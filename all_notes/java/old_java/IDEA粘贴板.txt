@@ -1,0 +1,2 @@
+printf("   *\n  ***\n *****\n*******");
+#include<stdio.h>

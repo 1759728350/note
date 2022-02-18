@@ -1,0 +1,10 @@
+int[] a = new int[9]//动态初始化，声明数组//
+int[] a ={1,2,3}//静态初始化，声明数组//
+public static void print(int[] a)//关于数组方法的格式//
+for (int x: a){}//遍历数组//
+
+ import java.util.Scanner;
+Scanner input = new Scanner(System.in);
+a[i] = input.nextInt()//外部输入数组//
+ score[i] = input.nextDouble();
+

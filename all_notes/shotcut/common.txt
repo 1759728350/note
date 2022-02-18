@@ -1,0 +1,56 @@
+shift+ 左方向     删除一整行
+shift+下/alt shift + 下（web）   复制粘贴到下一行
+Top #9选你所想：shift+o
+
+补全
+Top #1智能补全：  ctrl+j
+doc注解模板   /+7+tab
+alt + v补充前面的数据类型和变量
+
+查找
+Top #6无处藏身：Shift+Shift
+ctrl+shift+n  查找类                               
+ctrl+a   选择所有匹配项 (ctrl+alt+向下   移动到下一匹配项  ctrl+alt+向上   移动到上一匹配项)
+ctrl + f12    在类中找 方法，变量 
+alt  + 下 光标在代码块快速移动     
+              
+常用按键
+格式化代码    Ctrl+Alt+L
+运行         shift+f10  
+跳转定位
+
+f2      定位错误
+操作行移动：     alt+w回退    alt+e 前进   
+书签：              alt+r当前页面标记点   f11 标记/取消 书签
+移动选项卡：     alt+右键右选项卡  alt+左键左选项卡  
+ctrl+alt+b  跳转到实现类上
+f4       跳转到对象源码
+
+
+
+ctrl + e  显示最近更改的文件是哪些
+Top #1重构一切： alt+j
+Top #1自我修复：Alt+Enter
+Top #1智能补全：Ctrl+Shift+Space
+Top #1重构一切：Ctrl+Shift+Alt+T
+Top #10切来切去：Ctrl+Tab
+
+Top #5自动完成：Ctrl+Shift+Enter
+Top #4创造万物：Alt+Insert
+Top #7发号施令：Ctrl+Shift+A
+
+电脑快捷键
+alt+tab  电脑页面切屏
+alt+F4 关闭当前页面
+fn+f1关小键盘
+
+
+哔哩哔哩快捷键
+ F进入全屏  F退出全屏
+
+
+搜狗浏览器
+ctrl+w删除当前页面
+f2 切换到右边页面
+f3 切换到左边页面
+
