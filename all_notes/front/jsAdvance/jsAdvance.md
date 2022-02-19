@@ -508,7 +508,7 @@ sub/showSub();  //"sub"
 没有继承任何对象,直接new出来的,其prototype是其构造函数,这符合预期,毕竟constructor意思就是构造函数
 那么constructor这个值是存在哪里呢?
 通过控制台一路点下去可以发现,是在创造sub实例的原型上
-<img src="D:\elecbook\all_notes\front\jsAdvance\jsAdvance.assets\image-20220219150922082-16452619576372.png" alt="image-20220219150922082" style="zoom: 67%;" />
+![image-20220219150922082-16452619576372](jsAdvance.assets/image-20220219150922082-16452619576372.png)
 
 而下面这个继承了Sup类的sub实例输出的内容中在其第一层原型Sup中却没有constructor值
 所以可以断定,在Sub.prototype = new Sup();这个过程中,没有往Sup实例里加constructor属性的动作
@@ -606,7 +606,7 @@ Student.prototype.setPrice = function(price){
 var student = new Student('aa',1,2)
 console.log(student)
 ```
-<img src="D:\elecbook\all_notes\front\jsAdvance\jsAdvance.assets\image-20220219164743180-16452619507411.png" alt="image-20220219164743180" style="zoom: 80%;" />
+![image-20220219164743180](jsAdvance.assets/image-20220219164743180.png)
 
 不加Person.call(this, name, age);会导致在Sub构造函数里看不到Sup的值
 虽然不加也能访问到Sup的dog属性
