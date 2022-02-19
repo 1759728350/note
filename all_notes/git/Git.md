@@ -198,20 +198,20 @@ ssh-keygen -t rsa -C "注册邮箱"
 
 然后用户主目录/.ssh/下有两个文件，id_rsa是私钥，id_rsa.pub是公钥
 
-![image-20220216225416013](C:\Users\dougax\AppData\Roaming\Typora\typora-user-images\image-20220216225416013.png)
+![image-20220216225416013](D:\elecbook\all_notes\git\Git.assets\image-20220216225416013.png)
 
 将上面的id_rsa.pub文件里的内容复制,放进github里的ssh中
 
-![image-20220216230258527](C:\Users\dougax\AppData\Roaming\Typora\typora-user-images\image-20220216230258527.png)
+![image-20220216230258527](D:\elecbook\all_notes\git\Git.assets\image-20220216230258527.png)
 
-![image-20220216230239984](C:\Users\dougax\AppData\Roaming\Typora\typora-user-images\image-20220216230239984.png)
+![image-20220216230239984](D:\elecbook\all_notes\git\Git.assets\image-20220216230239984.png)
 
 
 
 测试是否连接成功
 ssh -T git@github.com
 
-![image-20220216230721749](C:\Users\dougax\AppData\Roaming\Typora\typora-user-images\image-20220216230721749.png)
+![image-20220216230721749](D:\elecbook\all_notes\git\Git.assets\image-20220216230721749.png)
 
 
 
@@ -221,7 +221,7 @@ ssh -T git@github.com
 
 2）、C:\Users\Administrator\ .gitconfig    只适用于当前登录用户的配置  --global 全局
 
-![](https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7Ksu8UlITwMlbX3kMGtZ9p0hcJS0rxj3qoCVvfDKh3WxwQJlSV3P15EIZuejraOwXLdic6NCB8X8oQ/640?wx_fmt=png)
+![](D:\elecbook\all_notes\git\Git.assets\640.png)
 
 这里可以直接编辑配置文件，通过命令设置后会响应到这里。
 
@@ -268,7 +268,7 @@ The file will have its original line endings in your working directory
 #然后输入提交信息,相当于注释
 ```
 
-当文件被更改后查看状态![image-20220217022814855](C:\Users\dougax\AppData\Roaming\Typora\typora-user-images\image-20220217022814855.png)
+当文件被更改后查看状态![image-20220217022814855](D:\elecbook\all_notes\git\Git.assets\image-20220217022814855.png)
 
 commit -a直接将修改后的文件提交到主分支中,一步到位
 
@@ -321,7 +321,7 @@ Git 基本理论（重要）
 
 Git 本地有三个工作区域：工作目录（Working Directory）、暂存区 (Stage/Index)、资源库(Repository 或 Git Directory)。如果在加上远程的 git 仓库(Remote Directory) 就可以分为四个工作区域。文件在这四个区域之间的转换关系如下：
 
-![](https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7Ksu8UlITwMlbX3kMGtZ9p0NJ4L9OPI9ia1MmibpvDd6cSddBdvrlbdEtyEOrh4CKnWVibyfCHa3lzXw/640?wx_fmt=png)
+![](D:\elecbook\all_notes\git\Git.assets\640.png)
 
 *   Workspace：工作区，就是你平时存放项目代码的地方
     
@@ -334,7 +334,7 @@ Git 本地有三个工作区域：工作目录（Working Directory）、暂存�
 
 本地的三个区域确切的说应该是 git 仓库中 HEAD 指向的版本：
 
-![](https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7Ksu8UlITwMlbX3kMGtZ9p0icz6X2aibIgUWzHxtwX8kicPCKpDrsiaPzZk04OlI2bzlydzicBuXTJvLEQ/640?wx_fmt=png)
+![](D:\elecbook\all_notes\git\Git.assets\640.png)
 
 *   Directory：使用 Git 管理的一个目录，也就是一个仓库，包含我们的工作空间和 Git 的管理空间。
     
@@ -366,7 +366,7 @@ git 的工作流程一般是这样的：
 
 Git 项目搭建
 
-![image-20220216233634375](C:\Users\dougax\AppData\Roaming\Typora\typora-user-images\image-20220216233634375.png)
+![image-20220216233634375](D:\elecbook\all_notes\git\Git.assets\image-20220216233634375.png)
 
 创建工作目录与常用指令
 -----------
@@ -442,12 +442,12 @@ ls-ah查看隐藏文件, 查看被设置为仓库的目录所生成的 .git 隐�
 $ git clone -o 远程主机别名 [url]  # https://github.com/lTbgykio/Books-Free-Books.git
 ```
 
-<img src="C:\Users\dougax\AppData\Roaming\Typora\typora-user-images\image-20220218120250831.png" alt="image-20220218120250831" style="zoom: 33%;" />
+<img src="D:\elecbook\all_notes\git\Git.assets\image-20220218120250831.png" alt="image-20220218120250831" style="zoom: 33%;" />
 
 上面远程主机别名起叫elecbook
 然后remote 查看远程主机名
 
-![image-20220218120806925](C:\Users\dougax\AppData\Roaming\Typora\typora-user-images\image-20220218120806925.png)
+![image-20220218120806925](D:\elecbook\all_notes\git\Git.assets\image-20220218120806925.png)
 
 
 
@@ -555,7 +555,7 @@ $ git branch -dr [remote/branch]
 
 使用码云创建一个自己的仓库！
 
-![](https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7Ksu8UlITwMlbX3kMGtZ9p0FSIwJb9g6Qbp99jY605xdPfh3N4l2rGpD44d6NCcdibankBUL60uODg/640?wx_fmt=png)
+![](D:\elecbook\all_notes\git\Git.assets\640.png)
 
 许可证：开源是否可以随意转载，开源但是不能商业使用，不能转载，...  限制！
 
@@ -563,7 +563,7 @@ $ git branch -dr [remote/branch]
 
 克隆到本地！
 
-![](https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7Ksu8UlITwMlbX3kMGtZ9p0PyKfGFd8UHSGIRbVLkXH5icQsgxh6K2RPibYeUER54UzuNVAYsgxXcfA/640?wx_fmt=png)
+![](D:\elecbook\all_notes\git\Git.assets\640.jpeg)
 
 IDEA 中集成 Git
 
@@ -575,7 +575,7 @@ IDEA 中集成 Git
 
 注意观察 idea 中的变化
 
-![](https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7Ksu8UlITwMlbX3kMGtZ9p0Cs93BiaOia1Sdk8icdH7vQzPfzIjuoTNYquKzYtrEe5mklhg2b7KOYsow/640?wx_fmt=png)
+![](D:\elecbook\all_notes\git\Git.assets\640.png)
 
 2、修改文件，使用 IDEA 操作 git。
 
@@ -728,7 +728,7 @@ $ git remote add origin_1 git@github.com:1759728350/jiayou2021.git
 #给该远程仓库起的别名为origin_1
 ```
 
-<img src="C:\Users\dougax\AppData\Roaming\Typora\typora-user-images\image-20220218114313158.png" alt="image-20220218114313158" style="zoom: 50%;" />
+<img src="D:\elecbook\all_notes\git\Git.assets\image-20220218114313158.png" alt="image-20220218114313158" style="zoom: 50%;" />
 
 ```bash
 #查看你远程添加了几个仓库
@@ -849,7 +849,7 @@ $ git push my mix:main
 #git push <远程主机名> <本地分支名> :<远程分支名>
 ```
 
-![image-20220218134302336](C:\Users\dougax\AppData\Roaming\Typora\typora-user-images\image-20220218134302336.png)
+![image-20220218134302336](D:\elecbook\all_notes\git\Git.assets\image-20220218134302336.png)
 
 ## push操作
 
@@ -898,7 +898,7 @@ origin  git@github.com:1759728350/jiayou2021.git (push)
 
 ## 报错解决
 
-![image-20220218172506512](C:\Users\dougax\AppData\Roaming\Typora\typora-user-images\image-20220218172506512.png)
+![image-20220218172506512](D:\elecbook\all_notes\git\Git.assets\image-20220218172506512.png)
 
 ```shell
 $ git push note master

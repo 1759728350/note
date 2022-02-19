@@ -425,21 +425,30 @@ function createPerson(name, age){
     };
     return obj;
 }
+let person = createPerson("lyh",78)
 ```
+以函数的方式创建对象,到了这一阶段以后,对象就可以批量创建了
+
 ## 方法4: 自定义构造函数
+
 * 套路: 自定义构造函数, 使用new创建
 * 使用场景: 需要创建多个类型确定的对象
 * 问题: 如果实例化多次会使同样的方法重复占用内存空间
 ```javascript
-function createPerson(name, age){
+function CreatePerson(name, age){
     this.name = "a";
     this.age = "1";
     this.setname = function(){
     this.name = "b";
-};
+	};
 }
+let person = new CreatePerson("lyh",78)
 ```
+构造函数与普通函数相比,没有return对象了
+构造函数省去了 var obj = new Object();和返回这两个代码,本质相同
+
 ## 方法5: 自定义构造函数+原型对象组合使用
+
 * 套路: 自定义构造函数, 使用new创建, 添加方法时使用原型对象来添加
 * 使用场景: 需要创建多个类型确定的对象
 ```javascript
@@ -453,7 +462,15 @@ createPerson.prototype = {
     }
 }
 ```
+较之于只用构造函数,可以减少多次创建对象带来的浪费内存()
+每次创建一个对象都会创建方法,我们或许向对象提供不同的数据参数,但其方法函数往往相同
+并不需要变化,所以通过加一个原型来实现共用一个函数引用
+这也带来了一个致命缺点,任意一个实例对象修改原型上的函数和值,其他实例也都会受影响
+从设计上来说,js的本意就是给你提供了一个节省空间的模式
+你要不想所有实例共用一个引用,也可以将方法函数卸载构造函数里而不是原型上
+
 # 继承模式
+
 ## 原型继承
 **缺点是如果父函数有一个变量为引用类型, 任意一个实例修改这个变量会导致所有实例的相关属性被修改**
 
@@ -475,6 +492,7 @@ var sub = function(){
 }
 Sub.prototype = new Sup();  //sub.prototype.__proto__ = sup.prototype
 console.log(Sub.prototype.constructor); //function sup(){...}, 不符合事实
+//所以人为修改这个值
 Sub.prototype.constructor = Sub;    //修正constructor属性
 Sub.prototype.showSub = function(){
     console.log(this.subP);
@@ -483,7 +501,32 @@ var sub = new Sub();
 sub.showSup();  //"sup"
 sub/showSub();  //"sub"
 ```
+由上一节对象创建模式-原型构造组合模式我们可知,这种继承模式的特点
+
+上面constructor的值我们需要探讨一下,为什么不符合事实
+一个实例的constructor肯定是实例往上面找的,\_\_proto\_\_毕竟你输出时该对象并没有这个属性
+没有继承任何对象,直接new出来的,其prototype是其构造函数,这符合预期,毕竟constructor意思就是构造函数
+那么constructor这个值是存在哪里呢?
+通过控制台一路点下去可以发现,是在创造sub实例的原型上
+<img src="C:\Users\dougax\AppData\Roaming\Typora\typora-user-images\image-20220219150922082.png" alt="image-20220219150922082" style="zoom: 67%;" />
+
+而下面这个继承了Sup类的sub实例输出的内容中在其第一层原型Sup中却没有constructor值
+所以可以断定,在Sub.prototype = new Sup();这个过程中,没有往Sup实例里加constructor属性的动作
+但没有继承的Sub和Sup其第一个原型中却有constructor这个属性
+而他们的共同点都是其原型都是个Object对象,
+且是第一个Object对象,
+这对应到第二个代码段是:
+	var sub= new Sub() => var Sub = new Function() => var Function = new Function()
+这对应到第二个代码段是:
+	var sub= new Sub() =>  var Sub.prototype = new Sup() =>  var Sup = new Function() => var Function = new 	Function()
+可以得出第一段代码是在var Sub = new Function()这个时候创建出这个值的
+可以得出第二段代码是在var Sup = new Function()这个时候创建出这个值的
+都是在其构造函数第一次被创建时往这个构造函数的原型里塞下这个constructor值的
+
+
+
 ## 借用构造函数继承(假继承, 没有继承父类型方法)
+
 **缺点是父类有方法时会被创建多次**
 
 套路:
@@ -496,12 +539,17 @@ var Person = function(name, age){
     this.age = age;
 };
 var student = function(name, age, price){
-    Person.call(this, name, age);
+    Person.call(this, name, age);//相当于this.Person(name,age)
     this.price = price;
 }
 var aa= new student('aa',11, 12)
 ```
-## 寄生式继承
+
+函数里借由call调用函数
+由于整个过程没有创建父类型对象,所以就没有原型,原型里的方法就没办法继承了
+
+## 寄生式继承(没吊用)
+
 **缺点是方法没有放到原型中无法复用**
 
 套路:
@@ -523,7 +571,10 @@ var aman = {
 }
 var student = new Person(aman);
 ```
+
+
 ## 组合继承(借用构造函数继承+原型继承)
+
 **缺点是构造函数执行了两次**
 
 套路:
@@ -542,18 +593,26 @@ Person.prototype.setAge = function(age){
     this.age = age;
 };
 var Student = function(name, age, price){
+    //看到父类型属性
     Person.call(this, name, age);
     this.price = price;
 }
 Student.prototype = new Person("tom", 12);
-Student.prototype.constructor = Student;
+//得到父类型方法
+Student.prototype.constructor = Student;  
 Student.prototype.setPrice = function(price){
     this.price = price;
 };
 var student = new Student('aa',1,2)
 console.log(student)
 ```
+<img src="D:\elecbook\all_notes\front\jsAdvance\jsAdvance.assets\image-20220219164743180.png" alt="image-20220219164743180" style="zoom: 80%;" />
+
+不加Person.call(this, name, age);会导致在Sub构造函数里看不到Sup的值
+虽然不加也能访问到Sup的dog属性
+
 # 进程与线程
+
 ## 进程
 * 程序的一次执行, 在内存中占用一片独立的内存空间
 ## 线程
@@ -628,7 +687,7 @@ console.log(student)
        * 绑定监听
        * 发送ajax请求
    * 某个时刻后再执行回调代码
-**使用alert()能暂停主线程执行与定时器计时**
+   **使用alert()能暂停主线程执行与定时器计时**
 # 事件循环模型
 ## 相关概念
 * 执行栈
