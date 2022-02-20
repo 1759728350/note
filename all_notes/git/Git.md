@@ -106,7 +106,7 @@ Linux 社区中存在很多的大佬！破解研究 BitKeeper ！
 
 Git 是免费、开源的，最初 Git 是为辅助 Linux 内核开发的，来替代 BitKeeper！
 
-![](https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7Ksu8UlITwMlbX3kMGtZ9p0XGLbyFDUiccCsib4L9Vkg7neJVWupfScbrjd7zm7apC8eYTzgQztNAnA/640?wx_fmt=png)
+<img src="Git.assets/image-20220221002854980.png" alt="image-20220221002854980" style="zoom:50%;" />
 
 Linux 和 Git 之父李纳斯 · 托沃兹（Linus Benedic Torvalds）1969、芬兰
 
@@ -134,7 +134,7 @@ Git 环境配置
 
 安装成功后在开始菜单中会有 Git 项，菜单下有 3 个程序：任意文件夹下右键也可以看到对应的程序！
 
-![](https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7Ksu8UlITwMlbX3kMGtZ9p0jaiaAfr2pAfWtFX57kGYqR3SlNxDlAZDkCU6IOB1YAicKxHib5yGbv9zQ/640?wx_fmt=png)
+<img src="Git.assets/image-20220221002808050.png" alt="image-20220221002808050" style="zoom:50%;" />
 
 **Git Bash：**Unix 与 Linux 风格的命令行，使用最多，推荐最多
 
@@ -220,8 +220,6 @@ ssh -T git@github.com
 1）、Git\etc\gitconfig  ：Git 安装目录下的 gitconfig     --system 系统级
 
 2）、C:\Users\Administrator\ .gitconfig    只适用于当前登录用户的配置  --global 全局
-
-![](Git.assets/640.png)
 
 这里可以直接编辑配置文件，通过命令设置后会响应到这里。
 
@@ -314,40 +312,9 @@ The file will have its original line endings in your working directory
 
 
 
-Git 基本理论（重要）
 
-三个区域
-----
 
-Git 本地有三个工作区域：工作目录（Working Directory）、暂存区 (Stage/Index)、资源库(Repository 或 Git Directory)。如果在加上远程的 git 仓库(Remote Directory) 就可以分为四个工作区域。文件在这四个区域之间的转换关系如下：
 
-![](Git.assets/640.png)
-
-*   Workspace：工作区，就是你平时存放项目代码的地方
-    
-*   Index / Stage：暂存区，用于临时存放你的改动，事实上它只是一个文件，保存即将提交到文件列表信息
-    
-*   Repository：仓库区（或本地仓库），就是安全存放数据的位置，这里面有你提交到所有版本的数据。其中 HEAD 指向最新放入仓库的版本
-    
-*   Remote：远程仓库，托管代码的服务器，可以简单的认为是你项目组中的一台电脑用于远程数据交换
-    
-
-本地的三个区域确切的说应该是 git 仓库中 HEAD 指向的版本：
-
-![](Git.assets/640.png)
-
-*   Directory：使用 Git 管理的一个目录，也就是一个仓库，包含我们的工作空间和 Git 的管理空间。
-    
-*   WorkSpace：需要通过 Git 进行版本控制的目录和文件，这些目录和文件组成了工作空间。
-    
-*   .git：存放 Git 管理信息的目录，初始化仓库的时候自动创建。
-    
-*   Index/Stage：暂存区，或者叫待提交更新区，在提交进入 repo 之前，我们可以把所有的更新放在暂存区。
-    
-*   Local Repo：本地仓库，一个存放在本地的版本库；HEAD 会只是当前的开发分支（branch）。
-    
-*   Stash：隐藏，是一个工作状态保存栈，用于保存 / 恢复 WorkSpace 中的临时状态。
-    
 
 工作流程
 ----
@@ -364,18 +331,11 @@ git 的工作流程一般是这样的：
 
 ![](https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7Ksu8UlITwMlbX3kMGtZ9p09iaOhl0dACfLrMwNbDzucGQ30s3HnsiaczfcR6dC9OehicuwibKuHjRlzg/640?wx_fmt=png)
 
-Git 项目搭建
+Git 多人项目合作开发
 
 ![image-20220216233634375](Git.assets/image-20220216233634375.png)
 
-创建工作目录与常用指令
------------
 
-工作目录（WorkSpace) 一般就是你希望 Git 帮助你管理的文件夹，可以是你项目的目录，也可以是一个空目录，建议不要有中文。
-
-日常使用只要记住下图 6 个命令：
-
-![](https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7Ksu8UlITwMlbX3kMGtZ9p0AII6YVooUzibpibzJnoOHHXUsL3f9DqA4horUibfcpEZ88Oyf2gQQNR6w/640?wx_fmt=png)
 
 本地仓库搭建
 ------
@@ -510,7 +470,7 @@ doc/*.txt    #会忽略 doc/notes.txt 但不包括 doc/server/arch.txt
 5.  如果名称的最后面是一个路径分隔符（/），表示要忽略的是此目录下该名称的子目录，而非文件（默认文件或目录都忽略）。使用码云
     
 
-github 是有墙的，比较慢，在国内的话，我们一般使用 gitee ，公司中有时候会搭建自己的 gitlab 服务器
+狂神idea,gitee配置git
 -----------------------------------------------------------
 
 这个其实可以作为大家未来找工作的一个重要信息！
@@ -525,29 +485,7 @@ github 是有墙的，比较慢，在国内的话，我们一般使用 gitee ，
 ssh-keygen
 ```
 
-```shell
-# 列出所有本地分支
-git branch
 
-# 列出所有远程分支
-git branch -r
-
-# 新建一个分支，但依然停留在当前分支
-git branch [branch-name]
-
-# 新建一个分支，并切换到该分支
-git checkout -b [branch]
-
-# 合并指定分支到当前分支
-$ git merge [branch]
-
-# 删除分支
-$ git branch -d [branch-name]
-
-# 删除远程分支
-$ git push origin --delete [branch-name]
-$ git branch -dr [remote/branch]
-```
 
 3将公钥信息 public key 添加到码云账户中即可！
 
@@ -592,14 +530,34 @@ IDEA 中集成 Git
 
 这些都是单个人的操作！
 
-学习的方式最重要！学会学习！我上课的更多时候都是在教大家去学习一种理念和思想（学习方式）
 
-有道无术、术尚可求。有术无道、止于术！
-
-真正的教学，授人以渔！
 
 GIT 分支
 ---------
+
+```shell
+# 列出所有本地分支
+git branch
+
+# 列出所有远程分支
+git branch -r
+
+# 新建一个分支，但依然停留在当前分支
+git branch [branch-name]
+
+# 新建一个分支，并切换到该分支
+git checkout -b [branch]
+
+# 合并指定分支到当前分支
+$ git merge [branch]
+
+# 删除分支
+$ git branch -d [branch-name]
+
+# 删除远程分支
+$ git push origin --delete [branch-name]
+$ git branch -dr [remote/branch]
+```
 
 分支在 GIT 中相对较难，分支就是科幻电影里面的平行宇宙，如果两个平行宇宙互不干扰，那对现在的你也没啥影响。不过，在某个时间点，两个平行宇宙合并了，我们就需要处理一些问题了！
 
@@ -713,6 +671,66 @@ dougax@lyh MINGW64 /d/github/test (fix_shit)
 ```
 
 解决冲突后,此时仍然有两个分支,master那个分支保留,fix_shit由于合并了master,所以文件里就会有修改建议
+
+三个区域
+----
+
+*   
+
+## 暂存区,工作区和远程仓库
+
+Git 本地有三个工作区域：工作目录（Working Directory）、暂存区 (Stage/Index)、资源库(Repository 或 Git Directory)。如果在加上远程的 git 仓库(Remote Directory) 就可以分为四个工作区域。文件在这四个区域之间的转换关系如下：
+
+
+
+*   Workspace：工作区，就是你平时存放项目代码的地方
+
+*   Index / Stage：暂存区，用于临时存放你的改动，事实上它只是一个文件，保存即将提交到文件列表信息
+
+*   Repository：仓库区（或本地仓库），就是安全存放数据的位置，这里面有你提交到所有版本的数据。其中 HEAD 指向最新放入仓库的版本
+
+*   Remote：远程仓库，托管代码的服务器，可以简单的认为是你项目组中的一台电脑用于远程数据交换
+
+本地的三个区域确切的说应该是 git 仓库中 HEAD 指向的版本：
+
+
+
+*   Directory：使用 Git 管理的一个目录，也就是一个仓库，包含我们的工作空间和 Git 的管理空间。
+
+*   WorkSpace：需要通过 Git 进行版本控制的目录和文件，这些目录和文件组成了工作空间。
+
+*   .git：存放 Git 管理信息的目录，初始化仓库的时候自动创建。
+
+*   Index/Stage：暂存区，或者叫待提交更新区，在提交进入 repo 之前，我们可以把所有的更新放在暂存区。
+
+*   Local Repo：本地仓库，一个存放在本地的版本库；HEAD 会只是当前的开发分支（branch）。
+
+*   Stash：隐藏，是一个工作状态保存栈，用于保存 / 恢复 WorkSpace 中的临时状态。
+
+
+
+
+
+
+
+工作目录（WorkSpace) 一般就是你希望 Git 帮助你管理的文件夹，可以是你项目的目录，也可以是一个空目录，建议不要有中文。
+
+日常使用只要记住下图 6 个命令：
+
+![img](Git.assets/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzM1NDE1Mg==,size_16,color_FFFFFF,t_70.png)
+
+
+
+通过ll来查看哪些文件已经存入到暂存区(index/stage)中
+![image-20220221001105070](Git.assets/image-20220221001105070.png)
+
+上面蓝色的是已经add到暂存区中的文件
+![image-20220221001230534](Git.assets/image-20220221001230534.png)
+
+git checkout -- \<file> 表示将文件从暂存区的file版本替换到工作区的file版本，如果暂存区没有，就从版本库中的file版本替换工作区的file版本；
+当执行 “git checkout .” 或者 “git checkout – ” 命令时，会用暂存区全部或指定的文件替换工作区的文件。这个操作很危险，会清除工作区中未添加到暂存区的改动。
+
+git rm --cached \<file> 只表示将暂存区的file文件删除。
 
 ## pull操作
 
@@ -853,6 +871,8 @@ $ git push my mix:main
 
 ## push操作
 
+作用:git push命令用于将本地分支的更新推送到远程主机对应分支
+
 git push的一般形式为 git push <远程主机名> <本地分支名> :<远程分支名> ，例如 git push origin master：refs/for/master ，即是将本地的master分支推送到远程主机origin上的对应master分支， origin 是远程主机名，
 
 第一个master是本地分支名，第二个master是远程分支名。
@@ -895,6 +915,63 @@ $ git remote -v
 origin  git@github.com:1759728350/jiayou2021.git (fetch)
 origin  git@github.com:1759728350/jiayou2021.git (push)
 ```
+
+
+
+## 删除文件操作
+
+git删除已经push的远程文件或文件夹
+
+在使用git提交项目时，有时候会误提交一下文件，比如：.iml，.project，*.settings，.idea/*等文件，有时候这些不需要提交的文件可以加入到.gitignore，在提交的时候可以忽略这些文件，但是有时候我们忘记，就会出现误提交一些文件，这时就需要我们删除误提交的文件，下面是使用git命令来删除已经push的误提交的文件：
+
+注意：该方法适用于我们需要删除暂存区或分支上的文件, 但本地又需要使用, 只是不希望这个文件被版本控制
+
+1.**预览暂存区我们需要删除的文件或文件夹**（此步骤可以预览我们要删除的文件或文件夹是否是我们要删除的，有没有或多或少删除）
+比如：我们就拿删除 integration-engine-stream.iml 作为例子
+
+```shell
+git rm -r -n --cached 文件/文件夹
+$ git add .    #虽然有些IDE在代码更新后会自动add，但是还是最好手动add一下，以防万一
+$ git rm -r -n --cached integration-engine-stream.iml
+rm 'data-integration-engine-stream/integration-engine-stream.iml'
+```
+
+使用 -n 参数，执行命令时，是不会删除任何文件，而是展示此命令要删除的文件列表预览。由此我们看到只有要删除的文件 integration-engine-stream.iml
+
+**git rm -r --cached file/dir**参数为递归删除，递归删除暂存区中的文件夹/文件
+
+2.确认无误后删除暂存区文件或文件夹，只需去掉 -n 参数
+3.将本次暂存区的更改提交
+
+```shell
+$ git commit -m "delete remote integration-engine-stream.iml"
+```
+
+4.push
+
+```shell
+$ git push [remote] [branch]
+```
+
+
+
+
+
+## clone和pull的区别
+
+git clone
+是在本地没有版本库的时候，从远程服务器克隆整个版本库到本地，是一个本地从无到有的过程。
+
+git pull
+在本地有版本库的情况下，从远程库获取最新commit 数据（如果有的话），并merge（合并）到本地。
+
+git pull = git fetch + git merge
+
+##### 使用场景
+
+通常情况下，远程操作的第一步，是使用git clone从远程主机克隆一个版本库到本地。
+
+本地修改代码后，每次从本地仓库push到远程仓库之前都要先进行git pull操作，**保证push到远程仓库时没有版本冲突**。也就是说,在这个仓库只有我一个人在提交时,没有第二个人commit,即使不pull也是可以随意push的,因为版本并没有冲突
 
 ## 报错解决
 

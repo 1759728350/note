@@ -508,7 +508,11 @@ sub/showSub();  //"sub"
 没有继承任何对象,直接new出来的,其prototype是其构造函数,这符合预期,毕竟constructor意思就是构造函数
 那么constructor这个值是存在哪里呢?
 通过控制台一路点下去可以发现,是在创造sub实例的原型上
+
+
 ![image-20220219150922082-16452619576372](jsAdvance.assets/image-20220219150922082-16452619576372.png)
+
+
 
 而下面这个继承了Sup类的sub实例输出的内容中在其第一层原型Sup中却没有constructor值
 所以可以断定,在Sub.prototype = new Sup();这个过程中,没有往Sup实例里加constructor属性的动作
