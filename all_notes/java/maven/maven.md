@@ -101,7 +101,65 @@ Maven 基本命令
 6.  **install**: 安装
     
     将当前项目放到 Maven 的本地仓库中。供其他项目使用
-    
+
+
+
+#### mvn compile 
+
+<font color=#FFCCCC style=" font-weight:bold;">compile后</font>
+在项目目录中会<font color=#FF6666* style=" font-weight:bold;">生成一个target目录</font>(先在cmdz中 cd/d d:\\project进入到项目文件夹下)
+
+![image-20220224234744027](maven.assets/image-20220224234744027.png)
+
+同时,可以观察到仓库中增加了许多jar包
+这些jar包是maven构建项目时的插件(java编写)
+
+![image-20220224234728766](maven.assets/image-20220224234728766.png)
+
+将 java 源文件编译成 class 文件放入到classes文件夹下
+
+![image-20220225002542240](maven.assets/image-20220225002542240.png)
+
+#### mvn clean
+
+clear可以删除当前项目文件夹下compile的target文件
+
+
+
+#### mvn test
+
+测试项目
+执行 test 目录下的测试用例
+
+![image-20220225002929007](maven.assets/image-20220225002929007.png)
+
+```java
+package com.oddeye;
+import org.junit.Test;
+import org.junit.Assert;
+public class DemoTest {
+    @Test
+    public void testjj(){
+        Demo demo = new Demo();
+        String ret = demo.print("JJ");
+        Assert.assertEquals("JJ", ret);
+    }
+}
+```
+
+写在test.java.com.oddeye的DemoTest测试main.java.com.oddeye的Demo返回结果是否符合预期
+
+同时在target下生成测试日志
+![image-20220225003442156](maven.assets/image-20220225003442156.png)
+
+#### mvn install
+
+将你这个项目打成jar包放入本地仓库
+
+#### mvn package
+
+将项目打成 jar 包,target下生成
+注意这个包只包含源程序Demo.class不包含test里的文件
 
 什么是 Maven 仓库？
 -------------
@@ -130,7 +188,7 @@ Maven 仓库用来存放 Maven 管理的所有 Jar 包。分为：本地仓库 �
 </mirror>  
 ```
 
-到setting.xml文件中配置
+到<font color=#666699 style=" font-weight:bold;">setting.xml</font>文件中配置
 
 
 
@@ -153,6 +211,76 @@ Maven 仓库用来存放 Maven 管理的所有 Jar 包。分为：本地仓库 �
 *   **groupId**: 所需 Jar 包的项目名
 *   **artifactId**: 所需 Jar 包的模块名
 *   **version**: 所需 Jar 包的版本号
+
+## 项目创建
+
+#### 创建一个有坐标的项目
+
+创建一个坐标为:com.oddeye.dougax的项目,其要导入junit的包
+它本身被打包后也是一个可以用坐标导入的包
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"  
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0  
+                      http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <!-- 
+        含义：组织标识，定义了项目属于哪个组，风向标，坐标，或者说若把本项目打包
+        用途：此名称则是本地仓库中的路径，列如：otowa.user.dao，在M2_REPO目录下，将是: otowa/user/dao目录
+        命名规范:项目名称，模块，子模块
+    -->
+    <groupId>com.oddeye</groupId>
+    <!-- 
+        含义：项目名称也可以说你所模块名称，定义当面Maven项目在组中唯一的ID
+        用途：例如：user-dao，在M2_REPO目录下，将是：otowa/user/dao/user-dao目录
+        命名规范:唯一就好
+    -->
+    <artifactId>dougax</artifactId>
+    <!-- 
+        含义：项目当前的版本号
+        用途：例如：0.0.1-SNAPSHOT，在M2_REPO目录下，将是：otowa/user/dao/user-dao/0.0.1-SNAPSHOT目录
+    -->
+    <version>1.0</version>
+    <!-- 打包的格式，可以为：pom , jar , maven-plugin , ejb , war , ear , rar , par -->
+    <packaging>jar</packaging>
+    
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+        </dependency>
+    </dependencies>
+</project>
+
+```
+
+#### idea中快速创建项目
+
+自动生成maven项目架构
+
+> org.apache.maven.archetypes:maven-archetype-quickstart
+
+配置maven设置
+
+![image-20220225005622323](maven.assets/image-20220225005622323.png)
+
+#### 创建maven模块
+
+如果想在当前项目中创建一个带pom.xml的maven模块
+可以setting=>structure=>new module
+
+
+
+#### maven快速调试
+
+<img src="maven.assets/image-20220225011758890.png" alt="image-20220225011758890" style="zoom: 50%;" />
+
+![image-20220225011717313](maven.assets/image-20220225011717313.png)
+
+
 
 传递依赖 与 排除依赖
 -----------
