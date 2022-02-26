@@ -282,6 +282,31 @@ Maven 仓库用来存放 Maven 管理的所有 Jar 包。分为：本地仓库 �
 
 
 
+#### tomcat插件下载
+
+加完build标签后刷新maven,可以看到plugin中有tomcat,点击tomcat中的run
+启动服务器
+作用:<font color=#FF6666* style=" font-weight:bold;">不用自己下一个tomcat了</font>,直接通过xml定义的标签配置maven下载下来的tomcat
+
+![image-20220225131535745](maven.assets/image-20220225131535745.png)
+
+异常信息
+
+> Error configuring application listener of class org.springframework.web.context.ContextLoaderListener java.lang.ClassNotFoundException: org.springframework.web.context.ContextLoaderListener 	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1713) 	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1558) 	at org.apache.catalina.core.DefaultInstanceManager.loadClass(DefaultInstanceManager.java:527) 	at org.apache.catalina.core.DefaultInstanceManager.loadClassMaybePrivileged(DefaultInstanceManager.java:509) 	at org.apache.catalina.core.DefaultInstanceManager.newInstance(DefaultInstanceManager.java:137) 	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4733) 	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5291) 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150) 	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559) 	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549) 	at java.util.concurrent.FutureTask.run(FutureTask.java:266) 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) 	at java.lang.Thread.run(Thread.java:750)
+
+web.xml配置全部删去,否则报错
+
+```xml
+<web-app version="2.4"
+         xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+</web-app>
+```
+
+
+
 传递依赖 与 排除依赖
 -----------
 
@@ -313,50 +338,126 @@ Maven 仓库用来存放 Maven 管理的所有 Jar 包。分为：本地仓库 �
 
 ![image-20220224182116365](maven.assets/image-20220224182116365.png)
 
-对于servlet-api来说,你是不能将其打包到服务器上的,服务器上的Tomcat上已经有servlet的包了,你本地导入的包只是开发测试时跑跑本地tomcat用的,你要是打包了,就容易版本冲突(两个同名jar包,版本不一样,用谁的?不报错?)
+对于servlet-api来说,你是不能将其打包到服务器上的,服务器上的Tomcat上已经有servlet的包了,你本地导入的包只是开发测试时跑跑本地tomcat用的,你要是打包了,就容易<font color=#FF6666* style=" font-weight:bold;">版本冲突</font>(两个同名jar包,版本不一样,用谁的?不报错?)
 
 像junit这种测试代码的包就测试部分代码用,不用打包
 
-log4j这种日志类jar包,在服务器上运行时也是要实时观测排查的,所以要打包
+log4j这种日志类jar包,在服务器上运行时也是要<font color=#FFCCCC style=" font-weight:bold;">实时观测排查</font>的,所以要打包
 
 依赖冲突
 ----
 
-若项目中多个 Jar 同时引用了相同的 Jar 时，会产生依赖冲突，但 Maven 采用了两种避免冲突的策略，因此在 Maven 中是不存在依赖冲突的。
+#### 依赖具有传递性
 
-**1. 短路优先**
+- 直接依赖:在当前项目中通过依赖配置建立的依赖关系
+- 间接依赖:被资源的资源如果依赖其他资源，当前项目间接依赖其他资源
 
+![image-20220226130830904](maven.assets/image-20220226130830904.png)
+
+#### 依赖传递冲突问题
+
+- 路径优先:当依赖中出现相同的资源时，<font color=#66CC99 style=" font-weight:bold;">层级越深，优先级越低</font>，层级越浅，优先级越高
+- 声明优先:当资源在相同层级被依赖，<font color=#66CC99 style=" font-weight:bold;">引用路径长度相同时，在 pom.xml 中谁先被声明，就使用谁。</font>
+- 特殊优先:当同级配置了<font color=#FF6666* style=" font-weight:bold;">相同资源的不同版本</font><font color=#66CC99 style=" font-weight:bold;">**配置顺序靠前的优先**</font>,后配置的覆盖先配置的
+
+若项目中多个 Jar 同时引用了相同的 Jar 时，会产生依赖冲突，但 Maven 采用了避免冲突的策略，因此在 Maven 中是不存在依赖冲突的。
+
+#### 模块添加
+
+protectStruct=>+=>import module=>
+
+![image-20220226133146030](maven.assets/image-20220226133146030.png)
+
+也可以
+<img src="maven.assets/image-20220226133253390.png" alt="image-20220226133253390" style="zoom:50%;" />
+
+
+
+#### 依赖排除
+
+<img src="maven.assets/image-20220226134444105.png" alt="image-20220226134444105" style="zoom: 50%;" />
+
+```xml
+<dependencies>
+    <dependency>
+<!--      导入的b模块-->
+      <groupId>com.oddeye</groupId>
+      <artifactId>dougax</artifactId>
+      <version>1.0</version>
+        
+<!--      b模块里也有junit且版本冲突-->
+      <exclusions>
+<!--        排除这个依赖模块-->
+        <exclusion>
+          <groupId>junit</groupId>
+          <artifactId>junit</artifactId>
+<!--          不需要填写版本号-->
+        </exclusion>
+      </exclusions>
+    </dependency>
+    
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.13</version>
+    </dependency>
+
+</dependencies>
 ```
-本项目——>A.jar——>B.jar——>X.jar
-本项目——>C.jar——>X.jar
-```
 
-若本项目引用了 A.jar，A.jar 又引用了 B.jar，B.jar 又引用了 X.jar，并且 C.jar 也引用了 X.jar。
 
-在此时，Maven 只会引用引用路径最短的 Jar。
 
-**2. 声明优先**
+## 生命周期
 
-若引用路径长度相同时，在 pom.xml 中谁先被声明，就使用谁。
+![image-20220226135818053](maven.assets/image-20220226135818053.png)
 
-聚合
+每一步操作并不是独立的,而是建立在之前操作流之上,所以一些操作需要遵循生命周期
+
+[关于maven生命周期的插件](https://maven.apache.org/plugins/index.html)https://maven.apache.org/plugins/index.html
+![image-20220226140711242](maven.assets/image-20220226140711242.png)
+
+官网上教你怎么用这些插件,比如source插件,你绑定要产生源码时的生命周期阶段:verify阶段
+
+插件与生命周期理解:
+![image-20220226140954979](maven.assets/image-20220226140954979.png)
+
+## 模块拆分
+
+![image-20220226141421387](maven.assets/image-20220226141421387.png)
+
+项目较小,暂时用不到
+
+模块聚合
 --
 
 1.  什么是聚合？
     
-    将多个项目同时运行就称为聚合。
+    通过操作一个父模块来将<font color=#666699 style=" font-weight:bold;">多个模块</font>同时运行或进行同一操作就称为聚合。
     
 2.  如何实现聚合？
     
-    只需在 pom 中作如下配置即可实现聚合：
+    创建一个模块,将其标记为父模块, (注意父模块和子模块在文件夹中的相对位置)
+    
+    在父模块pom 中作如下配置即可实现与子模块聚合：
     
 
 ```xml
-<modules>
-    <module>web-connection-pool</module>
-    <module>web-java-crawler</module>
-</modules>
+	<groupId>com.oddeye</groupId>
+    <artifactId>ssm</artifactId>
+    <version>1.0-SNAPSHOT</version>
+<!--    表示该模块为父管理模块-->
+    <packaging>pom</packaging>
+<!--    该父模块所管理的子模块名-->
+    <modules>
+<!--        子模块和父模块存储在同一级文件夹里-->
+        <module>../maven-project</module>
+        <module>../maven02_inIdea</module>
+        <module>../maven_dependenceDelivery/maven_dependenceDelivery</module>
+
+    </modules>
 ```
+
+子工程不写packaging,默认以jar打包
 
 继承
 --
@@ -391,6 +492,8 @@ log4j这种日志类jar包,在服务器上运行时也是要实时观测排查�
       <groupId>父pom所在项目的groupId</groupId>
       <artifactId>父pom所在项目的artifactId</artifactId>
       <version>父pom所在项目的版本号</version>
+       <!--   如果子工程正好在父工程底下就不用写相对路径了-->
+	  <relativePath>父工程相对路径<relativePath>
 </parent>
  <parent>
       <artifactId>resource-search</artifactId>
@@ -398,6 +501,317 @@ log4j这种日志类jar包,在服务器上运行时也是要实时观测排查�
       <version>1.0-SNAPSHOT</version>
 </parent>
 ```
+
+![image-20220226163136151](maven.assets/image-20220226163136151.png)
+
+#### 父工程blog-parent
+
+在父工程内<font color=#66CC99 style=" font-weight:bold;">统一依赖</font>,子工程声明依赖就不需要写版本号了
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>blog-parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <!--   子模块有哪些 -->
+    <modules>
+        <module>blog-api</module>
+        <module>blog-admin</module>
+    </modules>
+    <!--   表示该工程是父管理模块 -->
+    <packaging>pom</packaging>
+
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.5.0</version>
+        <relativePath/>
+    </parent>
+<!--    编码设置-->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+
+    <!--        把父工程中的   未加版本号的 依赖 删去  -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>1.2.76</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>commons-collections</groupId>
+                <artifactId>commons-collections</artifactId>
+                <version>3.2.2</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>3.4.3</version>
+            </dependency>
+
+    	</dependencies>
+    </dependencyManagement>
+
+    <build>
+        <!--        打包插件-->
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+
+<!--        <resources>-->
+<!--            <resource>-->
+<!--                <directory>src/main/java</directory>-->
+<!--                <includes>-->
+<!--                    <include>**/*.properties</include>-->
+<!--                    <include>**/*.xml</include>-->
+<!--                </includes>-->
+<!--                <filtering>false</filtering>-->
+<!--            </resource>-->
+<!--            <resource>-->
+<!--                <directory>src/main/resources</directory>-->
+<!--                <includes>-->
+<!--                    <include>**/*.properties</include>-->
+<!--                    <include>**/*.xml</include>-->
+<!--                </includes>-->
+<!--                <filtering>false</filtering>-->
+<!--            </resource>-->
+<!--        </resources>-->
+
+
+    </build>
+
+</project>
+```
+
+
+
+#### 子工程blog-api
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    
+    <!--  父工程名  -->
+    <parent>
+        <artifactId>blog-parent</artifactId>
+        <groupId>org.example</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <!--  pom规范版本  -->
+    <modelVersion>4.0.0</modelVersion>
+	<!--  子工程名  -->
+    
+   	<!--   <groupId>org.example</groupId>默认与父工程保持一致  -->
+    <artifactId>blog-api</artifactId>
+    <!--   打包方式默认为jar不写 -->
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <!-- 排除 默认使用的logback  -->
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!-- log4j2 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-log4j2</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.76</version>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>3.2.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>3.4.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/joda-time/joda-time -->
+        <!--        处理时间的工具类-->
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.10.10</version>
+        </dependency>
+        <!--jwt加密-->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>0.9.1</version>
+        </dependency>
+        <!--        md5加密-->
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+        </dependency>
+<!--        七牛云-->
+        <dependency>
+            <groupId>com.qiniu</groupId>
+            <artifactId>qiniu-java-sdk</artifactId>
+            <version>[7.7.0, 7.7.99]</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+
+        
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
+
+    </build>
+
+</project>
+```
+
+#### 插件继承
+
+父工程
+
+```xml
+<build>
+    <!--将父工程加上pluginManagement-->
+    <pluginManagement>
+        <!--设置插件-->
+    	<plugins>
+    	<!--具体的插件配置-->
+            <plugin>
+                <grouprd>org.apache .tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.1</version>
+                <configuration>
+                    <port>80</port>
+                    <path>/</path>
+                </configuration>	
+            </plugin>
+        </plugins>
+    </pluginManagement>
+</build>
+```
+
+子工程
+
+```xml
+<build>
+    	<plugins>
+            <plugin>
+                <grouprd>org.apache .tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+				<!--子工程不需要写版本号了-->
+                <!--<version>2.1</version>-->
+                <configuration>
+                    <port>80</port>
+                    <path>/</path>
+                </configuration>	
+            </plugin>
+        </plugins>
+</build>
+```
+
+
 
 使用 Maven 构建 Web 项目
 ------------------
@@ -785,3 +1199,15 @@ converted（仓库管理员从 Maven 1 POM转换过来），partner（直接从�
 ```
 
 参考原文：[Maven 使用详解](https://blog.csdn.net/u010425776/article/details/52027706)
+
+## 问题解决
+
+设置maven在不联网的情况下使用本地插件
+
+一般使用maven为我们提供好的骨架时，是需要联网的，配置这个，可以在没有网路的情况下，我们可以正常创建工程，并从之前已经使用过的工程中找到相应的骨架。
+
+输入内容：`-DarchetypeCatalog=internal`
+
+![img](https://img-blog.csdnimg.cn/20200514101056912.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMDU3MTU0,size_16,color_FFFFFF,t_70#pic_center)
+
+Lyh15370302726!
