@@ -802,13 +802,62 @@ protectStruct=>+=>import module=>
                 <artifactId>tomcat7-maven-plugin</artifactId>
 				<!--子工程不需要写版本号了-->
                 <!--<version>2.1</version>-->
-                <configuration>
-                    <port>80</port>
-                    <path>/</path>
-                </configuration>	
+             
             </plugin>
         </plugins>
 </build>
+```
+
+![image-20220226175223129](maven.assets/image-20220226175223129.png)
+
+## 版本统一
+
+当多jar包要用同一个版本时,创建变量统一版本
+
+```xml
+<!--定义自定义属性-->
+<properties>
+	<spring.version>5.1.9.RELEASE</ spring.version>
+</properties>
+
+<dependency>
+	<groupId>org.springframework</ groupId>
+    <artifactId>spring-context</ artifactId>
+    <version>${spring.version}</version>
+</dependency>
+
+```
+
+${version}默认引用该工程version
+
+属性类别:Setting属性
+作用:
+使用Maven配置文件setting.xml中的标签属性，用于动态配置
+调用格式:
+$ {settings.localRepository}
+
+## 配置属性管理
+
+利用maven在pom文件中自定义标签来取代properties配置的属性
+
+![image-20220226182231433](maven.assets/image-20220226182231433.png)
+
+```xml
+<!--定义自定义属性-->
+<properties>
+<spring. version>5.1.9.RELEASE</ spring.version>
+    <junit.version>4.12</ljunit.version>
+	<jdbc.url>jdbc:mysql://127.0.0.1:3306/ssm_db</jdbc.url>
+</properties>
+```
+
+jdbc.properties配置文件:
+
+```properties
+jdbc.driver=com.mysql.jdbc.Driver
+jdbc.ur1=$ {jdbc.url}
+jdbc.username=root
+jdbc.password=123
 ```
 
 
@@ -1198,8 +1247,6 @@ converted（仓库管理员从 Maven 1 POM转换过来），partner（直接从�
 </project>
 ```
 
-参考原文：[Maven 使用详解](https://blog.csdn.net/u010425776/article/details/52027706)
-
 ## 问题解决
 
 设置maven在不联网的情况下使用本地插件
@@ -1210,4 +1257,3 @@ converted（仓库管理员从 Maven 1 POM转换过来），partner（直接从�
 
 ![img](https://img-blog.csdnimg.cn/20200514101056912.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyMDU3MTU0,size_16,color_FFFFFF,t_70#pic_center)
 
-Lyh15370302726!

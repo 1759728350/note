@@ -748,6 +748,15 @@ $ git remote add origin_1 git@github.com:1759728350/jiayou2021.git
 
 <img src="Git.assets/image-20220218114313158.png" alt="image-20220218114313158" style="zoom: 50%;" />
 
+`git pull`命令作用：从另一个存储库或**本地分支关联的远端分支**获取最新代码，并与本地代码资源整合。
+`git pull`命令执行过程：取回远程主机某个分支的更新，再与本地的指定分支合并（可能存在需手动解决的冲突）。
+
+```shell
+$ git pull <远程主机名> <远程分支名>:<本地分支名>
+```
+
+
+
 ```bash
 #查看你远程添加了几个仓库
 dougax@lyh MINGW64 /d/github/test/jiayou2021 (main)
