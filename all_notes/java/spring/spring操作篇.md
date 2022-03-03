@@ -131,7 +131,13 @@ public class SomeServiceImpl implements SomeService {
 
 
     }
+    @Override
+    public void doOther(){
+    	System.out.println("doOther");
+        System.out.println("这是业务代码");
+    }
 }
+
 ```
 
 ##### MyAspect.java
@@ -141,6 +147,7 @@ public class SomeServiceImpl implements SomeService {
 ```java
 package com.oddeye.handle;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
@@ -153,17 +160,69 @@ import java.util.Date;
 位置:放在某个类的上面作用:表示当前类是切面类。
 
 切面类:表示切面功能的类
-*/
+ */
 
 @Component("aspect")
 @Aspect
 public class MyAspect {
-	//切入点表达式
-    @Before("execution(public void com.oddeye.service.impl.SomeServiceImpl.doSome(String,Integer))")
-    public void myBefore(){
-        System.out.println("before在目标方法之前执行"+new Date());
+    //切入点表达式
+    @Before("execution(public void com.oddeye.service.impl.SomeServiceImpl.*(..))")
+    public void myBefore(JoinPoint jp){
 
+        String methodName = jp.getSignature().getName();
+
+        if (methodName.equals("doSome")){
+            System.out.println("before doSome");
+            System.out.println("before在目标方法之前执行"+new Date());
+            Object[] args = jp.getArgs();
+            for (Object arg : args) {
+                System.out.println(arg);
+            }
+        }else if (methodName.equals("doOther")){
+            System.out.println("before doOther");
+
+        }
     }
 }
+
 ```
 
+### spring集成
+
+集成思路
+spring能集成很多的框架，是spring一个优势功能。通过集成功能，让开发人员使用其他框架更方便集成使用的是spring ioc核心技术。
+
+
+
+要使用框架，例如mybatis，怎么使用mybatis ?
+
+使用mybatis，需要创mybatis框架中的某些对象，使用这些对象，就能使用mybatis提供的功能了。
+分析: mybatis执行sql语句，需要使用那些对象?
+1.需要有Dao接口的代理对象，例如StudentDao接口,需要一个它的代理对象使用SqlSession.getMapper(StudentDao.class)，得到<font color=#66CC99 style=" font-weight:bold;">dao代理对象</font>
+
+⒉.需要有SqISessionFactory,创建<font color=#66CC99 style=" font-weight:bold;">SqlSessionFactory对象</font>，才能使用openSession()得到SqlSession对象
+
+3.数据源<font color=#66CC99 style=" font-weight:bold;">DataSource对</font>象，使用一个更强大，功能更多的连接池对象代替mybatis自己的PooledDataSource
+
+
+
+现在集成了spring可以用<font color=#FF6666* style=" font-weight:bold;">ioc技术让spring帮你创建mybatis需要的对象</font>
+![image-20220303163610247](spring操作篇.assets/image-20220303163610247.png)
+
+实现步骤:
+1.使用的mysql库,使用学生表student2(id int主键列,自动增长,name varchar(80),
+age int)
+2.创建maven项目
+3.加入依赖
+spring依赖，mybatis依赖，mysql驱动。junit依赖
+mybatis-spring依赖（mybatis网站上提供的，用来在spring项目中，创建mybatis对象spring有关事务的依赖。)
+mybatis和spring整合的时候，事务是自动提交的。
+4.创建实体类student
+5.创建Dao接口和mapper文件写sql语句6.写mybatis主配置文件
+6.写mybatis主配置文件
+7.创建service接口和他的实现类
+8.创建spring的配置文件
+1）声明数据源DataSource,使用的阿里的Druid连接池
+2）声明sqlsessionFactoryBean类，在这个类内部创建的是sqlSessionFactory对象。
+3）声明Mapperscannerconfiguration类，在内部创建dao代理对象，创建的对象都放在spring容器中。
+4)）声明service对象，把3）的中dao赋值给service属性9.测试dao访问数据库
