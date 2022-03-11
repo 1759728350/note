@@ -125,11 +125,33 @@ java.util.logging.ConsoleHandler.encoding = GBK
 
 
 
-### Tomcat 部署项目
+## Tomcat 部署项目
 
 **Tomcat 部署 Web 项目 · 内嵌** [https://blog.csdn.net/qq_40881680/article/details/100011988](https://blog.csdn.net/qq_40881680/article/details/100011988)
 
 **Tomcat 部署 Web 项目 · 连接外部路径** [https://blog.csdn.net/qq_40881680/article/details/100047094](https://blog.csdn.net/qq_40881680/article/details/100047094)
+
+
+
+#### 部署web项目
+
+出现404 可能未设置应用程序上下文
+
+创建部件然后点击要发布的模块,然后将上下文设置为/![image-20220311224459584](tomcat配置部署.assets/image-20220311224459584.png)
+
+应用程序上下文,你设置为jj,那么到时候你访问时url就得是
+http://localhost:8080/jj/hello
+如果你将应用程序上下文设置为/那么就是
+http://localhost:8080/hello
+
+
+
+
+
+使用tomcat部署web时,要加入lib包
+![image-20220311224751778](tomcat配置部署.assets/image-20220311224751778.png)
+
+<img src="tomcat配置部署.assets/image-20220311224822672.png" alt="image-20220311224822672" style="zoom: 50%;" />
 
 
 
