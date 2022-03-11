@@ -288,6 +288,22 @@ Maven 仓库用来存放 Maven 管理的所有 Jar 包。分为：本地仓库 �
 启动服务器
 作用:<font color=#FF6666* style=" font-weight:bold;">不用自己下一个tomcat了</font>,直接通过xml定义的标签配置maven下载下来的tomcat
 
+```xml
+<build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.1</version>
+                <configuration>
+                    <port>8080</port>
+                    <path>/</path>
+                </configuration>
+            </plugin>
+        </plugins>
+</build>
+```
+
 ![image-20220225131535745](maven.assets/image-20220225131535745.png)
 
 异常信息
