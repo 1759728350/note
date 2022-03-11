@@ -1263,6 +1263,38 @@ converted（仓库管理员从 Maven 1 POM转换过来），partner（直接从�
 </project>
 ```
 
+## 构建
+
+maven项目在ide中编译出的war包一般不会有很多问题。
+但是经过集成环境打war包会出现war包中打不进xml、properties等文件。这样打war包不会报错，但是war包放进tomcat中部署就报错了。
+解决方法
+在pom.xml的build节点配置src/main/java和src/main/resources
+
+```xml
+<build>
+  <resources>
+    <!-- 编译之后包含xml -->
+    <resource>
+      <directory>src/main/java</directory>
+      <includes>
+        <include>**/*.xml</include>
+      </includes>
+      <filtering>true</filtering>
+    </resource>
+    <!-- 编译之后包含xml和properties -->
+    <resource>
+      <directory>src/main/resources</directory>
+      <includes>
+        <include>**/*</include>
+      </includes>
+      <filtering>true</filtering>
+    </resource>
+  </resources>
+</build>
+```
+
+
+
 ## 问题解决
 
 设置maven在不联网的情况下使用本地插件
