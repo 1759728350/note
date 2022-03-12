@@ -12,7 +12,7 @@
 **Controller（控制器）：**接收用户请求，委托给模型进行处理（状态改变），处理完毕后把返回的模型数据返回给视图，由视图负责展示。也就是说控制器做了个调度员的工作。
 
 **最典型的MVC就是JSP + servlet + javabean的模式。**
-![图片](springMVC.assets/640.png)
+![image-20220312170726793](springMVC.assets/image-20220312170726793.png)
 
 #### Model1时代
 
@@ -29,7 +29,7 @@ Model1缺点：JSP职责不单一，职责过重，不便于维护；
 
 Model2把一个项目分成三部分，包括**视图、控制、模型。**
 
-![图片](springMVC.assets/640.png)
+![图片](springMVC.assets/641.png)
 
 1. 用户发请求
 2. Servlet接收请求数据，并调用对应的业务逻辑方法
@@ -196,23 +196,23 @@ DispatcherServlet的作用是将请求分发到不同的处理器。从Spring 2.
 
 正因为SpringMVC好 , 简单 , 便捷 , 易学 , 天生和Spring无缝集成(使用SpringIoC和Aop) , 使用约定优于配置 . 能够进行简单的junit测试 . 支持Restful风格 .异常处理 , 本地化 , 国际化 , 数据验证 , 类型转换 , 拦截器 等等......所以我们要学习 .
 
-### 中心控制器DispatcherServlet
+## 中心控制器DispatcherServlet
 
 ​	Spring的web框架围绕DispatcherServlet设计。DispatcherServlet的作用是将请求分发到不同的处理器。从Spring 2.5开始，使用Java 5或者以上版本的用户可以采用基于注解的controller声明方式。
 
 ​	Spring MVC框架像许多其他MVC框架一样, **以请求为驱动** , **围绕一个中心Servlet分派请求及提供其他功能**，**DispatcherServlet是一个实际的Servlet (它继承自HttpServlet 基类)**。
 
-![图片](springMVC.assets/640.png)
+![图片](springMVC.assets/642.png)
 
 SpringMVC的原理如下图所示：
 
 ​	当发起请求时被前置的控制器拦截到请求，根据请求参数生成代理请求，找到请求对应的实际控制器，控制器处理请求，创建数据模型，访问数据库，将模型响应给中心控制器，控制器使用模型与视图渲染视图结果，将结果返回给中心控制器，再将结果返回给请求者。
 
-![图片](springMVC.assets/640.png)
+![图片](springMVC.assets/643.png)
 
-### SpringMVC执行原理
+## SpringMVC执行原理
 
-![图片](springMVC.assets/640.png)
+![图片](springMVC.assets/644.png)
 
 图为SpringMVC的一个较完整的流程图，实线表示SpringMVC框架提供的技术，不需要开发者实现，虚线表示需要开发者实现。
 
@@ -258,7 +258,18 @@ SpringMVC的原理如下图所示：
 
 开发一个程序
 
-### 配置版
+## 常用注解
+
+<font color=#666699 style=" font-weight:bold;">@ResponseBody</font>是作用在方法上的，@ResponseBody 表示该方法的返回结果直接写入 HTTP response body 中，一般在异步获取数据时使用【也就是AJAX】。
+在使用 @RequestMapping后，返回值通常解析为跳转路径，但是<font color=#66CC99 style=" font-weight:bold;">加上 @ResponseBody 后返回结果不会被解析为跳转路径，而是直接写入 HTTP response body 中</font>。 比如异步获取 json 数据，加上 @ResponseBody 后，会直接返回 json 数据,xml类型的数据也会被返回xml类型
+在使用此注解之后<font color=#66CC99 style=" font-weight:bold;">不会再走视图处理器</font>，而是直接将数据写入到输入流中，他的效果等同于通过response对象输出指定格式的数据。注意,这个数据在未发送之前还会走<font color=#66CC99 style=" font-weight:bold;">HttpMessageConverter对象</font>所以在该对象中可以同一配置乱码
+
+
+
+<font color=#666699 style=" font-weight:bold;">@RestController</font>
+@RestController，一般是使用在类上的，它表示的意思其实就是结合了@Controller和@ResponseBody两个注解。处理json的时候需要用到spring框架特有的注解@ResponseBody或者@RestController注解，这两个注解都会处理返回的数据格式，使用了该类型注解后返回的<font color=#66CC99 style=" font-weight:bold;">不再是视图，不会进行转跳</font>，而是返回json或xml数据格式，输出在页面上。使用了@RestController注解之后，其本质相当于在该类的所有方法上都统一使用了@ResponseBody注解，所以该类下的<font color=#66CC99 style=" font-weight:bold;">所有方法都会返回json/xml数据格式</font>，输出在页面上，而不会再返回视图。
+
+## 配置版
 
 1、新建一个 Moudle ， springmvc-02-hello ， 添加 web 的支持！
 
@@ -381,17 +392,465 @@ ${msg}
 </html>
 ```
 
+部署
+
+![image-20220312172510895](springMVC.assets/image-20220312172510895.png)
+
 11、配置 Tomcat 启动测试！
 
-![](springMVC.assets/640.png)
+![](springMVC.assets/645.png)
 
 **可能遇到的问题：访问出现 404，排查步骤：**
 
-1.  查看控制台输出，看一下是不是缺少了什么 jar 包。
+1. 查看控制台输出，看一下是不是缺少了什么 jar 包。
 
-2.  如果 jar 包存在，显示无法输出，就在 IDEA 的项目发布中，添加 lib 依赖！
+2. 如果 jar 包存在，显示无法输出，就在 IDEA 的项目发布中，添加 lib 依赖！
 
-3.  重启 Tomcat 
+   ![image-20220312171550833](springMVC.assets/image-20220312171550833.png)
+
+3. 重启 Tomcat 
+
+## 注解版
+
+由于Maven可能存在资源过滤的问题，我们将配置完善
+
+```xml
+
+<build>
+   <resources>
+       <resource>
+           <directory>src/main/java</directory>
+           <includes>
+               <include>**/*.properties</include>
+               <include>**/*.xml</include>
+           </includes>
+           <filtering>false</filtering>
+       </resource>
+       <resource>
+           <directory>src/main/resources</directory>
+           <includes>
+               <include>**/*.properties</include>
+               <include>**/*.xml</include>
+           </includes>
+           <filtering>false</filtering>
+       </resource>
+   </resources>
+</build>
+```
+
+**配置web.xml**
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+        version="4.0">
+
+   <!--1.注册servlet-->
+   <servlet>
+       <servlet-name>SpringMVC</servlet-name>
+       <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+       <!--通过初始化参数指定SpringMVC配置文件的位置，进行关联-->
+       <init-param>
+           <param-name>contextConfigLocation</param-name>
+           <param-value>classpath:springmvc-servlet.xml</param-value>
+       </init-param>
+       <!-- 启动顺序，数字越小，启动越早 -->
+       <load-on-startup>1</load-on-startup>
+   </servlet>
+
+   <!--所有请求都会被springmvc拦截 -->
+   <servlet-mapping>
+       <servlet-name>SpringMVC</servlet-name>
+       <url-pattern>/</url-pattern>
+   </servlet-mapping>
+
+</web-app>
+```
+
+#### / 和 /\* 的区别：
+
+< url-pattern > / </ url-pattern > 不会匹配到.jsp， 只针对我们编写的请求；即：.jsp 不会进入spring的 DispatcherServlet类 。< url-pattern > /* </ url-pattern > 会匹配 *.jsp，会出现返回 jsp视图 时再次进入spring的DispatcherServlet 类，导致找不到对应的controller所以报404错。
+
+1. - 注意web.xml版本问题，要最新版！
+   - 注册DispatcherServlet
+   - 关联SpringMVC的配置文件
+   - 启动级别为1
+   - 映射路径为 / 【不要用/*，会404】
 
 
+
+1. 
+
+#### 添加Spring MVC配置文件
+
+在resource目录下添加springmvc-servlet.xml配置文件，配置的形式与Spring容器配置基本类似，为了支持基于注解的IOC，设置了自动扫描包的功能，具体配置信息如下：
+<font color=#66CC99 style=" font-weight:bold;"><mvc:annotation-driven />基于注解驱动</font>
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:context="http://www.springframework.org/schema/context"
+      xmlns:mvc="http://www.springframework.org/schema/mvc"
+      xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       https://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc
+       https://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+   <!-- 自动扫描包，让指定包下的注解生效,由IOC容器统一管理 -->
+   <context:component-scan base-package="com.kuang.controller"/>
+   <!-- 让Spring MVC不处理静态资源 -->
+   <mvc:default-servlet-handler />
+   <!--
+   支持mvc注解驱动
+       在spring中一般采用@RequestMapping注解来完成映射关系
+       要想使@RequestMapping注解生效
+       必须向上下文中注册DefaultAnnotationHandlerMapping
+       和一个AnnotationMethodHandlerAdapter实例
+       这两个实例分别在类级别和方法级别处理。
+       而annotation-driven配置帮助我们自动完成上述两个实例的注入。
+    -->
+   <mvc:annotation-driven />
+
+   <!-- 视图解析器 -->
+   <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+         id="internalResourceViewResolver">
+       <!-- 前缀 -->
+       <property name="prefix" value="/WEB-INF/jsp/" />
+       <!-- 后缀 -->
+       <property name="suffix" value=".jsp" />
+   </bean>
+
+</beans>
+```
+
+1. 在视图解析器中我们把所有的视图都存放在/WEB-INF/目录下，这样可以保证视图安全，因为<font color=#66CC99 style=" font-weight:bold;">这个目录下的文件，客户端不能直接访问。</font>
+
+2. - 让IOC的注解生效
+   - 静态资源过滤 ：HTML . JS . CSS . 图片 ， 视频 .....
+   - MVC的注解驱动
+   - 配置视图解析器
+
+
+
+创建Controller
+
+```java
+@Controller
+@RequestMapping("/HelloController")
+public class HelloController {
+
+    //真实访问地址 : 项目名/HelloController/hello
+    @RequestMapping("/hello")
+    public String sayHello(Model model){
+        //向模型中添加属性msg与值，可以在JSP页面中取出并渲染
+        model.addAttribute("msg","hello,SpringMVC");
+        //web-inf/jsp/hello.jsp
+        return "hello";
+    }
+}
+```
+
+- @Controller是为了让Spring IOC容器初始化时自动扫描到；
+- @RequestMapping是为了映射请求路径，这里因为类与方法上都有映射所以访问时应该是<font color=#66CC99 style=" font-weight:bold;">/HelloController/hello</font>；
+- 方法中声明Model类型的参数是为了把Action中的数据带到视图中；
+- <font color=#66CC99 style=" font-weight:bold;">方法返回的结果是视图的名称hello</font>，加上配置文件中的前后缀变成WEB-INF/jsp/**hello**.jsp。
+
+
+
+创建视图层
+
+在WEB-INF/ jsp目录中创建hello.jsp ， 视图可以直接取出并展示从Controller带回的信息；
+
+可以通过EL表示取出Model中存放的值，或者对象；
+
+```jsp
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+   <title>SpringMVC</title>
+</head>
+<body>
+${msg}
+</body>
+</html>
+```
+
+<img src="springMVC.assets/image-20220312215016301.png" alt="image-20220312215016301" style="zoom:33%;" />
+
+## json
+
+- JSON(JavaScript Object Notation, JS 对象标记) 是一种轻量级的数据交换格式，目前使用特别广泛。
+- 采用完全独立于编程语言的**文本格式**来存储和表示数据。
+- 简洁和清晰的层次结构使得 JSON 成为理想的数据交换语言。
+- 易于人阅读和编写，同时也易于机器解析和生成，并有效地提升网络传输效率。
+
+在 JavaScript 语言中，一切都是对象。因此，任何JavaScript 支持的类型都可以通过 JSON 来表示，例如字符串、数字、对象、数组等。看看他的要求和语法格式：
+
+- 对象表示为键值对，数据由逗号分隔
+- 花括号保存对象
+- 方括号保存数组
+
+**JSON 键值对**是用来保存 JavaScript 对象的一种方式，和 JavaScript 对象的写法也大同小异，键/值对组合中的键名写在前面并用双引号 "" 包裹，使用冒号 : 分隔，然后紧接着值：
+
+```json
+{"name": "QinJiang"}
+{"age": "3"}
+{"sex": "男"}
+```
+
+很多人搞不清楚 JSON 和 JavaScript 对象的关系，甚至连谁是谁都不清楚。其实，可以这么理解：
+
+JSON 是 JavaScript 对象的字符串表示法，它使用文本表示一个 JS 对象的信息，本质是一个字符串。
+
+<font color=#66CC99 style=" font-weight:bold;">JSON是一个简单字符串,而对象可以用引用输出其属性</font>
+
+```json
+var obj = {a: 'Hello', b: 'World'}; //这是一个对象，注意键名也是可以使用引号包裹的
+var json = '{"a": "Hello", "b": "World"}'; //这是一个 JSON 字符串，本质是一个字符串
+```
+
+**JSON 和 JavaScript 对象互转**
+
+要实现从JSON字符串转换为JavaScript 对象，使用 JSON.parse() 方法：
+
+```json
+var obj = JSON.parse('{"a": "Hello", "b": "World"}');
+//结果是 {a: 'Hello', b: 'World'}
+```
+
+要实现从JavaScript 对象转换为JSON字符串，使用 JSON.stringify() 方法：
+
+```json
+var json = JSON.stringify({a: 'Hello', b: 'World'});
+//结果是 '{"a": "Hello", "b": "World"}'
+```
+
+
+
+#### jackson依赖
+
+```xml
+<dependency>
+   <groupId>com.fasterxml.jackson.core</groupId>
+   <artifactId>jackson-databind</artifactId>
+   <version>2.9.8</version>
+</dependency>
+```
+
+#### lombok依赖
+
+```xml
+<dependency>
+       <groupId>org.projectlombok</groupId>
+       <artifactId>lombok</artifactId>
+       <version>1.16.10</version>
+       <scope>provided</scope>
+</dependency>
+```
+
+#### json实践
+
+##### 配置SpringMVC需要的配置
+
+web.xml
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+        version="4.0">
+
+   <!--1.注册servlet-->
+   <servlet>
+       <servlet-name>SpringMVC</servlet-name>
+       <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+       <!--通过初始化参数指定SpringMVC配置文件的位置，进行关联-->
+       <init-param>
+           <param-name>contextConfigLocation</param-name>
+           <param-value>classpath:springmvc-servlet.xml</param-value>
+       </init-param>
+       <!-- 启动顺序，数字越小，启动越早 -->
+       <load-on-startup>1</load-on-startup>
+   </servlet>
+
+   <!--所有请求都会被springmvc拦截 -->
+   <servlet-mapping>
+       <servlet-name>SpringMVC</servlet-name>
+       <url-pattern>/</url-pattern>
+   </servlet-mapping>
+
+   <filter>
+       <filter-name>encoding</filter-name>
+       <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+       <init-param>
+           <param-name>encoding</param-name>
+           <param-value>utf-8</param-value>
+       </init-param>
+   </filter>
+   <filter-mapping>
+       <filter-name>encoding</filter-name>
+       <url-pattern>/</url-pattern>
+   </filter-mapping>
+
+</web-app>
+```
+
+springmvc-servlet.xml
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:context="http://www.springframework.org/schema/context"
+      xmlns:mvc="http://www.springframework.org/schema/mvc"
+      xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       https://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc
+       https://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+   <!-- 自动扫描指定的包，下面所有注解类交给IOC容器管理 -->
+   <context:component-scan base-package="com.kuang.controller"/>
+
+   <!-- 视图解析器 -->
+   <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+         id="internalResourceViewResolver">
+       <!-- 前缀 -->
+       <property name="prefix" value="/WEB-INF/jsp/" />
+       <!-- 后缀 -->
+       <property name="suffix" value=".jsp" />
+   </bean>
+
+</beans>
+```
+
+pojo
+
+```java
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+//需要导入lombok
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class User {
+
+   private String name;
+   private int age;
+   private String sex;
+   
+}
+```
+
+controller
+<font color=#66CC99 style=" font-weight:bold;">@Controller和@ResponseBody可用一个@RestController代替</font>
+
+```java
+@Controller
+public class JsonController {
+    //produces:指定响应体返回类型和编码
+    @RequestMapping(value = "/json",produces = "application/json;charset=UTF-8")
+    @ResponseBody
+    public String hello() throws JsonProcessingException {
+        User user = new User("lyh",21,"男");
+        //创建一个jackson的对象映射器，用来解析数据
+        ObjectMapper mapper = new ObjectMapper();
+		 //将我们的对象解析成为json格式
+        String str = mapper.writeValueAsString(user);
+        return str;
+    }
+}
+```
+
+
+
+<font color=#66CC99 style=" font-weight:bold;">部署时不要忘加lib,在lib中加上包</font>
+![image-20220312210842416](springMVC.assets/image-20220312210842416.png)
+
+![image-20220312212147125](springMVC.assets/image-20220312212147125.png)
+
+
+
+#### FastJson
+
+```xml
+<dependency>
+   <groupId>com.alibaba</groupId>
+   <artifactId>fastjson</artifactId>
+   <version>1.2.60</version>
+</dependency>
+```
+
+fastjson 三个主要的类：
+
+**JSONObject  代表 json 对象** 
+
+- JSONObject实现了Map接口, 猜想 JSONObject底层操作是由Map实现的。
+- JSONObject对应json对象，通过各种形式的get()方法可以获取json对象中的数据，也可利用诸如size()，isEmpty()等方法获取"键：值"对的个数和判断是否为空。其本质是通过实现Map接口并调用接口中的方法完成的。
+
+**JSONArray  代表 json 对象数组**
+
+- 内部是有List接口中的方法来完成操作的。
+
+**JSON代表 JSONObject和JSONArray的转化**
+
+- JSON类源码分析与使用
+- 仔细观察这些方法，主要是实现json对象，json对象数组，javabean对象，json字符串之间的相互转化。
+
+
+
+
+
+## 返回信息乱码解决(json乱码问题配置)
+
+上一种方法比较麻烦，如果项目中有许多请求则每一个都要添加，可以通过Spring配置统一指定，这样就不用每次都去处理了！
+
+我们可以在springmvc的配置文件上添加一段消息StringHttpMessageConverter转换配置！
+
+```xml
+ <mvc:annotation-driven>
+        <mvc:message-converters register-defaults="true">
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <constructor-arg value="UTF-8"/>
+            </bean>
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                <property name="objectMapper">
+                    <bean class="org.springframework.http.converter.json.Jackson2ObjectMapperFactoryBean">
+                        <property name="failOnEmptyBeans" value="false"/>
+                    </bean>
+                </property>
+            </bean>
+        </mvc:message-converters>
+</mvc:annotation-driven>
+```
+
+## servlet过滤器解决乱码
+
+web.xml配置filter来同一解决乱码
+
+```xml
+<filter>
+        <filter-name>encoding</filter-name>
+        <filter-class>
+            org.springframework.web.filter.CharacterEncodingFilter
+        </filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>utf-8</param-value>
+        </init-param>
+</filter>
+<filter-mapping>
+        <filter-name>encoding</filter-name>
+        <url-pattern>/</url-pattern>
+</filter-mapping>
+```
 
