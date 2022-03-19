@@ -1,4 +1,14 @@
+
+
 # 笔记
+
+
+
+参与者只同边界对象交互
+b
+边界对象只能同控制器和参与者交互
+实体对象只能同控制器交互
+■控制器可同边界对象、实体对象以及其他控制器交互，但不能同参与者进行交互
 
 ## 脚手架文件结构
 
@@ -18,6 +28,79 @@
 	├── package.json: 应用包配置文件 
 	├── README.md: 应用描述文件
 	├── package-lock.json：包版本控制文件
+
+## 脚手架
+
+#### 创建一个脚手架
+
+下载nodejs
+<img src="README.assets/image-20220317191431150.png" alt="image-20220317191431150" style="zoom: 50%;" />
+
+配置淘宝镜像
+
+```shell
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+```
+
+全局安装vue-cli
+
+```shell
+npm install -g @vue/cli
+
+vue --version//验证
+//升级cli
+npm update -g @vue/cli
+```
+
+创建自己的项目
+
+```shell
+//在创建项目之前,cd到要创建项目的目录
+vue create lyh_app  
+//不能写大写字母
+Invalid project name: "lyhShoppingCart"
+Warning: name can no longer contain capital letters
+```
+
+选择版本
+![image-20220317192610332](README.assets/image-20220317192610332.png)
+
+构建项目
+
+```shell
+//运行项目时输入运行命令时需要先cd到脚手架的packjson那一级文件夹的项目文件夹lyh-vue....下的文件夹
+PS D:\project\vue-cliTest\lyh-vue_cli_test> cd .\lyh-vue_cli_test\
+```
+
+![image-20220317190705469](README.assets/image-20220317190705469.png)
+
+```shell
+npm run serve   //构建项目
+
+ App running at:
+  - Local:   http://localhost:8080/ 
+  - Network: http://192.168.3.60:8080/
+```
+
+
+
+
+
+##### 安装webpack
+
+```shell
+npm install -g webpack@3.8.1 全局安装
+```
+
+
+
+##### 取消eslint错误检查
+
+<img src="README.assets/image-20220317224458355.png" alt="image-20220317224458355" style="zoom:50%;" />
+
+
+
+
 
 ## 关于不同版本的Vue
 
@@ -1065,5 +1148,5 @@ module.exports = {
    1. 地址干净，美观 。
    2. 兼容性和hash模式相比略差。
    3. 应用部署上线时需要后端人员支持，解决刷新页面服务端404的问题。
-	 
+	
 	 
