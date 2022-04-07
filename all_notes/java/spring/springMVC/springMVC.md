@@ -267,7 +267,7 @@ SpringMVC的原理如下图所示：
 
 
 <font color=#666699 style=" font-weight:bold;">@RestController</font>
-@RestController，一般是使用在类上的，它表示的意思其实就是结合了@Controller和@ResponseBody两个注解。处理json的时候需要用到spring框架特有的注解@ResponseBody或者@RestController注解，这两个注解都会处理返回的数据格式，使用了该类型注解后返回的<font color=#66CC99 style=" font-weight:bold;">不再是视图，不会进行转跳</font>，而是返回json或xml数据格式，输出在页面上。使用了@RestController注解之后，其本质相当于在该类的所有方法上都统一使用了@ResponseBody注解，所以该类下的<font color=#66CC99 style=" font-weight:bold;">所有方法都会返回json/xml数据格式</font>，输出在页面上，而不会再返回视图。
+@RestController，一般是使用在类上的，它表示的意思其实就是结合了<font color=#66CC99 style=" font-weight:bold;">@Controller</font>和<font color=#66CC99 style=" font-weight:bold;">@ResponseBody</font>两个注解。处理json的时候需要用到spring框架特有的注解@ResponseBody或者@RestController注解，这两个注解都会处理返回的数据格式，使用了该类型注解后返回的<font color=#66CC99 style=" font-weight:bold;">不再是视图，不会进行转跳</font>，而是返回json或xml数据格式，输出在页面上。使用了@RestController注解之后，其本质相当于在该类的所有方法上都统一使用了@ResponseBody注解，所以该类下的<font color=#66CC99 style=" font-weight:bold;">所有方法都会返回json/xml数据格式</font>，输出在页面上，而不会再返回视图。
 
 ## 配置版
 

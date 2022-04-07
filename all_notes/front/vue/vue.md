@@ -1,4 +1,4 @@
-# vue
+vue
 
 <img src="vue.assets/image-20211230155137579.png" alt="image-20211230155137579" style="zoom:67%;" />
 
@@ -37,4 +37,19 @@
 
 多利用了一个抽象层(虚拟dom层)利用diff算法来在内存中检测虚拟dom的改变
 然后只需要改变不同的结构,减少数据刷新时的重复加载,如上图只需要加载一个,另外三个已经在内存里了
+
+### 脚手架搭建
+
+nodejs安装
+官网下载：https://nodejs.org/en/download/
+
+设置npm阿里镜像 cnpm
+
+```shell
+npm install cnpm -g --registry=https://registry.npm.taobao.org
+```
+
+
+
+详见vue/代码/readme.md
 
