@@ -476,6 +476,38 @@ div{
 
 
 
+#### box-sizing:border-box
+
+> 盒子模型是指：**外边距（margin）+ border（边框） + 内边距（padding）+ content（内容）**
+>
+> 　　可以把每一个容器，比如div，都看做是一个盒子模型
+>
+> 　　比如你给一个div设置宽高为500px，但实际你设置的只是content，之后你又设置了padding:10px;border:1px solid red;
+>
+> 　　这时div的宽高就会变为544px**（content 500px + padding 40px + border 4px）**
+>
+> 　　**相当于一个元素的实际宽高是由：　padding + border + content 组成**
+>
+> 　**①：没有设置box-sizing:border-box属性，宽高会加上padding和border的值，****需要我们手动去计算，减去padding和border的值，并调整content的值，以免超过给定的宽高**
+>
+> 　　　　比如下图，我给父元素parent设置宽高为500px，背景色为黑色；然后给子元素设置宽高为478px，并设置内边距10px,红色边框1px，背景颜色为灰色
+>
+> 　　　　此时子元素的宽高为500px**（content 478px + padding 40px + border 4px）**所以就覆盖了父元素的黑色背景，只能看到子元素的灰色背景
+>
+> 　**②****：加了\**box-sizing:border-box属性，padding和border的值就不会在影响元素的宽高，相当于把padding和border的值都算在content里\****　　　
+>
+> <font color=#FFCCCC style=" font-weight:bold;">盒子模型会自动根据padding和border的值来调整content的值，就不需要手动调整</font>
+>
+>    **一般浏览器也都默认为标准盒子模型。即：box-sizing:content-box**
+>
+> 　**怪异盒子模型，一般根据实际项目需要自行设置。即：box-sizing:border-box**
+>
+> 
+
+#### 自适应布局
+
+rpx和flex和width百分比
+
 
 
 #### 类
