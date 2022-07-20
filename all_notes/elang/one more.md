@@ -143,10 +143,30 @@ example:<br><font color=#99CCFF size=3>For displaying real-time box movement ,we
 example:<br><font color=#99CCFF size=3></font><br>explain:<br><font color=#6699FF size=3> </font><br>try:<br>strange:<br>debug:调试    debugger:调试器
 
 ##### automatic
-
 example:<br><font color=#99CCFF size=3>show all automatic debug configurations</font><br>explain:<br><font color=#6699FF size=3> </font><br>try:<br>strange:<br>展示所有的自动调试配置
 
 
+##### in case of 
+example:<br><font color=#99CCFF size=3>@Lazy only has an actual effect in case of the default singleton scope</font><br>explain:<br><font color=#6699FF size=3>@Lazy仅在默认单例作用域的情况下才有实际效果 </font><br><br>
+
+##### selective&inclusion
+example:<br><font color=#99CCFF size=3>@Profile allows for selective inclusion of certain beans.</font><br>explain:<br><font color=#6699FF size=3>允许选择性地包含特定的bean </font><br>
+
+##### creation
+example:<br><font color=#99CCFF size=3>@DependsOn enforces the creation of specific other beans before this bean will be created</font><br>explain:<br><font color=#6699FF size=3>在该bean创建之前强制创建其他特定的bean </font><br>
+
+##### in addition to&typically
+example:<br><font color=#99CCFF size=3>@DependsOn enforces the creation of specific other beans before this bean will be created, in addition to any dependencies that the bean expressed through direct references, which is typically helpful for singleton startup.</font><br>explain:<br><font color=#6699FF size=3>@DependsOn在创建这个bean之前强制创建特定的其他bean，以及bean通过直接引用表示的任何依赖项，这通常有助于单例启动。 </font><br>
+
+##### mechanism&ambiguity&Ambiguous
+example:<br><font color=#99CCFF size=3>@Primary is a mechanism to resolve ambiguity at the injection point level if a single target component needs to be injected but several beans match by type</font><br>explain:<br><font color=#6699FF size=3> @Primary是一种在注入点级别解决歧义的机制，如果需要注入单个目标组件，但多个bean按类型匹配</font><br>
+
+##### corresponding
+example:<br><font color=#99CCFF size=3>@Bean methods may also declare qualifier annotations and @Order values, to be taken into account during injection point resolution just like corresponding annotations on the corresponding component classes</font><br>explain:<br><font color=#6699FF size=3>@Bean方法还可以声明限定符注释和@Order值，就像相应组件类上的相应注释一样，在注入点解析期间要考虑这些值 </font><br>
+
+##### resolution&integration&integrate
+example:<br><font color=#99CCFF size=3>The testing of each functions proved that the system plays an important role in resources integration 
+and scheduling code resolution service rationally and effectively.</font><br>explain:<br><font color=#6699FF size=3> 通过对系统各功能点的测试，证明了系统对整合资源、合理有效地调度编码解析服务有重要作用。</font><br>
 
 
 

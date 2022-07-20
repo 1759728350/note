@@ -6,7 +6,7 @@
 
 版本控制
 
-什么是版本控制
+版本控制git
 -------
 
 版本控制（Revision control）是一种在开发的过程中用于管理我们对文件、目录或工程等内容的修改历史，方便查看更改历史记录，备份以便恢复以前的版本的软件工程技术。
@@ -32,8 +32,7 @@
 
 
 
-常见的版本控制工具
----------
+##### 常见的版本控制工具
 
 主流的版本控制器有如下这些：
 
@@ -52,8 +51,9 @@
 
 现在影响力最大且使用最广泛的是 Git 与 SVN
 
-版本控制分类
-------
+
+
+##### 版本控制分类
 
 **1、本地版本控制**
 
@@ -79,8 +79,9 @@
 
 ![](https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7Ksu8UlITwMlbX3kMGtZ9p0ev8Q7qXjsTfeSwFexdA4tGjFAiaVEKQzAHdGcINXILKflI2cfk9BiawQ/640?wx_fmt=png)
 
-Git 与 SVN 的主要区别
----------------
+
+
+##### Git 与 SVN 的主要区别
 
 SVN 是集中式版本控制系统，版本库是集中放在中央服务器的，而工作的时候，用的都是自己的电脑，所以首先要从中央服务器得到最新的版本，然后工作，完成工作后，需要把自己做完的活推送到中央服务器。集中式版本控制系统是必须联网才能工作，对网络带宽要求较高。
 
@@ -114,7 +115,7 @@ Linux 和 Git 之父李纳斯 · 托沃兹（Linus Benedic Torvalds）1969、芬
 
 Git 环境配置
 
-软件下载
+环境搭建
 ----
 
 打开 [git 官网] https://git-scm.com/，下载 git 对应操作系统的版本。
@@ -123,18 +124,9 @@ Git 环境配置
 
 官网下载太慢，我们可以使用淘宝镜像下载：http://npm.taobao.org/mirrors/git-for-windows/
 
-![](https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7Ksu8UlITwMlbX3kMGtZ9p0IXktseBR7lpvVF4bibFwiaibnGxkDm0wYicPIiaZxcUe2KuibAHj83MiaWFSQ/640?wx_fmt=png)
 
-下载对应的版本即可安装！
 
-安装：无脑下一步即可！安装完毕就可以使用了！
-
-启动 Git
-------
-
-安装成功后在开始菜单中会有 Git 项，菜单下有 3 个程序：任意文件夹下右键也可以看到对应的程序！
-
-<img src="Git.assets/image-20220221002808050.png" alt="image-20220221002808050" style="zoom:50%;" />
+##### 启动 Git
 
 **Git Bash：**Unix 与 Linux 风格的命令行，使用最多，推荐最多
 
@@ -172,8 +164,9 @@ git config --global user.email  #邮箱
 
 ```
 
-设置用户名与邮箱（用户标识，必要）
------------------
+
+
+##### 设置用户名与邮箱（用户标识，必要）
 
 当你安装 Git 后首先要做的事情是设置你的用户名称和 e-mail 地址。这是非常重要的，因为每次 Git 提交都会使用该信息。它被永远的嵌入到了你的提交中：
 
@@ -186,7 +179,7 @@ $ git config --global user.email "email@example.com"
 
 只需要做一次这个设置，如果你传递了 --global 选项，因为 Git 将总是会使用该信息来处理你在系统中所做的一切操作。如果你希望在一个特定的项目中使用不同的名称或 e-mail 地址，你可以在该项目中运行该命令而不要 --global 选项。总之 --global 为全局配置，不加为某个项目的特定配置。
 
-![](https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7Ksu8UlITwMlbX3kMGtZ9p0zQZY37q1iaG0n7445X8YgPVvZH5AqyGvT4RgmoyIcZlJWiaLcxyDgSdQ/640?wx_fmt=png)
+
 
 
 
