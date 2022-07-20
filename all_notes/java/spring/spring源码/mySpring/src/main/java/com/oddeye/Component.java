@@ -10,4 +10,3 @@ import java.lang.annotation.Target;
 public @interface Component {
     String value() default "";//此处可以提供默认值,是所标记的类的名称的小写
 }
-
