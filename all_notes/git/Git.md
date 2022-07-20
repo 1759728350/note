@@ -51,8 +51,11 @@
 
 现在影响力最大且使用最广泛的是 Git 与 SVN
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 810a59c0ad4150a565043aabe1bdc8e7ed7ac38c
 ##### 版本控制分类
 
 **1、本地版本控制**
@@ -85,7 +88,7 @@
 
 SVN 是集中式版本控制系统，版本库是集中放在中央服务器的，而工作的时候，用的都是自己的电脑，所以首先要从中央服务器得到最新的版本，然后工作，完成工作后，需要把自己做完的活推送到中央服务器。集中式版本控制系统是必须联网才能工作，对网络带宽要求较高。
 
-![](https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7Ksu8UlITwMlbX3kMGtZ9p0qtEIDr2NG6rOGg1UgDu5c3ffRR8P7FD5D8BPLUEXp0hQoL7qfp3I6g/640?wx_fmt=png)
+
 
 Git 是分布式版本控制系统，没有中央服务器，每个人的电脑就是一个完整的版本库，工作的时候不需要联网了，因为版本都在自己电脑上。协同的方法是这样的：比如说自己在电脑上改了文件 A，其他人也在电脑上改了文件 A，这时，你们两之间只需把各自的修改推送给对方，就可以互相看到对方的修改了。Git 可以直接看到更新了哪些代码和文件！
 
@@ -115,8 +118,14 @@ Linux 和 Git 之父李纳斯 · 托沃兹（Linus Benedic Torvalds）1969、芬
 
 Git 环境配置
 
+<<<<<<< HEAD
 环境搭建
 ----
+=======
+
+
+##### 软件下载
+>>>>>>> 810a59c0ad4150a565043aabe1bdc8e7ed7ac38c
 
 打开 [git 官网] https://git-scm.com/，下载 git 对应操作系统的版本。
 
@@ -126,7 +135,20 @@ Git 环境配置
 
 
 
+<<<<<<< HEAD
 ##### 启动 Git
+=======
+安装：无脑下一步即可！安装完毕就可以使用了！
+
+
+
+Git 配置
+------
+
+安装成功后在开始菜单中会有 Git 项，菜单下有 3 个程序：任意文件夹下右键也可以看到对应的程序！
+
+<img src="Git.assets/image-20220221002808050.png" alt="image-20220221002808050" style="zoom:50%;" />
+>>>>>>> 810a59c0ad4150a565043aabe1bdc8e7ed7ac38c
 
 **Git Bash：**Unix 与 Linux 风格的命令行，使用最多，推荐最多
 
@@ -146,8 +168,7 @@ git config --global  --list
 
 
 
-Git 配置
-------
+
 
 所有的配置文件，其实都保存在本地！
 
@@ -164,9 +185,13 @@ git config --global user.email  #邮箱
 
 ```
 
+<<<<<<< HEAD
 
 
 ##### 设置用户名与邮箱（用户标识，必要）
+=======
+### 设置用户名与邮箱（用户标识，必要）
+>>>>>>> 810a59c0ad4150a565043aabe1bdc8e7ed7ac38c
 
 当你安装 Git 后首先要做的事情是设置你的用户名称和 e-mail 地址。这是非常重要的，因为每次 Git 提交都会使用该信息。它被永远的嵌入到了你的提交中：
 
@@ -183,10 +208,32 @@ $ git config --global user.email "email@example.com"
 
 
 
+### gitee/hub配置git
+
+这个其实可以作为大家未来找工作的一个重要信息！
+
+设置本机绑定 SSH 公钥，实现免密码登录！（免密码登录，这一步挺重要的，码云是远程仓库，我们是平时工作在本地仓库！)
+
+```shell
+# 进入 C:\Users\Administrator\.ssh 目录
+# 生成公钥
+ssh-keygen
+```
+
+3将公钥信息 public key 添加到码云账户中即可！
+
+使用码云创建一个自己的仓库！
+
+许可证：开源是否可以随意转载，开源但是不能商业使用，不能转载，...  限制！
+
+克隆到本地！
+
+IDEA 中集成 Git
+
 ## 配置ssh公钥
 
 ```shell
-ssh-keygen -t rsa -C "注册邮箱"
+ssh-keygen -t rsa -C "注册邮箱"=
 ```
 
 然后用户主目录/.ssh/下有两个文件，id_rsa是私钥，id_rsa.pub是公钥
@@ -312,6 +359,18 @@ The file will have its original line endings in your working directory
 工作流程
 ----
 
+初始化本地
+创建远程仓库
+本地建立密钥并放到远程仓库
+remote建立连接创建仓库别名
+clone版本库
+开发
+add .  commit   push
+push失败,pull merge
+push
+
+
+
 git 的工作流程一般是这样的：
 
 １、在工作目录中添加、修改文件；
@@ -322,11 +381,11 @@ git 的工作流程一般是这样的：
 
 因此，git 管理的文件有三种状态：已修改（modified）, 已暂存（staged）, 已提交 (committed)
 
-![](https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7Ksu8UlITwMlbX3kMGtZ9p09iaOhl0dACfLrMwNbDzucGQ30s3HnsiaczfcR6dC9OehicuwibKuHjRlzg/640?wx_fmt=png)
+<img src="https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7Ksu8UlITwMlbX3kMGtZ9p09iaOhl0dACfLrMwNbDzucGQ30s3HnsiaczfcR6dC9OehicuwibKuHjRlzg/640?wx_fmt=png" style="zoom:50%;" />
 
 Git 多人项目合作开发
 
-![image-20220216233634375](Git.assets/image-20220216233634375.png)
+<img src="Git.assets/image-20220216233634375.png" alt="image-20220216233634375" style="zoom:50%;" />
 
 
 
@@ -386,6 +445,10 @@ ls-ah查看隐藏文件, 查看被设置为仓库的目录所生成的 .git 隐�
 克隆远程仓库
 ------
 
+```bash
+git remote add url   #先remote连接
+```
+
 1、另一种方式是克隆远程目录，由于是将远程服务器上的仓库完全镜像一份至本地！
 
 ```shell
@@ -404,7 +467,7 @@ $ git clone -o 远程主机别名 [url]  # https://github.com/lTbgykio/Books-Fre
 
 
 
-Git 文件操作
+
 
 文件的四种状态
 -------
@@ -431,101 +494,15 @@ git status
 *   Staged: 暂存状态. 执行 git commit 则将修改同步到库中, 这时库中的文件和本地文件又变为一致, 文件为 Unmodify 状态. 执行 git reset HEAD filename 取消暂存, 文件状态为 Modified
     
 
-查看文件状态
-------
-
-上面说文件有 4 种状态，通过如下命令可以查看到文件的状态：
-
-```
-#为注释
-*.txt        #忽略所有 .txt结尾的文件,这样的话上传就不会被选中！
-!lib.txt     #但lib.txt除外
-/temp        #仅忽略项目根目录下的TODO文件,不包括其它目录temp
-build/       #忽略build/目录下的所有文件
-doc/*.txt    #会忽略 doc/notes.txt 但不包括 doc/server/arch.txt
-```
-
-忽略文件
-----
-
-有些时候我们不想把某些文件纳入版本控制中，比如数据库文件，临时文件，设计文件等
-
-在主目录下建立 ".gitignore" 文件，此文件有如下规则：
-
-1.  忽略文件中的空行或以井号（#）开始的行将会被忽略。
-    
-2.  可以使用 Linux 通配符。例如：星号（*）代表任意多个字符，问号（？）代表一个字符，方括号（[abc]）代表可选字符范围，大括号（{string1,string2,...}）代表可选的字符串等。
-    
-3.  如果名称的最前面有一个感叹号（!），表示例外规则，将不被忽略。
-    
-4.  如果名称的最前面是一个路径分隔符（/），表示要忽略的文件在此目录下，而子目录中的文件不忽略。
-    
-5.  如果名称的最后面是一个路径分隔符（/），表示要忽略的是此目录下该名称的子目录，而非文件（默认文件或目录都忽略）。使用码云
-    
-
-狂神idea,gitee配置git
------------------------------------------------------------
-
-这个其实可以作为大家未来找工作的一个重要信息！
 
 
 
-设置本机绑定 SSH 公钥，实现免密码登录！（免密码登录，这一步挺重要的，码云是远程仓库，我们是平时工作在本地仓库！)
-
-```shell
-# 进入 C:\Users\Administrator\.ssh 目录
-# 生成公钥
-ssh-keygen
-```
-
-
-
-3将公钥信息 public key 添加到码云账户中即可！
-
-![](https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7Ksu8UlITwMlbX3kMGtZ9p0I5Zicrm4PEbnox9L5wjCPtPybCyrKI1JOkRWCYIY5zsX4FvI77LXXmQ/640?wx_fmt=png)
-
-使用码云创建一个自己的仓库！
-
-![](Git.assets/640.png)
-
-许可证：开源是否可以随意转载，开源但是不能商业使用，不能转载，...  限制！
-
-![](https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7Ksu8UlITwMlbX3kMGtZ9p0S96XfGogNWVqRAexeybT7DXdyQhfcYJ1oEAgaH1RibRU0WZE0eczdxw/640?wx_fmt=png)
-
-克隆到本地！
-
-![](Git.assets/640.jpeg)
-
-IDEA 中集成 Git
 
   
 
-1、新建项目，绑定 git。
-
-![](https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7Ksu8UlITwMlbX3kMGtZ9p0D8LPGu2SNKXD01IMqDaSkBeP8ibtvnasBYiaReyuZWAl0EjEib8IYf7cQ/640?wx_fmt=png)
-
-注意观察 idea 中的变化
-
-![](Git.assets/640.png)
-
-2、修改文件，使用 IDEA 操作 git。
-
-*   添加到暂存区
-    
-*   commit 提交
-    
-*   push 到远程仓库
-    
-
-3、提交测试
-
-![](https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7Ksu8UlITwMlbX3kMGtZ9p0tERIszdgLVlUWamyRapfN74aR8XeGFV2OYWiaeR9CkYlfoBefRh2AIA/640?wx_fmt=png)
-
-这些都是单个人的操作！
 
 
-
-GIT 分支
+GIT 分支命令
 ---------
 
 ```shell
@@ -600,15 +577,15 @@ IDEA 中操作
 
 ![](https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7Ksu8UlITwMlbX3kMGtZ9p0wHNIYeTHC8aHGASoDyZO64QicslqiaMb1OJ1Z1LPoic3LBGyDIYBa7XXw/640?wx_fmt=png)
 
-如果同一个文件在合并分支时都被修改了则会引起冲突：解决的办法是我们可以修改冲突文件后重新提交！选择要保留他的代码还是你的代码！
+<font color=#FFCCCC style=" font-weight:bold;">如果同一个文件在合并分支时都被修改了则会引起冲突：解决的办法是我们可以修改冲突文件后重新提交！选择要保留他的代码还是你的代码！</font>
 
 master 主分支应该非常稳定，用来发布新版本，一般情况下不允许在上面工作，工作一般情况下在新建的 dev 分支上工作，工作完后，比如上要发布，或者说 dev 分支代码稳定后可以合并到主分支 master 上来。
-
-作业练习：找一个小伙伴，一起搭建一个远程仓库，来练习 Git！
 
 
 
 ## 分支合并
+
+<font color=#FFCCCC style=" font-weight:bold;">没学会</font>
 
 ```shell
 dougax@lyh MINGW64 /d/github/test (fix_shit)
@@ -665,10 +642,7 @@ dougax@lyh MINGW64 /d/github/test (fix_shit)
 
 解决冲突后,此时仍然有两个分支,master那个分支保留,fix_shit由于合并了master,所以文件里就会有修改建议
 
-三个区域
-----
 
-*   
 
 ## 暂存区,工作区和远程仓库
 
@@ -704,8 +678,6 @@ Git 本地有三个工作区域：工作目录（Working Directory）、暂存�
 
 
 
-
-
 工作目录（WorkSpace) 一般就是你希望 Git 帮助你管理的文件夹，可以是你项目的目录，也可以是一个空目录，建议不要有中文。
 
 日常使用只要记住下图 6 个命令：
@@ -725,9 +697,9 @@ git checkout -- \<file> 表示将文件从暂存区的file版本替换到工作�
 
 git rm --cached \<file> 只表示将暂存区的file文件删除。
 
-## pull操作
 
-## 关联远程仓库操作
+
+## 关联远程库pull操作
 
 > remote add url 关联另一个远程仓库别名
 > git remote 查看所有关联的远程仓库名
@@ -778,6 +750,8 @@ $ git push origin_1 main
 ```
 
 ## 两仓库分支合并
+
+### <font color=#FFCCCC style=" font-weight:bold;">没学会</font>
 
 ```bash
 dougax@lyh MINGW64 /d/github/auto
@@ -924,9 +898,9 @@ origin  git@github.com:1759728350/jiayou2021.git (push)
 
 git删除已经push的远程文件或文件夹
 
-在使用git提交项目时，有时候会误提交一下文件，比如：.iml，.project，*.settings，.idea/*等文件，有时候这些不需要提交的文件可以加入到.gitignore，在提交的时候可以忽略这些文件，但是有时候我们忘记，就会出现误提交一些文件，这时就需要我们删除误提交的文件，下面是使用git命令来删除已经push的误提交的文件：
+在使用git提交项目时，有时候会误提交一下文件，比如：.iml，.project，*.settings，.idea/*等文件，有时候这些不需要提交的文件可以加入到.gitignore，在提交的时候可以忽略这些文件，但是有时候我们忘记，就会出现误提交一些文件，这时就需要我们删除误提交的文件，<font color=#99CCFF style=" font-weight:bold;">下面是使用git命令来删除已经push的误提交的文件</font>：
 
-注意：该方法适用于我们需要删除暂存区或分支上的文件, 但本地又需要使用, 只是不希望这个文件被版本控制
+注意：<font color=#FFCCCC style=" font-weight:bold;">该方法适用于我们需要删除暂存区或分支上的文件, 但本地又需要使用, 只是不希望这个文件被版本控制</font>
 
 1.**预览暂存区我们需要删除的文件或文件夹**（此步骤可以预览我们要删除的文件或文件夹是否是我们要删除的，有没有或多或少删除）
 比如：我们就拿删除 integration-engine-stream.iml 作为例子
@@ -962,10 +936,10 @@ $ git push [remote] [branch]
 ## clone和pull的区别
 
 git clone
-是在本地没有版本库的时候，从远程服务器克隆整个版本库到本地，是一个本地从无到有的过程。
+是在本地没有版本库的时候，从远程服务器克<font color=#FFCCCC style=" font-weight:bold;">隆整个版本库,还有所有分支</font>到本地，是一个本地从无到有的过程。
 
 git pull
-在本地有版本库的情况下，从远程库获取最新commit 数据（如果有的话），并merge（合并）到本地。
+在本地有版本库的情况下，从远程库获取最新commit 数据（如果有的话），<font color=#FFCCCC style=" font-weight:bold;">并merge</font>（合并）到本地。
 
 git pull = git fetch + git merge
 
@@ -997,3 +971,29 @@ From github.com:1759728350/note
    Successfully rebased and updated refs/heads/master.
 ```
 
+
+
+## 忽略文件
+
+```
+#为注释
+*.txt        #忽略所有 .txt结尾的文件,这样的话上传就不会被选中！
+!lib.txt     #但lib.txt除外
+/temp        #仅忽略项目根目录下的TODO文件,不包括其它目录temp
+build/       #忽略build/目录下的所有文件
+doc/*.txt    #会忽略 doc/notes.txt 但不包括 doc/server/arch.txt
+```
+
+有些时候我们不想把某些文件纳入版本控制中，比如数据库文件，临时文件，设计文件等
+
+在主目录下建立 ".gitignore" 文件，此文件有如下规则：
+
+1.  忽略文件中的空行或以井号（#）开始的行将会被忽略。
+
+2.  可以使用 Linux 通配符。例如：星号（*）代表任意多个字符，问号（？）代表一个字符，方括号（[abc]）代表可选字符范围，大括号（{string1,string2,...}）代表可选的字符串等。
+
+3.  如果名称的最前面有一个感叹号（!），表示例外规则，将不被忽略。
+
+4.  如果名称的最前面是一个路径分隔符（/），表示要忽略的文件在此目录下，而子目录中的文件不忽略。
+
+5.  如果名称的最后面是一个路径分隔符（/），表示要忽略的是此目录下该名称的子目录，而非文件（默认文件或目录都忽略）。使用码云
