@@ -167,6 +167,14 @@ example:<br><font color=#99CCFF size=3>@Bean methods may also declare qualifier 
 ##### resolution&integration&integrate
 example:<br><font color=#99CCFF size=3>The testing of each functions proved that the system plays an important role in resources integration 
 and scheduling code resolution service rationally and effectively.</font><br>explain:<br><font color=#6699FF size=3> 通过对系统各功能点的测试，证明了系统对整合资源、合理有效地调度编码解析服务有重要作用。</font><br>
+##### sub
+example:<br><font color=#99CCFF size=3>All Known Subinterfaces</font><br>explain:<br><font color=#6699FF size=3>所有已知的子接口 </font><br>
+
+##### for accessing
+example:<br><font color=#99CCFF size=3>The root interface for accessing a Spring bean container.</font><br>explain:<br><font color=#6699FF size=3>用于访问spring bean容器的根接口 </font><br>
+
+##### are available for
+example:<br><font color=#99CCFF size=3>This is the basic client view of a bean container; further interfaces such as ListableBeanFactory and ConfigurableBeanFactory are available for specific purposes.</font><br>explain:<br><font color=#6699FF size=3> 这是bean容器的客户端界面,更深层的接口.....被用于特定目的</font><br>
 
 
 
