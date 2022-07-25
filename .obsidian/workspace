@@ -1,29 +1,33 @@
 {
   "main": {
-    "id": "46e23c5e9da75466",
+    "id": "03e48e08ab411fed",
     "type": "split",
     "children": [
       {
-        "id": "e15b9e803ba77284",
+        "id": "f6ea4d60bd17647b",
         "type": "leaf",
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "all_notes/java/未来总学习路线.md",
+            "mode": "source",
+            "source": false
+          }
         }
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "ab069fd64e4cfb27",
+    "id": "6d4bb52aa6416c53",
     "type": "split",
     "children": [
       {
-        "id": "5fb3723807639fe4",
+        "id": "487c7333c31da16a",
         "type": "tabs",
         "children": [
           {
-            "id": "4a92d0830a0e3a42",
+            "id": "7d7c79a106679c44",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -31,7 +35,7 @@
             }
           },
           {
-            "id": "7a143d37523bf63e",
+            "id": "10e34b0b023a06f2",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -46,7 +50,7 @@
             }
           },
           {
-            "id": "aed2364f1ba891f7",
+            "id": "16a6cc3829a596e9",
             "type": "leaf",
             "state": {
               "type": "starred",
@@ -60,42 +64,44 @@
     "width": 300
   },
   "right": {
-    "id": "aa04ff4cf37b8b3c",
+    "id": "fd22a51f8a10e99d",
     "type": "split",
     "children": [
       {
-        "id": "2f2fa86e4970f89b",
+        "id": "17914db88f350a54",
         "type": "tabs",
         "children": [
           {
-            "id": "986e01d2f728b2f5",
+            "id": "894d029e468cee3b",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "collapseAll": false,
+                "file": "all_notes/java/未来总学习路线.md",
+                "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
-                "backlinkCollapsed": true,
-                "unlinkedCollapsed": true
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": false
               }
             }
           },
           {
-            "id": "cda9f96b5899b320",
+            "id": "f557a1c291c56739",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "all_notes/java/未来总学习路线.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "9ffca63be990b19a",
+            "id": "16f16bb983eb882e",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -106,21 +112,29 @@
             }
           },
           {
-            "id": "bca5a46977c677a4",
+            "id": "ba0d3d0b47340067",
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "all_notes/java/未来总学习路线.md"
+              }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
     "width": 300
   },
-  "active": "986e01d2f728b2f5",
+  "active": "f6ea4d60bd17647b",
   "lastOpenFiles": [
-    "未命名.md"
+    "all_notes/elang/one more.md",
+    "all_notes/front/UI/figma快捷键.md",
+    "all_notes/git/Git.md",
+    "all_notes/net/计算机网络-数据包网络运输.md",
+    "all_notes/net/计算机网络-数据包网络运输.assets/src=http%3A%2F%2Fimg.jpg",
+    "计算机网络-数据包网络运输.assets/src=http%3A%2F%2Fimg2020.cnblogs.com%2Fblog%2F1323383%2F202007%2F1323383-20200710222723241-1850052375.jpg&refer=http%3A%2F%2Fimg2020.cnblogs.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto.md"
   ]
 }
