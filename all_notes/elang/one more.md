@@ -176,6 +176,10 @@ example:<br><font color=#99CCFF size=3>The root interface for accessing a Spring
 ##### are available for
 example:<br><font color=#99CCFF size=3>This is the basic client view of a bean container; further interfaces such as ListableBeanFactory and ConfigurableBeanFactory are available for specific purposes.</font><br>explain:<br><font color=#6699FF size=3> 这是bean容器的客户端界面,更深层的接口.....被用于特定目的</font><br>
 
+##### come across
+example:<br><font color=#99CCFF size=3>
+
+Remember every word you come across</font><br>explain:<br><font color=#6699FF size=3>记住你遇到的每一个单词 </font><br>
 
 
 按ex一键生成,每天五个
