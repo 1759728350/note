@@ -1,0 +1,135 @@
+{
+  "main": {
+    "id": "f99615fd0660cc2f",
+    "type": "split",
+    "children": [
+      {
+        "id": "b23f0ff4d0836dc9",
+        "type": "leaf",
+        "state": {
+          "type": "graph",
+          "state": {}
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "0effa94eba026f51",
+    "type": "split",
+    "children": [
+      {
+        "id": "88c038e428e8b661",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4ca02f3278a669dd",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "e8a260ecfa32155f",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "c4b43c5fcc8bed61",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "724473f158e4f6fb",
+    "type": "split",
+    "children": [
+      {
+        "id": "0c40d8aaf38feb31",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2a056cc08c512cfe",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "7c77320e06ca015e",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "f995e69b6adc0c77",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "6c43b347f3988ab8",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "e8a260ecfa32155f",
+  "lastOpenFiles": [
+    "2022-07-20.md",
+    "java-stack/积极.md",
+    "maven/maven.md",
+    "java-stack/Pasted image 20220718211522.png",
+    "spring/spring操作篇.md",
+    "maven/difference_between_warAndjar.md",
+    "maven/difference_between_warAndjar.assets/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MDkxMDM3Mg==,size_16,color_FFFFFF,t_70.png",
+    "java-stack/2022-07-18.md"
+  ]
+}

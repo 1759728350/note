@@ -402,6 +402,7 @@ value即是输入的值
 
 #### 块级元素和行内元素
 
+
 display属性
 
 > 每一个元素都有默认的display属性值，比如div元素，它的**默认display属性值为“block”**，成为“块级”元素(block-level)；而span元素的默认**display属性值为“inline”**，称为“行内”元素。

@@ -1,0 +1,139 @@
+{
+  "main": {
+    "id": "17c8e2a22ebba1b7",
+    "type": "split",
+    "children": [
+      {
+        "id": "894781c4f9cbf4f0",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "积极.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "03a6e77a179de967",
+    "type": "split",
+    "children": [
+      {
+        "id": "deacdd7db64ffc28",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5b886198d11b1c35",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "d28b5ff61da25b8f",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "12ba420ad1afe113",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "9db93e89d46ce8c0",
+    "type": "split",
+    "children": [
+      {
+        "id": "fa8112e4f1c6e13f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4bcbee0c0baf92aa",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "积极.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": false
+              }
+            }
+          },
+          {
+            "id": "03fb6160b1f0b6b1",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "积极.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "b43bd80d6b2120c6",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "5c899be873eb0610",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "积极.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "active": "4bcbee0c0baf92aa",
+  "lastOpenFiles": [
+    "2022-07-18.md",
+    "积极.md",
+    "Pasted image 20220718210956.png.md",
+    "就.md",
+    "Pasted image 20220718210956.png"
+  ]
+}

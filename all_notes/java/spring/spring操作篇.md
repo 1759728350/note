@@ -84,7 +84,7 @@ ch07-aspectj-before: 使用aspectj框架的注解，实现前置通知实现步�
 
 如果报错,看一下xml头中的命名空间和规则有没有写对
 
-```xml-dtd
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
