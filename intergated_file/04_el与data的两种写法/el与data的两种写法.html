@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="../vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+        <p>我的姓名是：{{name}}</p>
+    </div>
+    
+
+    <script type="text/javascript">
+        Vue.config.productionTip = false;
+
+        // el的写法一和data的第一种写法
+        // new Vue({
+        //     el:"#root",
+        //     data:{
+        //         name:"Roy"
+        //     }
+        // })
+
+        // el的写法二
+        // const x = new Vue({
+        //     data:{
+        //         name:"Roy"
+        //     }
+        // })
+
+        // x.$mount("#root")
+
+        //data的第二种写法
+        const x = new Vue({
+            data(){
+                return{
+                    name:"Roy"
+                }
+            }
+        })
+
+        x.$mount("#root")
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="../vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        Vue.config.productionTip = false;
+
+        let number = 18;
+
+        const person = {
+            name:"张三",
+            sex:"男"
+        }
+
+        Object.defineProperty(person,'age',{
+            // value:19,
+            // writable:true,
+            // configurable:true,
+            // enumerable:true
+
+            get(){
+                console.log("有人读取的age属性")
+                return number;
+            },
+            set(value){
+                console.log("有人修改了age属性", value);
+                number = value;
+            }
+        })
+        console.log(person)
+    </script>
+    
+</body>
+</html>

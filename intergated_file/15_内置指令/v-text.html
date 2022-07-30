@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="../vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+        <h2>你好，{{name}}</h2>
+        <!-- v-text以文本的形式直接替换标签中的文本内容 -->
+        <h2 v-text="name">你好，</h2>
+    </div>
+
+
+    <script type="text/javascript">
+        Vue.config.productionTip = false;
+        
+        new Vue({
+            el:"#root",
+            data:{
+                name:"Roy"
+            }
+        })
+    </script>
+</body>
+</html>

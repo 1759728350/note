@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="../vue.js"></script>
+    <style>
+        *{
+            margin-top: 20px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+        <input type="text" placeholder="按下enter键，输出信息" @keyup.enter="showInfo">
+        <br>
+        <input type="text" placeholder="按下ctl+y键，输出信息" @keyup.ctl.y="showInfo">
+        <br>
+        <input type="text" placeholder="按下tab键，输出信息" @keydown.tab="showInfo">
+        <br>
+        <input type="text" placeholder="按下CapsLk键，切换大小写" @keyup.caps-lock="showInfo2">
+    </div>
+
+    <script type="text/javascript">
+        Vue.config.productionTip = false;
+
+        new Vue({
+            el:"#root",
+            methods:{
+                showInfo(e){
+                    console.log(e.target.value);
+                },
+                showInfo2(){
+                    alert("大小写已经切换成功");
+                }
+            }
+        })
+    </script>
+</body>
+</html>

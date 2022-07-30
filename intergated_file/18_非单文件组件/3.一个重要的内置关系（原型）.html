@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="../vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="root">
+
+    </div>
+
+    <script type="text/javascript">
+
+        Vue.config.productionTip = false;
+
+        function Demo(){
+            a = 1
+            b = 2
+        }
+
+        const o = new Demo();
+        Demo.prototype.x = 100
+
+        console.log(Demo.prototype)//显示原型属性
+        console.log(o.__proto__)//隐式原型属性
+        console.log(Demo.prototype === o.__proto__)//true
+        console.log(o.x)//在构造函数的显示原型对象上面添加的属性在构造函数的对象上的隐式原型上面能够访问
+
+        const school = Vue.extend({
+            data(){
+                return{
+                    schoolName:"华南理工大学",
+                    schoolAddress:"番禺区大学城"
+                }
+
+            }
+        })
+
+        const vm = new Vue({
+            el:"#root",
+            data:{
+
+            },
+            components:{
+                school
+            }
+        })
+
+        console.log("@",school.prototype.__proto__ === vm.__proto__)
+        console.log("@@",school.prototype.__proto__ === Vue.prototype)
+    </script>
+    
+</body>
+</html>

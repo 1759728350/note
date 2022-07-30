@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="../vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="root">
+        姓: <input type="text" v-model="lastname"><br>
+        名: <input type="text" v-model="firstname"><br>
+        姓名：<span>{{fullName}}</span>
+
+    </div>
+    
+
+    <script type="text/javascript">
+        Vue.config.productionTip = false;
+
+        const vm = new Vue({
+            el:"#root",
+            data:{
+                lastname:"张",
+                firstname:"三"
+            },
+            computed:{
+                fullName:{
+                    get(){
+                        console.log("调用了get方法");
+                        return this.lastname + '-' + this.firstname;
+                    },
+                    set(value){
+                        console.log("调用了set方法");
+                        const arr = value.split("-");
+                        this.lastname = arr[0];
+                        this.firstname = arr[1];
+                    }
+                }
+            }
+            // 当确定了计算属性只读不写的时候，才能使用计算属性的简写形式
+            // computed:{
+            //     fullNamen(){
+            //             console.log("调用了get方法");
+            //             return this.lastname + '-' + this.firstname;
+            //     }
+            // }
+
+        })
+    </script>
+</body>
+</html>

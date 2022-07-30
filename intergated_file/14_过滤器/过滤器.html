@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="../vue.js"></script>
+    <script type="text/javascript" src="../dayjs.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+        <!-- 计算属性实现 -->
+        <h2>当前时间是：{{formatTime}}</h2>
+
+        <!-- methods方法实现 -->
+        <h2>当前时间是：{{getFormatTime()}}</h2>
+
+        <!-- 过滤器实现 -->
+        <h2>当前时间是：{{time | FFormatTime}}</h2>
+        <!-- 过滤器实现，可以连续过滤，且可以设置全局过滤器 -->
+        <h2>当前时间是：{{time | FFormatTime2('YYYY-MM-DD HH:mm:ss') | myslice}}</h2>
+    </div>
+
+
+    <script type="text/javascript">
+        Vue.config.productionTip = false;
+        // 全局过滤器
+        Vue.filter('myslice',function(val){
+            return val.slice(0,4);//截取前四个字符
+        })
+
+        const vm = new Vue({
+            el:"#root",
+            data:{
+                time:Date.now()
+            },
+            computed:{
+                formatTime(){
+                    return dayjs(this.time).format('YYYY-MM-DD HH:mm:ss');
+                }
+            },
+            methods: {
+                getFormatTime(){
+                    return dayjs(this.time).format('YYYY-MM-DD HH:mm:ss');
+                }
+            },
+            // 局部过滤器
+            filters:{
+                FFormatTime(val){
+                    return dayjs(val).format('YYYY-MM-DD HH:mm:ss');
+                },
+                FFormatTime2(val,str){
+                    return dayjs(val).format(str);
+                }
+            }
+        })
+    </script>
+</body>
+</html>
