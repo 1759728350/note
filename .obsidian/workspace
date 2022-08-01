@@ -121,16 +121,20 @@
               }
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 223,
+    "collapsed": true
   },
   "active": "f6ea4d60bd17647b",
   "lastOpenFiles": [
+    "all_notes/java/java面试内化.md",
+    "all_notes/java/Java面试宝典9.0.pdf",
+    "all_notes/java/maven/maven.md",
     "all_notes/elang/one more.md",
+    "all_notes/java/未来总学习路线.md",
     "all_notes/front/UI/figma快捷键.md",
     "all_notes/git/Git.md",
     "all_notes/net/计算机网络-数据包网络运输.md",

@@ -1,5 +1,8 @@
 # one more
 
+英语有严谨的句子结构不要以中文那种天然没有语法的方式去翻译句子
+
+
 ##### synthesize
 
 example: 
@@ -180,6 +183,12 @@ example:<br><font color=#99CCFF size=3>This is the basic client view of a bean c
 example:<br><font color=#99CCFF size=3>
 
 Remember every word you come across</font><br>explain:<br><font color=#6699FF size=3>记住你遇到的每一个单词 </font><br>
+
+#####  distributed&described
+example:<br><font color=#99CCFF size=3>Ubuntu is distributed on three types of images described below.</font><br>explain:<br><font color=#6699FF size=3> Ubuntu发布在以下三种类型的图像上。</font>
+<br>
+
+
 
 
 ##### fetch
