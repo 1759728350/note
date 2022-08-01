@@ -126,11 +126,12 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "active": "a7e10578590a99cf",
   "lastOpenFiles": [
+    "elang/one more.md",
+    "OSandLinux/jyy_nju_os/操作系统.md",
     "principle_of_computer_organization/organization.md",
     "python/note/python基础语法.md",
     "front/htmlAndCss/htmlAndCss.md",
