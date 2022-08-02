@@ -48,6 +48,14 @@ JDK（Java Development Kit）是整个 Java 的核心，是 java 开发工具包
 如果父类方法访问修饰符为 <font color=#66CC99 style=" font-weight:bold;">private 则子类就不能重写该方法</font>。
 
 
+##### 1.4.2 final 在 java 中有什么作用？
+
+-   final 修饰的类叫最终类，该类不能被<font color=#66CC99 style=" font-weight:bold;">继承</font>。
+    
+-   final 修饰的方法不能被<font color=#66CC99 style=" font-weight:bold;">重写</font>。
+    
+-   final 修饰的变量叫常量，常量<font color=#66CC99 style=" font-weight:bold;">必须初始化</font>，初始化之后值就不能被<font color=#66CC99 style=" font-weight:bold;">修改</font>。
+
 ##### 1.5 Java 中\=\=和 equals 的区别（必会)
 
 == 的作用：
@@ -95,8 +103,19 @@ public boolean equals(Object anObject) {
 
 ##### 1.5.2. 两个对象的 hashCode()相同，则 equals()也一定为 true，对吗？
 不对，两个对象的 hashCode()相同，equals()不一定 true。
+```java
+String s1 = "通话";  
+String s2 = "重地";  
+System.out.println(s1.hashCode());  
+System.out.println(s2.hashCode());
+//1179395
+//1179395
 
-字符串有其hashCode
+```
+
+
+##### 1.5.3什么是hashCode
+字符串和对象有其hashCode
 ```java
 	String s1 = "123";  
 	String s2 = "111";  
@@ -105,9 +124,16 @@ public boolean equals(Object anObject) {
 	//48690
 	//48657
 ```
-
+object类中
+```java
+public native int hashCode();
+```
 
 hashCode()存在的意义是什么？我们通过前面可以了解到hashCode()将一个字符串的值变为了一个整数，那么这样做的作用是什么呢？我们来看一段代码，如图。
+![](img/Pasted%20image%2020220803004514.png)
+我们平时经常用到map来存储对象，因为map是key，value形式的，它不像list形式的集合可以有顺序的从0开始往集合里放数据，而是随意的放，但是取值的话就很麻烦，因为它存放值的时候没有顺序，所以取值的时候根据key去里面一个一个对比，等找到key相等的值就取出，这样就会造成效率问题而<font color=#66CC99 style=" font-weight:bold;">hashCode的存在主要是用于查找的快捷性</font>。
+当我们用到hashCode()可以看到我们将name计算为3373707，age计算为98511，这样的话我们存值的时候就根据计算后的数值进行对应位置的存储，同样当我们get取值的时候再次将key计算为hashCode()值，因为同一个字符串hashCode()值相等，这个时候我们就可以<font color=#66CC99 style=" font-weight:bold;">直接根据hashCode()值将对应位置的数据取出，就不需要对key一个一个进行对比了，这样大大提高了效率</font>，这就是为什么有hashCode()存在的原因了。
+
 
 ##### 1.6 String、StringBuffer、StringBuilder 三者之间的区别（必会）
 
@@ -135,6 +161,9 @@ StringBuilder 并没有对方法进行加同步锁，所以是非线程安全的
 
 （3）单线程操作字符串缓冲区下操作大量数据用 StringBuilder。
 
+##### 1.6.2 String str="i"与 String str=new String("i")一样吗？
+
+不一样，因为内存的分配方式不一样。String str="i"的方式，java 虚拟机会将其分配到<font color=#66CC99 style=" font-weight:bold;">常量池</font>中；而 String str=new String("i") 则会被分到<font color=#66CC99 style=" font-weight:bold;">堆内存</font>中。
 
 
 ##### 1.7 接口和抽象类的区别是什么？（必会）
@@ -145,11 +174,21 @@ StringBuilder 并没有对方法进行加同步锁，所以是非线程安全的
 
 main 方法：抽象类可以有 main 方法，并且我们能运行它；接口不能有 main 方
 法。
-实现数量：类可以实现很多个接口；但是只能继承一个抽象类。
+实现数量：类可以<font color=#66CC99 style=" font-weight:bold;">实现很多个接口</font>；但是只能继承一个抽象类。
 
 访问修饰符：<font color=#66CC99 style=" font-weight:bold;">接口中的方法默认使用 public 修饰</font>；抽象类中的方法可以是任意访
 问修饰符
 
+##### 1.7.2 普通类和抽象类有哪些区别?
+
+-   普通类不能包含<font color=#66CC99 style=" font-weight:bold;">抽象方法</font>，抽象类可以包含抽象方法。
+    
+-   抽象类不能直接实例化，普通类可以直接<font color=#66CC99 style=" font-weight:bold;">实例化</font>。
+
+
+##### 1.7.3抽象类能使用 final 修饰吗？
+  
+不能，定义抽象类就是让其他类继承的，如果定义为 final 该类就不能被继承，这样彼此就会产生矛盾，所以 final 不能修饰抽象类
 
 ##### 1.8 string 常用的方法有哪些？（了解）
 
@@ -250,3 +289,72 @@ Lambda 允许<font color=#66CC99 style=" font-weight:bold;">把函数作为一�
 方法引用允许直接引用已有 Java 类或对象的方法或构造方法。(没学会)
 
 
+
+==============================================================
+
+
+
+
+
+##### 1.12 Java 的异常（必会）
+![](img/Pasted%20image%2020220803011040.png)
+
+Throwable 是所有 Java 程序中错误处理的父类，有两种资类：Error 和Exception。
+
+Error：表示由 JVM 所侦测到的无法预期的错误，由于这是属于 JVM 层次的严重错误，导致 JVM 无法继续执行，因此，这是不可捕捉到的，无法采取任何恢复的操作，顶多只能显示错误信息。
+
+Exception：表示可恢复的例外，这是可捕捉到的。
+
+1.运行时异常：都是 RuntimeException 类及其子类异常，如
+NullPointerException(空指针异常)、IndexOutOfBoundsException(下标越界异常)等，
+这些异常是不检查异常，程序中可以选择捕获处理，也可以不处理。这些异常一般是由程序
+逻辑错误引起的，程序应该从逻辑角度尽可能避免这类异常的发生。运行时异常的特点是
+<font color=#66CC99 style=" font-weight:bold;">Java 编译器不会检查它</font>，也就是说，当程序中可能出现这类异常，即使没有用 try-catch
+语句捕获它，也没有用 throws 子句声明抛出它，也会编译通过。
+
+2.非运行时异常（编译异常）：是 RuntimeException 以外的异常，类型上都属于 Exception
+类及其子类。从程序语法角度讲是必须进行处理的异常，如果不处理，程序就不能编译通过。
+如<font color=#66CC99 style=" font-weight:bold;"> IOException、SQLException</font> 等以及用户自定义的 Exception 异常，一般情况下不自定
+义检查异常。
+
+常见的 RunTime 异常几种如下：
+
+NullPointerException - 空指针引用异常
+
+ClassCastException - 类型强制转换异常。
+
+IllegalArgumentException - 传递非法参数异常。
+
+ArithmeticException - 算术运算异常
+
+ArrayStoreException - 向数组中存放与声明类型不兼容对象异常
+
+IndexOutOfBoundsException - 下标越界异常
+
+7NegativeArraySizeException - 创建一个大小为负数的数组错误异常
+
+NumberFormatException - 数字格式异常
+
+SecurityException - 安全异常
+
+UnsupportedOperationException - 不支持的操作异常
+
+##### 1.13 BIO、NIO、AIO 有什么区别？（高薪常问）
+
+BIO：Block IO 同步阻塞式 IO，就是我们平常使用的传统 IO，它的特点是模式简
+单使用方便，并发处理能力低。
+
+NIO：New IO 同步非阻塞 IO，是传统 IO 的升级，客户端和服务器端通过
+Channel（通道）通讯，实现了多路复用。
+
+AIO：Asynchronous IO 是 NIO 的升级，也叫 NIO2，实现了异步非堵塞 IO ，
+异步 IO 的操作基于事件和回调机制。
+
+
+##### 1.14 ThreadLocal 的原理（高薪常问）
+
+ThreadLocal：为共享变量在每个线程中创建一个副本，每个线程都可以访问自己
+内部的副本变量。通过 threadlocal 保证线程的安全性。其实在 ThreadLocal 类中有一个静态内部类 ThreadLocalMap(其类似于 Map)，用键值对的形式存储每一个线程的变量副本，ThreadLocalMap 中元素的 key 为当前ThreadLocal 对象，而 value 对应线程的变量副本。
+ThreadLocal 本身并不存储值，它只是作为一个 key 保存到 ThreadLocalMap中，但是这里要注意的是它作为一个 key 用的是弱引用，因为没有强引用链，弱引用在 GC的时候可能会被回收。这样就会在 ThreadLocalMap 中存在一些 key 为 null 的键值对（Entry）。因为 key 变成 null 了，我们是没法访问这些 Entry 的，但是这些 Entry 本身是不会被清除的。如果没有手动删除对应 key 就会导致这块内存即不会回收也无法访问，也就是内存泄漏。
+使用完 ThreadLocal 之后，记得调用 remove 方法。 在不使用线程池的前提下，
+即使不调用 remove 方法，线程的"变量副本"也会被 gc 回收，即不会造成内存泄漏的情况。
