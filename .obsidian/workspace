@@ -4,14 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "f6ea4d60bd17647b",
+        "id": "5d8784834062fe49",
         "type": "leaf",
         "state": {
-          "type": "markdown",
+          "type": "image",
           "state": {
-            "file": "all_notes/java/java面试内化.md",
-            "mode": "source",
-            "source": false
+            "file": "Pasted image 20220801191718.png"
           }
         }
       }
@@ -61,7 +59,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 292
+    "width": 405
   },
   "right": {
     "id": "fd22a51f8a10e99d",
@@ -77,7 +75,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "all_notes/java/java面试内化.md",
+                "file": "Pasted image 20220801191718.png",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +92,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "all_notes/java/java面试内化.md",
+                "file": "Pasted image 20220801191718.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -117,28 +115,28 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "all_notes/java/java面试内化.md"
+                "file": "Pasted image 20220801191718.png"
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 223,
-    "collapsed": true
+    "width": 477
   },
-  "active": "f6ea4d60bd17647b",
+  "active": "5d8784834062fe49",
   "lastOpenFiles": [
-    "all_notes/java/springcloud/积极.md",
-    "all_notes/java/未来总学习路线.md",
+    "Pasted image 20220801192822.png",
+    "Pasted image 20220801235314.png",
+    "Pasted image 20220801235338.png",
+    "Pasted image 20220801235359.png",
     "all_notes/java/java面试内化.md",
-    "all_notes/java/Java面试宝典9.0.pdf",
-    "all_notes/java/maven/maven.md",
-    "all_notes/elang/one more.md",
-    "all_notes/front/UI/figma快捷键.md",
-    "all_notes/git/Git.md",
-    "all_notes/net/计算机网络-数据包网络运输.md",
-    "all_notes/net/计算机网络-数据包网络运输.assets/src=http%3A%2F%2Fimg.jpg"
+    "all_notes/Pasted image 20220731164524.png",
+    "all_notes/Pasted image 20220731131255.png",
+    "all_notes/Pasted image 20220731012829.png",
+    "all_notes/Pasted image 20220731010050.png",
+    "all_notes/Pasted image 20220731011929.png"
   ]
 }

@@ -18,11 +18,11 @@
 抽象
 抽象类用 abstract 关键字来修饰，用 abstract修饰类时，<font color=#66CC99 style=" font-weight:bold;">此类就不能被实例化</font>，从这里可以看出，抽象类（接口）就是为了继承而存在的
 
-##### 数据类型(了解)
-![[Pasted image 20220801191718.png]]
+##### 1.2数据类型(了解)
+![[Pasted image 20220802221501.png]]
 
 ##### 1.3JDK JRE JVM 的区别 （必会）
-![[Pasted image 20220801192822.png]]
+![[Pasted image 20220802221445.png]]
 JVM 是 Java Virtual Machine（Java 虚拟机），
 所有的java程序会首先被编译为.class的类文件，这种<font color=#66CC99 style=" font-weight:bold;">.class文件可以在虚拟机上执行</font>,是整个 java 实现<font color=#66CC99 style=" font-weight:bold;">跨平台</font>的最核心的部分，能够运行以 Java 语言的软件程序。
 
@@ -81,6 +81,30 @@ public boolean equals(Object anObject) {
 }
 ```
 
+未实现的equals
+```java
+	public boolean equals(Object obj) {
+		return (this == obj);
+	}	  
+```
+
+
+
+##### 1.5.2. 两个对象的 hashCode()相同，则 equals()也一定为 true，对吗？
+不对，两个对象的 hashCode()相同，equals()不一定 true。
+
+字符串有其hashCode
+```java
+	String s1 = "123";  
+	String s2 = "111";  
+	System.out.println(s1.hashCode());  
+	System.out.println(s2.hashCode());
+	//48690
+	//48657
+```
+
+
+hashCode()存在的意义是什么？我们通过前面可以了解到hashCode()将一个字符串的值变为了一个整数，那么这样做的作用是什么呢？我们来看一段代码，如图。
 
 ##### 1.6 String、StringBuffer、StringBuilder 三者之间的区别（必会）
 
@@ -157,9 +181,9 @@ equals()：字符串比较。
 
 饿汉式：<font color=#66CC99 style=" font-weight:bold;">线程安全，一开始就初始化</font>。
 在线程访问单例对象之前就已经创建好一个私有静态全局对象。再加上，由于一个<font color=#66CC99 style=" font-weight:bold;">类在整个生命周期中只会被加载一次</font>，因此该单例类只会创建一个实例。线程每次都只能也必定只可以拿到这个唯一的对象
-![[Pasted image 20220801235314.png]]
+![[Pasted image 20220802221526.png]]
 懒汉式：<font color=#66CC99 style=" font-weight:bold;">非线程安全，延迟初始化</font>。
-![[Pasted image 20220801235338.png]]
+![[Pasted image 20220802221550.png]]
 ```java
 if(instance == null){
 	//多线程情况下,多个线程同时检查instance=null的情况下会创建多个实例
@@ -177,4 +201,49 @@ synchroized(Singleton.class){
 	}
 }
 ```
-![[Pasted image 20220801235359.png]]
+![[Pasted image 20220802221604.png]]
+
+
+##### 1.10 反射（了解）
+
+在 Java 中的反射机制是指在运行状态中，对于任意一个类都能够知道这个类所有的
+属性和方法；并且对于任意一个对象，都能够调用它的任意一个方法；这种动态获
+取信息以及动态调用对象方法的功能成为 Java 语言的反射机制。
+
+获取 Class 对象的 3 种方法 ：
+```java
+//调用某个对象的 getClass()方法
+
+Person p=new Person();
+
+Class clazz=p.getClass();
+
+//调用某个类的 class 属性来获取该类对应的 Class 对象
+
+Class clazz=Person.class;
+
+//使用 Class 类中的 forName()静态方法(最安全/性能最好)
+
+Class clazz=Class.forName("类的全路径"); (最常用)
+```
+
+
+##### 1.11 jdk1.8 的新特性（高薪常问）
+<font color=#FFCCCC style=" font-weight:bold;">暂时略过</font>
+
+1 Lambda 表达式
+Lambda 允许<font color=#66CC99 style=" font-weight:bold;">把函数作为一个方法的参数</font>。
+
+可以取代大部分的匿名内部类，写出更优雅的Java 代码，尤其在集合的遍历和其他集合操作中，可以极大地优化代码结构。
+```java
+	//详细看如何创建一个线程
+	new Thread(()->System.out.println("这是个方法")).start();
+```
+[四种线程创建方式](https://blog.csdn.net/HuZeyo/article/details/120315914?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522165943744416780366594397%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=165943744416780366594397&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-120315914-null-null.142^v38^pc_rank_34&utm_term=java%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%BA%BF%E7%A8%8B&spm=1018.2226.3001.4187)
+[lambda表达式详细使用](https://blog.csdn.net/kangkang12221222/article/details/122651474?ops_request_misc=&request_id=&biz_id=102&utm_term=java%20lam&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-4-122651474.142^v38^pc_rank_34&spm=1018.2226.3001.4187)
+
+2 方法引用
+
+方法引用允许直接引用已有 Java 类或对象的方法或构造方法。(没学会)
+
+
