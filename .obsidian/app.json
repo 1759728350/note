@@ -1,3 +1,6 @@
 {
-  "attachmentFolderPath": "all_notes/images"
+  "attachmentFolderPath": "./img",
+  "newLinkFormat": "relative",
+  "useMarkdownLinks": true,
+  "newFileLocation": "current"
 }

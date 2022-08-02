@@ -19,10 +19,13 @@
 抽象类用 abstract 关键字来修饰，用 abstract修饰类时，<font color=#66CC99 style=" font-weight:bold;">此类就不能被实例化</font>，从这里可以看出，抽象类（接口）就是为了继承而存在的
 
 ##### 1.2数据类型(了解)
-![[Pasted image 20220802221501.png]]
+
+
+![](img/Pasted%20image%2020220801191718.png)
+
 
 ##### 1.3JDK JRE JVM 的区别 （必会）
-![[Pasted image 20220802221445.png]]
+
 JVM 是 Java Virtual Machine（Java 虚拟机），
 所有的java程序会首先被编译为.class的类文件，这种<font color=#66CC99 style=" font-weight:bold;">.class文件可以在虚拟机上执行</font>,是整个 java 实现<font color=#66CC99 style=" font-weight:bold;">跨平台</font>的最核心的部分，能够运行以 Java 语言的软件程序。
 
@@ -181,9 +184,9 @@ equals()：字符串比较。
 
 饿汉式：<font color=#66CC99 style=" font-weight:bold;">线程安全，一开始就初始化</font>。
 在线程访问单例对象之前就已经创建好一个私有静态全局对象。再加上，由于一个<font color=#66CC99 style=" font-weight:bold;">类在整个生命周期中只会被加载一次</font>，因此该单例类只会创建一个实例。线程每次都只能也必定只可以拿到这个唯一的对象
-![[Pasted image 20220802221526.png]]
+![](img/Pasted%20image%2020220802234025.png)
 懒汉式：<font color=#66CC99 style=" font-weight:bold;">非线程安全，延迟初始化</font>。
-![[Pasted image 20220802221550.png]]
+![](img/Pasted%20image%2020220802234059.png)
 ```java
 if(instance == null){
 	//多线程情况下,多个线程同时检查instance=null的情况下会创建多个实例
@@ -201,7 +204,7 @@ synchroized(Singleton.class){
 	}
 }
 ```
-![[Pasted image 20220802221604.png]]
+![](img/Pasted%20image%2020220802234113.png)
 
 
 ##### 1.10 反射（了解）
