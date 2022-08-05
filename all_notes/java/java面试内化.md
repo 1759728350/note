@@ -299,9 +299,9 @@ Lambda 允许<font color=#66CC99 style=" font-weight:bold;">把函数作为一�
 ##### 1.12 Java 的异常（必会）
 ![](img/Pasted%20image%2020220803011040.png)
 
-Throwable 是所有 Java 程序中错误处理的父类，有两种资类：Error 和Exception。
+Throwable 是所有 Java 程序中错误处理的父类，有两种子类：Error 和Exception。
 
-Error：表示由 JVM 所侦测到的无法预期的错误，由于这是属于 JVM 层次的严重错误，导致 JVM 无法继续执行，因此，这是不可捕捉到的，无法采取任何恢复的操作，顶多只能显示错误信息。
+Error：表示由 JVM 所侦测到的无法预期的错误，由于这是属于<font color=#66CC99 style=" font-weight:bold;"> JVM 层次的严重错误</font>，导致 JVM 无法继续执行，因此，这是不可捕捉到的，无法采取任何恢复的操作，顶多只能显示错误信息。
 
 Exception：表示可恢复的例外，这是可捕捉到的。
 
@@ -314,7 +314,7 @@ NullPointerException(空指针异常)、IndexOutOfBoundsException(下标越界�
 
 2.非运行时异常（编译异常）：是 RuntimeException 以外的异常，类型上都属于 Exception
 类及其子类。从程序语法角度讲是必须进行处理的异常，如果不处理，程序就不能编译通过。
-如<font color=#66CC99 style=" font-weight:bold;"> IOException、SQLException</font> 等以及用户自定义的 Exception 异常，一般情况下不自定
+如<font color=#66CC99 style=" font-weight:bold;"> IOException、 SQLException</font> 等以及用户自定义的 Exception 异常，一般情况下不自定
 义检查异常。
 
 常见的 RunTime 异常几种如下：
@@ -339,6 +339,81 @@ SecurityException - 安全异常
 
 UnsupportedOperationException - 不支持的操作异常
 
+##### 1.12.2 java中的异常处理关键字是什么？
+throw：有时我们明确要创建异常对象然后抛出它来停止程序的正常处理。throw关键字用于向运行时抛出异常来处理它。
+
+throws：当我们在方法中抛出任何已检查的异常而不处理它时，我们需要在<font color=#66CC99 style=" font-weight:bold;">方法签名</font>中使用 throws关键字让调用者程序知道该方法可能抛出的异常。调用方法可以处理这些异常或使用throws关键字将其传播给它的调用方法。我们可以在throws子句中提供多个异常，也可以与main（）方法一起使用。
+
+try-catch：我们在代码中使用try-catch块进行异常处理。try是块的开始，catch是在try块的末尾处理异常。我们可以使用try有多个catch块，try-catch块也可以嵌套。catch块需要一个应该是Exception类型的参数。
+
+finally： finally块是可选的，只能用于try-catch块。由于<font color=#66CC99 style=" font-weight:bold;">异常会暂停执行过程</font>，因此我们可能会打开一些不会关闭的资源，因此我们可以使用finally块。<font color=#66CC99 style=" font-weight:bold;">finally块总是被执行,以防程序异常停摆</font>，无论是否发生异常。
+
+##### 1.12.3 final, finally, finalize的区别？
+final用于声明属性，方法和类，分别表示属性不可交变，方法不可覆盖，类不可继承。    
+
+finally是异常处理语句结构的一部分，表示<font color=#66CC99 style=" font-weight:bold;">总是执行</font>。
+
+finalize是Object类的一个方法，在<font color=#66CC99 style=" font-weight:bold;">垃圾收集器执行的时候会调用被回收对象</font>的此方法，供垃圾收集时的其他资源回收，例如关闭文件等（在垃圾回收的时候会调用被回收对象的此方法）
+
+##### 1.12.4 try catch finally，try里有return，finally还执行么？
+    执行，并且finally的执行早于try里面的return结论：
+
+1、不管有没有出现异常，finally块中代码都会执行；
+
+2、当try和catch中有return时，finally仍然会执行；
+
+3、finally是在return后面的表达式<font color=#66CC99 style=" font-weight:bold;">运算后结果返回前执行</font>的
+    
+4、finally中最好不要包含return，否则程序会提前退出
+
+##### 1.12.5 什么情况finally不会执行
+一共有三种
+
+    1、不进入try块
+       try语句没有被执行到，如在try语句之前就返回了，这样finally语句就不会执行；
+
+    2、程序中止
+        在try块中有System.exit(0);这样的语句，System.exit(0);是终止Java虚拟机JVM的，连JVM都停止了，所有都结束了，当然finally语句也不会被执行到。
+
+    3、线程中止
+    java线程分为两类，守护线程和非守护线程。当所有的非守护线程中止时，不论存不存在守护线程，虚拟机都会kill掉守护线程从而中止程序。 虚拟机中，执行main方法的线程就是一个非守护线程，垃圾回收则是另一个守护线程，main执行完，程序就中止了，而不管垃圾回收线程是否中止。 所以，如果守护线程中存在finally代码块，那么当所有的非守护线程中止时，守护线程被kill掉，其finally代码块是不会执行的。
+
+##### 1.12.6 thorw与thorws区别
+位置不同
+
+    throws 用在函数上，后面跟的是异常类，可以跟多个；而 throw 用在函数内，后面跟的是异常对象。
+
+功能不同
+
+    throws 用来声明异常，让调用者只知道该功能可能出现的问题，可以给出预先的处理方式；throw 抛出具体的问题对象，执行到 throw，功能就已经结束了，跳转到调用者，并将具体的问题对象抛给调用者。也就是说 throw 语句独立存在时，下面不要定义其他语句，因为执行不到。
+
+```java
+public class ThrowsDemo {
+	public static void main(String[] args) {
+
+		// 在调用方法处进行异常处理,亦可以抛出
+		try {
+			ThrowsDemo.testThrows();
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+	// 定义方法是使用throws抛出异常,谁调用谁处理
+	public static void testThrows() throws ParseException {
+		String string = "1999-09-15";
+
+        // SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+		System.out.println(simpleDateFormat.parse(string)); // 解析为日期
+
+	}
+}
+```
+
 ##### 1.13 BIO、NIO、AIO 有什么区别？（高薪常问）
 
 BIO：Block IO 同步阻塞式 IO，就是我们平常使用的传统 IO，它的特点是模式简
@@ -350,6 +425,10 @@ Channel（通道）通讯，实现了多路复用。
 AIO：Asynchronous IO 是 NIO 的升级，也叫 NIO2，实现了异步非堵塞 IO ，
 异步 IO 的操作基于事件和回调机制。
 
+##### 1.13.2字节流和字符流的区别？
+字符流和字节流的使用非常相似，但是实际上字节流的操作不会经过缓冲区（内存）而是直接操作文本本身的，而字符流的操作会先经过缓冲区（内存）然后通过缓冲区再操作文件以字节为单位输入输出数据，字节流按照 8 位传输 以字符为单位输入输出数据，字符流按照 16 位传输
+
+[io面试](https://blog.csdn.net/weixin_44196561/article/details/120261292?ops_request_misc=&request_id=&biz_id=102&utm_term=java%20io%E9%9D%A2%E8%AF%95%E9%A2%98&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-0-120261292.nonecase&spm=1018.2226.3001.4187)
 
 ##### 1.14 ThreadLocal 的原理（高薪常问）
 

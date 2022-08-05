@@ -198,6 +198,9 @@ example:<br><font color=#99CCFF size=3>fetch me the bag from my drawer please</f
 example:<br><font color=#99CCFF size=3>drag the summary link web part onto the content placeholder</font><br>explain:<br><font color=#6699FF size=3> 将摘要链接web部件拖拽到内容占位符上</font><br>
 example2:<br><font color=#99CCFF size=3>create an instance of control you want to add to the placeholder control</font><br>explain:<br><font color=#6699FF size=3>创建一个你想要添加到占位符控件中的控件实例 </font><br>
 
+##### patch
+example:<br><font color=#99CCFF size=3>Adobe released a patch for its own product last Wednesday, less than a week after being warned about it</font><br>explain:<br><font color=#6699FF size=3> Adobe在上周三发布了对其自身产品漏洞的补丁，距该公司接到谷歌警告还不到一周时间。
+</font><br>
 
 按ex一键生成,每天五个
 
