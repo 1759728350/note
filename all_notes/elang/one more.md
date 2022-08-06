@@ -201,8 +201,9 @@ example2:<br><font color=#99CCFF size=3>create an instance of control you want t
 ##### patch
 example:<br><font color=#99CCFF size=3>Adobe released a patch for its own product last Wednesday, less than a week after being warned about it</font><br>explain:<br><font color=#6699FF size=3> Adobe在上周三发布了对其自身产品漏洞的补丁，距该公司接到谷歌警告还不到一周时间。
 </font><br>
-
-按ex一键生成,每天五个
+##### Scheduling Tasks
+example:<br><font color=#99CCFF size=3>An Economic Approach to Scheduling Tasks for Multi-Computer Servers</font><br>explain:<br><font color=#6699FF size=3>一种经济的多计算机服务器任务调度方法 </font><br>
+按ex一键生成,每天五个 
 
 
 
