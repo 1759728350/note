@@ -189,8 +189,6 @@ example:<br><font color=#99CCFF size=3>Ubuntu is distributed on three types of i
 <br>
 
 
-
-
 ##### fetch
 example:<br><font color=#99CCFF size=3>fetch me the bag from my drawer please</font><br>explain:<br><font color=#6699FF size=3>请帮我把我当包从抽屉里取出来 </font><br>
 
@@ -203,7 +201,11 @@ example:<br><font color=#99CCFF size=3>Adobe released a patch for its own�
 </font><br>
 ##### Scheduling Tasks
 example:<br><font color=#99CCFF size=3>An Economic Approach to Scheduling Tasks for Multi-Computer Servers</font><br>explain:<br><font color=#6699FF size=3>一种经济的多计算机服务器任务调度方法 </font><br>
-按ex一键生成,每天五个 
+
+##### Persistence&procedure
+example:<br><font color=#99CCFF size=3>A Solution Of The Java Persistence Based On Stored Procedure</font><br>explain:<br><font color=#6699FF size=3> 基于存储过程的Java持久层的解决方案</font><br>
+
+按ex一键生成,每天五
 
 
 
