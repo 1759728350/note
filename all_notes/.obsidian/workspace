@@ -4,13 +4,13 @@
     "type": "split",
     "children": [
       {
-        "id": "a7e10578590a99cf",
+        "id": "482c07ec2b8d292a",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "OSandLinux/jyy_nju_os/操作系统.md",
-            "mode": "source",
+            "file": "git/Git.md",
+            "mode": "preview",
             "source": false
           }
         }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "OSandLinux/jyy_nju_os/操作系统.md",
+                "file": "git/Git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "OSandLinux/jyy_nju_os/操作系统.md",
+                "file": "git/Git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -117,7 +117,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "OSandLinux/jyy_nju_os/操作系统.md"
+                "file": "git/Git.md"
               }
             }
           }
@@ -128,15 +128,17 @@
     "direction": "horizontal",
     "width": 300
   },
-  "active": "a7e10578590a99cf",
+  "active": "482c07ec2b8d292a",
   "lastOpenFiles": [
-    "elang/one more.md",
+    "temp/软件测试.md",
+    "Pasted image 20220801191718.png.md",
+    "java/java基础/file类.md",
     "OSandLinux/jyy_nju_os/操作系统.md",
+    "elang/one more.md",
     "principle_of_computer_organization/organization.md",
     "python/note/python基础语法.md",
     "front/htmlAndCss/htmlAndCss.md",
     "java/spring/spring操作篇.md",
-    "git/Git.md",
-    "未命名.md"
+    "git/Git.md"
   ]
 }

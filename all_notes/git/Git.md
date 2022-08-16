@@ -374,7 +374,7 @@ git 的工作流程一般是这样的：
 
 Git 多人项目合作开发
 
-<img src="Git.assets/image-20220216233634375.png" alt="image-20220216233634375" style="zoom:50%;" />
+
 
 
 
@@ -447,7 +447,7 @@ git remote add url   #先remote连接
 $ git clone -o 远程主机别名 [url]  # https://github.com/lTbgykio/Books-Free-Books.git
 ```
 
-<img src="Git.assets/image-20220218120250831.png" alt="image-20220218120250831" style="zoom: 33%;" />
+
 
 上面远程主机别名起叫elecbook
 然后remote 查看远程主机名
@@ -700,7 +700,7 @@ $ git remote add origin_1 git@github.com:1759728350/jiayou2021.git
 #给该远程仓库起的别名为origin_1
 ```
 
-<img src="Git.assets/image-20220218114313158.png" alt="image-20220218114313158" style="zoom: 50%;" />
+
 
 `git pull`命令作用：从另一个存储库或**本地分支关联的远端分支**获取最新代码，并与本地代码资源整合。
 `git pull`命令执行过程：取回远程主机某个分支的更新，再与本地的指定分支合并（可能存在需手动解决的冲突）。
