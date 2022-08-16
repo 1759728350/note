@@ -219,7 +219,7 @@ ssh-keygen
 
 IDEA 中集成 Git
 
-## 配置ssh公钥
+### 配置ssh公钥
 
 ```shell
 ssh-keygen -t rsa -C "注册邮箱"=
@@ -252,7 +252,7 @@ ssh -T git@github.com
 
 这里可以直接编辑配置文件，通过命令设置后会响应到这里。
 
-## 提交本地仓库
+### 提交本地仓库
 
 ```shell
 dougax@lyh MINGW64 /d/github/test (master)
@@ -988,6 +988,8 @@ doc/*.txt    #会忽略 doc/notes.txt 但不包括 doc/server/arch.txt
 5.  如果名称的最后面是一个路径分隔符（/），表示要忽略的是此目录下该名称的子目录，而非文件（默认文件或目录都忽略）。使用码云
 
 
+
+
 ## git 为什么要先commit，然后pull，最后再push？
 
 <font color=#66CC99 style=" font-weight:bold;">一般工作先pull初始化一下本地仓库,每次提交在push之前pull一下检查冲突多一个合并过程
@@ -1080,3 +1082,20 @@ _文件从没有被add过_
 一般情况下，一次commit代表完成了某项操作。假如说你一天会完成一项工作，也就是会commit一次，上午完成了一半的工作，下午来的时候发生了意外，你只能将你的代码倒回到今天刚上班的时候，上午的工作也将付之东流。但是有了git add 命令，你可以在随时add，如果代码出现了问题，可以随时倒回到git add 时候的状态。你还可以随时比较当前代码和git add 时代码的差别，git add 时和仓库代码的差别，当前代码和仓库代码的差别。简单来说如下图(并不完全精确，有些命令会重用)：
 
 ![[Pasted image 20220816203646.png]]
+
+
+
+## add.不能乱用
+add是将文件加入到缓存区且让git能追踪到
+add . 将所有文件到加入了,有的文件你还没修改后就不要急着推上去
+
+## 查看某个文件的提交历史
+
+ ```shell
+ git log ${FileName}
+
+```
+
+## git 查看暂存区的使用场景挖坑
+## git diff 命令
+## 查看及删除git远程库不需要的文件
