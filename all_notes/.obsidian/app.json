@@ -1,4 +1,6 @@
 {
   "defaultViewMode": "preview",
-  "tabSize": 2
+  "tabSize": 2,
+  "attachmentFolderPath": "./img",
+  "promptDelete": false
 }

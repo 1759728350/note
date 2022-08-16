@@ -4,13 +4,13 @@
     "type": "split",
     "children": [
       {
-        "id": "4f273c9a2961310e",
+        "id": "468f1b4728437a6e",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
             "file": "git/Git.md",
-            "mode": "preview",
+            "mode": "source",
             "source": false
           }
         }
@@ -128,17 +128,17 @@
     "direction": "horizontal",
     "width": 300
   },
-  "active": "4f273c9a2961310e",
+  "active": "468f1b4728437a6e",
   "lastOpenFiles": [
+    "Pasted image 20220816203354.png.md",
     "git/Git.md",
+    "Pasted image 20220816203354.png",
+    "elang/one more.md",
     "temp/软件测试.md",
     "Pasted image 20220801191718.png.md",
     "java/java基础/file类.md",
     "OSandLinux/jyy_nju_os/操作系统.md",
-    "elang/one more.md",
     "principle_of_computer_organization/organization.md",
-    "python/note/python基础语法.md",
-    "front/htmlAndCss/htmlAndCss.md",
-    "java/spring/spring操作篇.md"
+    "python/note/python基础语法.md"
   ]
 }

@@ -205,6 +205,10 @@ example:<br><font color=#99CCFF size=3>An Economic Approach to Scheduling Tasks 
 ##### Persistence&procedure
 example:<br><font color=#99CCFF size=3>A Solution Of The Java Persistence Based On Stored Procedure</font><br>explain:<br><font color=#6699FF size=3> 基于存储过程的Java持久层的解决方案</font><br>
 
+discard
+
+unstage
+changes not staged for commit
 按ex一键生成,每天五
 
 
