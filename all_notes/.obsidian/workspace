@@ -4,7 +4,7 @@
     "type": "split",
     "children": [
       {
-        "id": "482c07ec2b8d292a",
+        "id": "4f273c9a2961310e",
         "type": "leaf",
         "state": {
           "type": "markdown",
@@ -128,8 +128,9 @@
     "direction": "horizontal",
     "width": 300
   },
-  "active": "482c07ec2b8d292a",
+  "active": "4f273c9a2961310e",
   "lastOpenFiles": [
+    "git/Git.md",
     "temp/软件测试.md",
     "Pasted image 20220801191718.png.md",
     "java/java基础/file类.md",
@@ -138,7 +139,6 @@
     "principle_of_computer_organization/organization.md",
     "python/note/python基础语法.md",
     "front/htmlAndCss/htmlAndCss.md",
-    "java/spring/spring操作篇.md",
-    "git/Git.md"
+    "java/spring/spring操作篇.md"
   ]
 }

@@ -106,7 +106,7 @@ Linux 社区中存在很多的大佬！破解研究 BitKeeper ！
 
 Git 是免费、开源的，最初 Git 是为辅助 Linux 内核开发的，来替代 BitKeeper！
 
-<img src="Git.assets/image-20220221002854980.png" alt="image-20220221002854980" style="zoom:50%;" />
+
 
 Linux 和 Git 之父李纳斯 · 托沃兹（Linus Benedic Torvalds）1969、芬兰
 
