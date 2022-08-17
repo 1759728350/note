@@ -15,8 +15,14 @@
 mybatis的配置文件虽然在resource文件夹中但在<font color=#66CC99 style=" font-weight:bold;">compile后</font>会根据文件名生成到了对应的com文件夹里
 ![[Pasted image 20220818005641.png]]
 
+### classpath经常在xml或者yml,properties/java中读取一些配置文件
 把配置文件如：mybatis.xml、spring-web.xml、applicationContext.xml等放到src目录（就是存放代码.java文件的目录），然后使用“classpath：xxx.xml”来读取
 
+```xml
+<param-value>classpath:context/conf/controller.xml</param-value>
+
+
+```
 
 ### classpath 和 classpath* 区别：  
 classpath：只会到你的class路径中查找找文件;  
