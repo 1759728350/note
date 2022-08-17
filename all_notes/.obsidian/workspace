@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "OSandLinux/jyy_nju_os/操作系统.md",
-            "mode": "source",
+            "file": "java/java面试内化.md",
+            "mode": "preview",
             "source": false
           }
         }
@@ -61,7 +61,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 189
+    "width": 269
   },
   "right": {
     "id": "c49a711e9dedb52a",
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "OSandLinux/jyy_nju_os/操作系统.md",
+                "file": "java/java面试内化.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "OSandLinux/jyy_nju_os/操作系统.md",
+                "file": "java/java面试内化.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -117,7 +117,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "OSandLinux/jyy_nju_os/操作系统.md"
+                "file": "java/java面试内化.md"
               }
             }
           }
@@ -126,19 +126,19 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 256
   },
   "active": "bb98b408ddd55659",
   "lastOpenFiles": [
-    "java/java面试内化.md",
-    "java/java基础/file类.md",
     "java/java基础/io流.md",
+    "java/java基础/file类.md",
+    "java/java面试内化.md",
+    "OSandLinux/jyy_nju_os/操作系统.md",
     "log.md",
     "git/Git.md",
     "Pasted image 20220816203354.png.md",
     "Pasted image 20220816203354.png",
     "elang/one more.md",
-    "temp/软件测试.md",
-    "Pasted image 20220801191718.png.md"
+    "temp/软件测试.md"
   ]
 }

@@ -94,4 +94,59 @@ public File[] listiiles()
 
 ```
 
+##### 实践-递归文件夹
+```java
+import java.io.File;  
+import java.io.InputStream;  
+  
+public class jj {  
+    public static void main(String[] args) throws Exception{  
+  
+        //将文件读取  
+        File file = new File("jjk");  
+        int num = 1;  
+        read(file,num);  
+  
+    }  
+    public static void read(File file,int num){  
+  
+        //循环遍历  
+        for (File subFile:file.listFiles()) {  
+            //如果是文件夹递归,输出文件夹名  
+            if (subFile.isDirectory()){  
+                System.out.println(offset(num)+num+"级文件夹:"+subFile.getName());  
+                num++;  
+                read(subFile,num);  
+                num--;  
+            }else {  
+                //如果不是输出文件名  
+                System.out.println(offset(num)+num+"级文件:"+subFile.getName());  
+  
+            }        
+        }    
+    }    
+            
+            
+    public static String offset(int num){  
+        StringBuilder s = new StringBuilder();  
+        for (int i = 0;i < num;i++){  
+            s.append("--");  
+        }        return s.toString();  
+    }  
+  
+}
 
+
+```
+输出
+```java
+--1级文件夹:aa
+----2级文件:sss - 副本.txt
+----2级文件:sss.txt
+--1级文件夹:bb
+----2级文件夹:jkjbb
+------3级文件:新建 文本文档.txt
+----2级文件:sss.txt
+--1级文件夹:cc
+
+```
