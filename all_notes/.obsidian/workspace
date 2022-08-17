@@ -4,11 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "468f1b4728437a6e",
+        "id": "bb98b408ddd55659",
         "type": "leaf",
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "OSandLinux/jyy_nju_os/操作系统.md",
+            "mode": "source",
+            "source": false
+          }
         }
       }
     ],
@@ -73,6 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "OSandLinux/jyy_nju_os/操作系统.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,6 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "OSandLinux/jyy_nju_os/操作系统.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -110,7 +116,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "OSandLinux/jyy_nju_os/操作系统.md"
+              }
             }
           }
         ],
@@ -120,17 +128,17 @@
     "direction": "horizontal",
     "width": 300
   },
-  "active": "468f1b4728437a6e",
+  "active": "bb98b408ddd55659",
   "lastOpenFiles": [
+    "java/java面试内化.md",
+    "java/java基础/file类.md",
+    "java/java基础/io流.md",
     "log.md",
     "git/Git.md",
     "Pasted image 20220816203354.png.md",
     "Pasted image 20220816203354.png",
     "elang/one more.md",
     "temp/软件测试.md",
-    "Pasted image 20220801191718.png.md",
-    "java/java基础/file类.md",
-    "OSandLinux/jyy_nju_os/操作系统.md",
-    "principle_of_computer_organization/organization.md"
+    "Pasted image 20220801191718.png.md"
   ]
 }

@@ -39,6 +39,13 @@ JDK（Java Development Kit）是整个 Java 的核心，是 java 开发工具包
 
 [相关解释](https://blog.csdn.net/weixin_45525272/article/details/117825058?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522165934959216782388031797%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=165934959216782388031797&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-117825058-null-null.142^v37^pc_rank_34&utm_term=jre&spm=1018.2226.3001.4187)
 
+
+##### 1.3.2在 Java 中，为什么不允许从静态方法中访问非静态变量？
+静态变量属于类本身，<font color=#66CC99 style=" font-weight:bold;">在类加载的时候就会分配内存</font>，可以通过类名直接访问；
+非静态变量属于类的对象，<font color=#66CC99 style=" font-weight:bold;">只有在类的对象产生时</font>，才会分配内存，通过类的实例去访问；
+静态方法也属于类本身，但是此时没有类的实例，内存中没有非静态变量，所以无法调用。
+
+
 ##### 1.4 重载和重写的区别（必会）
 重载： 发生在同一个类中，方法名必须相同，参数类型不同.个数不同.顺序不同,方法返回
 值和访问修饰符可以不同，发生在编译时。
@@ -414,7 +421,15 @@ public class ThrowsDemo {
 }
 ```
 
-##### 1.13 BIO、NIO、AIO 有什么区别？（高薪常问）
+##### 1.13字节流和字符流哪个好？怎么选择？
+字节流继承inputStream和OutputStream
+字符流继承自InputSteamReader和OutputStreamWriter
+
+缓冲区方面:
+字节流直接对于二进制数据进行io操作,不经过缓冲区,而字符流需要经过缓冲区,所以字符流对于内存中需要频繁处理的数据/字符串具有更强的读写能力减少资源浪费(缓冲区满了再发送),也因此字节流不用缓冲区适合大型文件的io操作
+
+
+##### 1.13.2 BIO、NIO、AIO 有什么区别？（高薪常问）
 
 BIO：Block IO 同步阻塞式 IO，就是我们平常使用的传统 IO，它的特点是模式简
 单使用方便，并发处理能力低。
@@ -425,10 +440,21 @@ Channel（通道）通讯，实现了多路复用。
 AIO：Asynchronous IO 是 NIO 的升级，也叫 NIO2，实现了异步非堵塞 IO ，
 异步 IO 的操作基于事件和回调机制。
 
-##### 1.13.2字节流和字符流的区别？
-字符流和字节流的使用非常相似，但是实际上字节流的操作不会经过缓冲区（内存）而是直接操作文本本身的，而字符流的操作会先经过缓冲区（内存）然后通过缓冲区再操作文件以字节为单位输入输出数据，字节流按照 8 位传输 以字符为单位输入输出数据，字符流按照 16 位传输
+
+
+
+
+
+
+
+
 
 [io面试](https://blog.csdn.net/weixin_44196561/article/details/120261292?ops_request_misc=&request_id=&biz_id=102&utm_term=java%20io%E9%9D%A2%E8%AF%95%E9%A2%98&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-0-120261292.nonecase&spm=1018.2226.3001.4187)
+
+
+
+
+
 
 ##### 1.14 ThreadLocal 的原理（高薪常问）
 
