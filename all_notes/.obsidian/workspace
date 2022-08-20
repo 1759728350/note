@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "project_blog/面试技巧.md",
+            "file": "OSandLinux/OS面试题/内存管理.md",
             "mode": "source",
             "source": false
           }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "project_blog/面试技巧.md",
+                "file": "OSandLinux/OS面试题/内存管理.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "project_blog/面试技巧.md",
+                "file": "OSandLinux/OS面试题/内存管理.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -117,7 +117,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "project_blog/面试技巧.md"
+                "file": "OSandLinux/OS面试题/内存管理.md"
               }
             }
           }
@@ -126,14 +126,14 @@
       }
     ],
     "direction": "horizontal",
-    "width": 256
+    "width": 307
   },
   "active": "f9ba330e7ec0b062",
   "lastOpenFiles": [
+    "project_blog/面试技巧.md",
     "OSandLinux/OS面试题/内存管理.md",
     "java/java基础/java内存模型.md",
     "elang/one more.md",
-    "project_blog/面试技巧.md",
     "OSandLinux/asm/学习笔记/汇编语言学习笔记.md",
     "OSandLinux/asm/《汇编语言(第3版) 》王爽著.pdf",
     "front/es6/ES全系列详细学习笔记.md",
