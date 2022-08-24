@@ -19,7 +19,7 @@ File file = new File("相对路径/绝对路径")
 File file = new File(parent,child)
 ```
 
-##### 文件名及路径
+##### 文件名及路径分割符
 * getName获取文件最后的名字
 * getPath获取创建文件时file构造函数的参数
 * getAbsolutePath获取文件的绝对路径
