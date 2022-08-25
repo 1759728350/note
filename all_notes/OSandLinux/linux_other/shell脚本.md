@@ -173,7 +173,10 @@ if[ sss ] #括号内有内容默认返回true ,两边括号内部要有空格
 ![image-20211202104331134](shell脚本.assets/image-20211202104331134.png)
 
 read -p "are you ok(yes/no)" str
+
+```shell
 if[[ $str = [Yy]es ]];then
+```
 
 
 

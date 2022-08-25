@@ -4,7 +4,7 @@
     "type": "split",
     "children": [
       {
-        "id": "9333070d91b1c4f0",
+        "id": "4ed58916d19911f5",
         "type": "leaf",
         "state": {
           "type": "graph",
@@ -57,7 +57,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 343
+    "width": 203
   },
   "right": {
     "id": "c49a711e9dedb52a",
@@ -113,23 +113,24 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 309
+    "width": 249
   },
-  "active": "9333070d91b1c4f0",
+  "active": "4ed58916d19911f5",
   "lastOpenFiles": [
+    "Pasted image 20220719142545.png.md",
     "$str = [Yy]es.md",
-    "OSandLinux/jyy_nju_os/操作系统.md",
-    "OSandLinux/jyy_nju_os/imgPasted image 20220731010050.png.md",
-    "java/tomcat/tomcat配置部署.md",
-    "tomcat配置部署.assets/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2dvb2dfbWFu,size_16,color_FFFFFF,t_70.md",
-    "clang/c程序的编译过程.md",
-    "java/java基础/java是什么类型的语言.md",
-    "git/Git.md",
-    "java/java基础/file类.md",
-    "java/io流.md"
+    "OSandLinux/linux_other/shell脚本.md",
+    "tomcat配置部署.assets/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwODgxNjgw,size_16,color_FFFFFF,t_70.png.md",
+    "java/tomcat/tomcat配置部署.assets/70piccenter.png",
+    "java/tomcat/tomcat配置部署.assets/port.png",
+    "java/tomcat/tomcat配置部署.assets/image-20220311224822672.png",
+    "java/tomcat/tomcat配置部署.assets/image-20220311224459584.png",
+    "java/tomcat/tomcat配置部署.assets/image-20220311224751778.png",
+    "java/tomcat/tomcat配置部署.md"
   ]
 }
