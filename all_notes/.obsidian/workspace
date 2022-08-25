@@ -4,10 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "4ed58916d19911f5",
+        "id": "872ccfbd1ed091fd",
         "type": "leaf",
         "state": {
-          "type": "graph",
+          "type": "empty",
+          "state": {}
+        }
+      },
+      {
+        "id": "7134e5f203f3773e",
+        "type": "leaf",
+        "state": {
+          "type": "empty",
           "state": {}
         }
       }
@@ -57,7 +65,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 203
+    "width": 338
   },
   "right": {
     "id": "c49a711e9dedb52a",
@@ -120,17 +128,17 @@
     "direction": "horizontal",
     "width": 249
   },
-  "active": "4ed58916d19911f5",
+  "active": "8104255345443cf3",
   "lastOpenFiles": [
-    "Pasted image 20220719142545.png.md",
-    "$str = [Yy]es.md",
+    "OSandLinux/linux_other/屏幕截图 2021-10-26 160743.jpg",
+    "OSandLinux/linux_other/屏幕截图 2021-10-26 160124.jpg",
+    "OSandLinux/linux_other/屏幕截图 2021-10-26 160757.jpg",
+    "OSandLinux/linux_other/屏幕截图 2021-10-26 160813.jpg",
+    "OSandLinux/linux_other/屏幕截图 2021-10-26 164050.jpg",
+    "OSandLinux/linux_other/屏幕截图 2021-11-11 161922.jpg",
+    "OSandLinux/linux_other/linux网络配置课上.md",
+    "OSandLinux/linux_other/linux上线项目.md",
     "OSandLinux/linux_other/shell脚本.md",
-    "tomcat配置部署.assets/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQwODgxNjgw,size_16,color_FFFFFF,t_70.png.md",
-    "java/tomcat/tomcat配置部署.assets/70piccenter.png",
-    "java/tomcat/tomcat配置部署.assets/port.png",
-    "java/tomcat/tomcat配置部署.assets/image-20220311224822672.png",
-    "java/tomcat/tomcat配置部署.assets/image-20220311224459584.png",
-    "java/tomcat/tomcat配置部署.assets/image-20220311224751778.png",
-    "java/tomcat/tomcat配置部署.md"
+    "OSandLinux/linux_other/windowsip浏览器测试.jpg"
   ]
 }
