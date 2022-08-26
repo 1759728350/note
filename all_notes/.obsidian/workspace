@@ -4,19 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "872ccfbd1ed091fd",
+        "id": "54505f9125d85034",
         "type": "leaf",
         "state": {
-          "type": "empty",
-          "state": {}
-        }
-      },
-      {
-        "id": "7134e5f203f3773e",
-        "type": "leaf",
-        "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "elang/one more.md",
+            "mode": "source",
+            "backlinks": true,
+            "source": false
+          }
         }
       }
     ],
@@ -81,6 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "elang/one more.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +95,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "elang/one more.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +117,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "elang/one more.md"
+              }
             }
           }
         ],
@@ -128,17 +129,17 @@
     "direction": "horizontal",
     "width": 249
   },
-  "active": "8104255345443cf3",
+  "active": "54505f9125d85034",
   "lastOpenFiles": [
-    "OSandLinux/linux_other/屏幕截图 2021-10-26 160743.jpg",
+    "principle_of_computer_organization/王道计组/第二章_数据的表示和运算.md",
+    "principle_of_computer_organization/王道计组/第一章_计算机硬件.md",
+    "project_blog/未来总学习路线.md",
+    "project_blog/笔记技巧.md",
+    "project_blog/面试技巧.md",
+    "elang/one more.md",
     "OSandLinux/linux_other/屏幕截图 2021-10-26 160124.jpg",
+    "OSandLinux/linux_other/屏幕截图 2021-10-26 160743.jpg",
     "OSandLinux/linux_other/屏幕截图 2021-10-26 160757.jpg",
-    "OSandLinux/linux_other/屏幕截图 2021-10-26 160813.jpg",
-    "OSandLinux/linux_other/屏幕截图 2021-10-26 164050.jpg",
-    "OSandLinux/linux_other/屏幕截图 2021-11-11 161922.jpg",
-    "OSandLinux/linux_other/linux网络配置课上.md",
-    "OSandLinux/linux_other/linux上线项目.md",
-    "OSandLinux/linux_other/shell脚本.md",
-    "OSandLinux/linux_other/windowsip浏览器测试.jpg"
+    "OSandLinux/linux_other/屏幕截图 2021-10-26 160813.jpg"
   ]
 }
