@@ -4,7 +4,7 @@
     "type": "split",
     "children": [
       {
-        "id": "7171a2f6649e9441",
+        "id": "b2d64cd58c136d42",
         "type": "leaf",
         "state": {
           "type": "markdown",
@@ -62,7 +62,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 338
+    "width": 267
   },
   "right": {
     "id": "c49a711e9dedb52a",
@@ -129,17 +129,49 @@
     "direction": "horizontal",
     "width": 249
   },
-  "active": "7171a2f6649e9441",
+  "floating": {
+    "id": "74c4988ac2e4a6dd",
+    "type": "floating",
+    "children": [
+      {
+        "id": "03e12f1f94285038",
+        "type": "window",
+        "children": [
+          {
+            "id": "88fd7e8c84d25dba",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "project_blog/字节与字符编码.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          }
+        ],
+        "direction": "vertical",
+        "x": 128,
+        "y": 0,
+        "width": 1024,
+        "height": 752,
+        "maximize": false,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "b2d64cd58c136d42",
   "lastOpenFiles": [
-    "project_blog/笔记技巧.md",
     "project_blog/字节与字符编码.md",
-    "java/java基础/io流.md",
     "principle_of_computer_organization/王道计组/第二章_数据的表示和运算.md",
+    "principle_of_computer_organization/expansion/异或运算.md",
+    "java/heima_java/9-字节流、字符流/day09【字节流、字符流】.md",
+    "java/java基础/io流.md",
+    "project_blog/笔记技巧.md",
+    "environment/配置DOSbox.md",
     "elang/one more.md",
     "principle_of_computer_organization/王道计组/第一章_计算机硬件.md",
-    "project_blog/未来总学习路线.md",
-    "project_blog/面试技巧.md",
-    "OSandLinux/linux_other/屏幕截图 2021-10-26 160124.jpg",
-    "OSandLinux/linux_other/屏幕截图 2021-10-26 160743.jpg"
+    "project_blog/未来总学习路线.md"
   ]
 }
