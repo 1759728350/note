@@ -18,7 +18,8 @@
 
 ## Maven 软件结构
 
-<img src="maven.assets/image-20220224220757636.png" alt="image-20220224220757636" style="zoom:67%;" />
+![pp](maven.assets/image-20220224220757636.png)
+
 
 - bin中的mvn和mvn.cmd文件
   用shell和window-api写的读取本机java相关环境变量的脚本
@@ -276,7 +277,7 @@ Maven 仓库用来存放 Maven 管理的所有 Jar 包。分为：本地仓库 �
 
 #### maven快速调试
 
-<img src="maven.assets/image-20220225011758890.png" alt="image-20220225011758890" style="zoom: 50%;" />
+![pp2](maven.assets/image-20220225011758890.png)
 
 ![image-20220225011717313](maven.assets/image-20220225011717313.png)
 
@@ -385,13 +386,12 @@ protectStruct=>+=>import module=>
 ![image-20220226133146030](maven.assets/image-20220226133146030.png)
 
 也可以
-<img src="maven.assets/image-20220226133253390.png" alt="image-20220226133253390" style="zoom:50%;" />
-
+![pp3](maven.assets/image-20220226133253390.png)
 
 
 #### 依赖排除
 
-<img src="maven.assets/image-20220226134444105.png" alt="image-20220226134444105" style="zoom: 50%;" />
+![pp4](maven.assets/image-20220226134444105.png)
 
 ```xml
 <dependencies>
