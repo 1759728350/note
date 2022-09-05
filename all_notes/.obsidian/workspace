@@ -62,7 +62,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 269
+    "width": 194
   },
   "right": {
     "id": "c49a711e9dedb52a",
@@ -127,9 +127,9 @@
       }
     ],
     "direction": "horizontal",
-    "width": 286
+    "width": 257
   },
-  "active": "fe87add0aa34b737",
+  "active": "652e51990a8a5aab",
   "lastOpenFiles": [
     "principle_of_computer_organization/王道计组/第一章_计算机硬件.md",
     "principle_of_computer_organization/王道计组/第四章_指令系统.md",
