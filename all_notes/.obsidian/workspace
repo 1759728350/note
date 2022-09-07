@@ -7,13 +7,8 @@
         "id": "fe87add0aa34b737",
         "type": "leaf",
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "principle_of_computer_organization/王道计组/第六章_总线.md",
-            "mode": "source",
-            "backlinks": true,
-            "source": false
-          }
+          "type": "empty",
+          "state": {}
         }
       }
     ],
@@ -78,7 +73,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "principle_of_computer_organization/王道计组/第六章_总线.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +89,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "principle_of_computer_organization/王道计组/第六章_总线.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -117,9 +110,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "principle_of_computer_organization/王道计组/第六章_总线.md"
-              }
+              "state": {}
             }
           }
         ],
@@ -129,17 +120,17 @@
     "direction": "horizontal",
     "width": 257
   },
-  "active": "fe87add0aa34b737",
+  "active": "8104255345443cf3",
   "lastOpenFiles": [
+    "project_blog/文件上传和下载.md",
+    "project_blog/笔记技巧.md",
+    "git/Git.md",
+    "project_blog/项目中的时间处理.md",
+    "principle_of_computer_organization/王道计组/第六章_总线.md",
     "principle_of_computer_organization/王道计组/第五章_中央处理器.md",
     "principle_of_computer_organization/王道计组/第三章_存储系统.md",
     "principle_of_computer_organization/王道计组/第一章_计算机硬件.md",
     "principle_of_computer_organization/王道计组/王道计组总结.md",
-    "principle_of_computer_organization/王道计组/第六章_总线.md",
-    "principle_of_computer_organization/王道计组/第四章_指令系统.md",
-    "project_blog/笔记技巧.md",
-    "principle_of_computer_organization/王道计组/第二章_数据的表示和运算.md",
-    "第一章_数据的表示和运算.md",
-    "principle_of_computer_organization/expansion/int.md"
+    "principle_of_computer_organization/王道计组/第四章_指令系统.md"
   ]
 }

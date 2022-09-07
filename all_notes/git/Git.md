@@ -919,7 +919,14 @@ $ git push [remote] [branch]
 ```
 
 
+## 强制拉取远程仓库并覆盖本地仓库代码
 
+```shell
+git fetch --all 
+git reset --hard master 
+git pull #可省略
+
+```
 
 
 ## clone和pull的区别
