@@ -208,8 +208,8 @@ example:<br><font color=#99CCFF size=3>A Solution Of The Java Persistence 
 ##### decimal
 example:<br><font color=#99CCFF size=3>The number is correct to three decimal places
 </font><br>explain:<br><font color=#6699FF size=3>这个数目精确到小数点后三位数 ,       既有小数点的意思又有十进制的意思</font><br>
-
-
+##### assign
+example:<br><font color=#99CCFF size=3>can not assign a value to final variable</font><br>explain:<br><font color=#6699FF size=3> 不能给final变量赋值</font><br>
 
 
 

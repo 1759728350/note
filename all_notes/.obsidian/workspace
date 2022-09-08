@@ -4,11 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "fe87add0aa34b737",
+        "id": "e75ca04eb0146105",
         "type": "leaf",
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "project_blog/笔记技巧.md",
+            "mode": "source",
+            "backlinks": true,
+            "source": false
+          }
         }
       }
     ],
@@ -57,7 +62,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 260
+    "width": 318
   },
   "right": {
     "id": "c49a711e9dedb52a",
@@ -73,6 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "project_blog/笔记技巧.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,6 +95,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "project_blog/笔记技巧.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -110,7 +117,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "project_blog/笔记技巧.md"
+              }
             }
           }
         ],
@@ -120,17 +129,17 @@
     "direction": "horizontal",
     "width": 257
   },
-  "active": "8104255345443cf3",
+  "active": "e75ca04eb0146105",
   "lastOpenFiles": [
-    "project_blog/文件上传和下载.md",
-    "project_blog/笔记技巧.md",
-    "git/Git.md",
     "project_blog/项目中的时间处理.md",
-    "principle_of_computer_organization/王道计组/第六章_总线.md",
-    "principle_of_computer_organization/王道计组/第五章_中央处理器.md",
-    "principle_of_computer_organization/王道计组/第三章_存储系统.md",
-    "principle_of_computer_organization/王道计组/第一章_计算机硬件.md",
-    "principle_of_computer_organization/王道计组/王道计组总结.md",
-    "principle_of_computer_organization/王道计组/第四章_指令系统.md"
+    "project_blog/线程安全及不可变性.md",
+    "elang/one more.md",
+    "project_blog/secret.md",
+    "project_blog/笔记技巧.md",
+    "java/java面试内化.md",
+    "project_blog/file类及系统文件操作.md",
+    "project_blog/文件上传和下载.md",
+    "git/Git.md",
+    "principle_of_computer_organization/王道计组/第六章_总线.md"
   ]
 }
