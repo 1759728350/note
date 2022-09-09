@@ -4,12 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "e75ca04eb0146105",
+        "id": "9ecc4e4948763bf0",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "project_blog/笔记技巧.md",
+            "file": "project_blog/项目连接数据库.md",
             "mode": "source",
             "backlinks": true,
             "source": false
@@ -78,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "project_blog/笔记技巧.md",
+                "file": "project_blog/项目连接数据库.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +95,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "project_blog/笔记技巧.md",
+                "file": "project_blog/项目连接数据库.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +118,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "project_blog/笔记技巧.md"
+                "file": "project_blog/项目连接数据库.md"
               }
             }
           }
@@ -129,17 +129,17 @@
     "direction": "horizontal",
     "width": 257
   },
-  "active": "e75ca04eb0146105",
+  "active": "9ecc4e4948763bf0",
   "lastOpenFiles": [
+    "database/mysql8.0.26安装配置.md",
+    "java/spring/initializr.md",
+    "project_blog/项目连接数据库.md",
+    "java/spring/spring操作篇.md",
     "project_blog/项目中的时间处理.md",
+    "project_blog/笔记技巧.md",
     "project_blog/线程安全及不可变性.md",
     "elang/one more.md",
     "project_blog/secret.md",
-    "project_blog/笔记技巧.md",
-    "java/java面试内化.md",
-    "project_blog/file类及系统文件操作.md",
-    "project_blog/文件上传和下载.md",
-    "git/Git.md",
-    "principle_of_computer_organization/王道计组/第六章_总线.md"
+    "java/java面试内化.md"
   ]
 }
