@@ -211,9 +211,11 @@ example:<br><font color=#99CCFF size=3>The number is correct to three deci
 ##### assign
 example:<br><font color=#99CCFF size=3>can not assign a value to final variable</font><br>explain:<br><font color=#6699FF size=3> 不能给final变量赋值</font><br>
 
-
-
-discard
+##### discard
+example:<br><font color=#99CCFF size=3>discard unsaved changes when closing a tab</font><br>explain:<br><font color=#6699FF size=3>废弃未保存的改变当关闭选项卡 </font><br>
+##### binding
+example:<br><font color=#99CCFF size=3>A New Approach to Solve Crashes of Client and Server Based on Dynamic Binding</font><br>explain:<br><font color=#6699FF size=3>一种基于动态绑定的解决客户机和服务器崩溃的新方法 </font><br>
+example:<br><font color=#99CCFF size=3>BindingException</font><br>explain:<br><font color=#6699FF size=3> 绑定异常</font><br>
 
 unstage
 changes not staged for commit

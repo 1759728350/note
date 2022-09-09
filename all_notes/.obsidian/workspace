@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "project_blog/项目连接数据库.md",
+            "file": "database/mybatis/使用mybatis遇到的问题.md",
             "mode": "source",
             "backlinks": true,
             "source": false
@@ -78,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "project_blog/项目连接数据库.md",
+                "file": "database/mybatis/使用mybatis遇到的问题.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +95,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "project_blog/项目连接数据库.md",
+                "file": "database/mybatis/使用mybatis遇到的问题.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +118,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "project_blog/项目连接数据库.md"
+                "file": "database/mybatis/使用mybatis遇到的问题.md"
               }
             }
           }
@@ -131,15 +131,15 @@
   },
   "active": "9ecc4e4948763bf0",
   "lastOpenFiles": [
+    "project_blog/springboot项目打包.md",
+    "database/mybatis/使用mybatis遇到的问题.md",
+    "elang/one more.md",
+    "project_blog/项目连接数据库.md",
     "database/mysql8.0.26安装配置.md",
     "java/spring/initializr.md",
-    "project_blog/项目连接数据库.md",
     "java/spring/spring操作篇.md",
     "project_blog/项目中的时间处理.md",
     "project_blog/笔记技巧.md",
-    "project_blog/线程安全及不可变性.md",
-    "elang/one more.md",
-    "project_blog/secret.md",
-    "java/java面试内化.md"
+    "project_blog/线程安全及不可变性.md"
   ]
 }
