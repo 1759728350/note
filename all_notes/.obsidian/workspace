@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "OSandLinux/王道操作系统/第一章_操作系统概述.md",
-            "mode": "source",
+            "file": "OSandLinux/王道操作系统/第二章_进程与线程.md",
+            "mode": "preview",
             "backlinks": true,
             "source": false
           }
@@ -62,7 +62,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 318
+    "width": 239
   },
   "right": {
     "id": "c49a711e9dedb52a",
@@ -78,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "OSandLinux/王道操作系统/第一章_操作系统概述.md",
+                "file": "OSandLinux/王道操作系统/第二章_进程与线程.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +95,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "OSandLinux/王道操作系统/第一章_操作系统概述.md",
+                "file": "OSandLinux/王道操作系统/第二章_进程与线程.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +118,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "OSandLinux/王道操作系统/第一章_操作系统概述.md"
+                "file": "OSandLinux/王道操作系统/第二章_进程与线程.md"
               }
             }
           }
@@ -131,15 +131,15 @@
   },
   "active": "9ecc4e4948763bf0",
   "lastOpenFiles": [
-    "principle_of_computer_organization/王道计组/第六章_总线和io.md",
     "OSandLinux/王道操作系统/第一章_操作系统概述.md",
+    "OSandLinux/王道操作系统/第二章_进程与线程.md",
+    "project_blog/笔记技巧.md",
+    "principle_of_computer_organization/organization.md",
+    "principle_of_computer_organization/王道计组/第六章_总线和io.md",
     "principle_of_computer_organization/expansion/int.md",
     "principle_of_computer_organization/王道计组/王道计组总结.md",
     "OSandLinux/expansion/并行、并发、同步、异步的区别.md",
     "principle_of_computer_organization/王道计组/第四章_指令系统.md",
-    "未命名.md",
-    "project_blog/img/tap接口文档.md",
-    "elang/培训/语法.md",
-    "elang/express_yourself.md"
+    "未命名.md"
   ]
 }

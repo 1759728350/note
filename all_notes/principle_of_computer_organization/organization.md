@@ -113,8 +113,8 @@ cpu统一各寄存器,下至电路的同步
 
 逻辑如果没有前后顺序的限定,就没有意义
 
-<img src="organization.assets/image-20211211193455340.png" align=left>
 
+![](organization.assets/image-20211211193455340.png)
 
 
 
@@ -123,7 +123,7 @@ cpu统一各寄存器,下至电路的同步
 
 BIOS全名 Basic Input Output System即**“基本输出与输入系统”**，是计算机启动时加载的第一个软件。它是储存在主板上的不需要电源的记忆体(芯片)中的一小段代码,是一个程序。我们通常称之为主板“固件”，因为**它是软件和硬件之间的桥梁，没有它的话电脑就无法开机。**
 
-它为[工业计算机](https://www.zhihu.com/search?q=工业计算机&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra={"sourceType"%3A"article"%2C"sourceId"%3A122927289})提供最低级、最直接的硬件控制，计算机的原始操作都是依照固化在BIOS里的内容来完成的。准确地说,BIOS是**硬件与软件程序**之间的一个“[转换器](https://www.zhihu.com/search?q=转换器&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra={"sourceType"%3A"article"%2C"sourceId"%3A122927289})”或者说是**接口**，它负责开机时对系统的各项硬件进行初始化设置和测试，以确保系统能够正常工作。用户在使用计算机的过程中，如果硬件不正常则立即停止工作，并把出错的设备信息反馈给用户，
+它为[工业计算机](https://www.zhihu.com/search?q=工业计算机&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra={"sourceType"%3A"article"%2C"sourceId"%3A122927289})提供最低级、最直接的硬件控制，计算机的原始操作都是依照固化在BIOS里的内容来完成的。准确地说,BIOS是**硬件与软件程序**之间的一个“[转换器](https://www.zhihu.com/search?q=转换器&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra={"sourceType"%3A"article"%2C"sourceId"%3A122927289})”或者说是**接口**，它负责开机时对系统的各项硬件进行初始化设置和测试，以确保系统能够正常工作。用户在使用计算机的过程中，如果硬件不正常则立即停止工作，并把出错的设备信息反馈给用户
 
 
 
