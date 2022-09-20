@@ -62,7 +62,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 341
+    "width": 174
   },
   "right": {
     "id": "c49a711e9dedb52a",
@@ -132,14 +132,14 @@
   "active": "9ecc4e4948763bf0",
   "lastOpenFiles": [
     "OSandLinux/王道操作系统/第一章_操作系统概述.md",
-    "project_blog/未来总学习路线.md",
     "OSandLinux/王道操作系统/第二章_进程与线程.md",
     "project_blog/笔记技巧.md",
+    "project_blog/未来总学习路线.md",
+    "project_blog/面试技巧.md",
+    "elang/one more.md",
+    "elang/express_yourself.md",
     "clang/regression/c语言考点.md",
     "principle_of_computer_organization/王道计组/第二章_数据的表示和运算.md",
-    "principle_of_computer_organization/王道计组/第一章_计算机硬件.md",
-    "principle_of_computer_organization/王道计组/第六章_总线和io.md",
-    "principle_of_computer_organization/王道计组/第四章_指令系统.md",
-    "principle_of_computer_organization/王道计组/第三章_存储系统.md"
+    "principle_of_computer_organization/王道计组/第一章_计算机硬件.md"
   ]
 }
