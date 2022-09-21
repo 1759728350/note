@@ -216,6 +216,8 @@ example:<br><font color=#99CCFF size=3>discard unsaved changes when closing a ta
 ##### binding
 example:<br><font color=#99CCFF size=3>A New Approach to Solve Crashes of Client and Server Based on Dynamic Binding</font><br>explain:<br><font color=#6699FF size=3>一种基于动态绑定的解决客户机和服务器崩溃的新方法 </font><br>
 example:<br><font color=#99CCFF size=3>BindingException</font><br>explain:<br><font color=#6699FF size=3> 绑定异常</font><br>
+##### mutex lock
+example:<br><font color=#99CCFF size=3>The mutex object must be declared; once declared, it must be initialized.</font><br>explain:<br><font color=#6699FF size=3> 互斥量对象必须先被声明；声明后还必须初始化。</font><br><font color=#6699FF size=3> mutex又称为互斥量</font>
 
 unstage
 changes not staged for commit
