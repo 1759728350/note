@@ -2,6 +2,7 @@
 
 英语有严谨的句子结构不要以中文那种天然没有语法的方式去翻译句子
 
+### part 1
 
 ##### synthesize
 
@@ -89,7 +90,11 @@ strange:<br>负责将模板字符串编译为js渲染函数的代码
 example:<br><font color=#99CCFF size=3>code that is responsible for creating Vue instances, rendering and patching virtual DOM,  Basically everything minus the compiler.</font>explain:<br><font color=#6699FF size=3>repair something </font>try:<br>we do not have enough money ,get through it and believe me,baby,now we can only to patch clothes ,oh put up with it,my baby
 strange:<br>负责创建vue实例,渲染和修补虚拟dom(document object module)的代码,基本每个都可以减去编译器
 minus减去
+<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=2)" width="80%" color=#987cb9 SIZE=10>
 
+
+
+### part 2
 ##### universal
 
 example:<br><font color=#99CCFF size=3>Universal Module Definition</font>
@@ -100,7 +105,7 @@ strange:<br>standard:标准,规范 UMD:通用模块定义规范（Universal Modu
 
 
 
-<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=2)" width="80%" color=#987cb9 SIZE=10>
+
 ##### register
 example:<br><font color=#99CCFF size=3>A logical address consists of a segment register specifier and offset</font>
 explain:<br><font color=#6699FF size=3> the component of cpu</font>
@@ -152,6 +157,10 @@ example:<br><font color=#99CCFF size=3>show all automatic debug configurations</
 ##### in case of 
 example:<br><font color=#99CCFF size=3>@Lazy only has an actual effect in case of the default singleton scope</font><br>explain:<br><font color=#6699FF size=3>@Lazy仅在默认单例作用域的情况下才有实际效果 </font><br><br>
 
+<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=2)" width="80%" color=#987cb9 SIZE=10>
+
+
+### part3
 ##### selective&inclusion
 example:<br><font color=#99CCFF size=3>@Profile allows for selective inclusion of certain beans.</font><br>explain:<br><font color=#6699FF size=3>允许选择性地包含特定的bean </font><br>
 
@@ -170,6 +179,11 @@ example:<br><font color=#99CCFF size=3>@Bean methods may also declare qualifier 
 ##### resolution&integration&integrate
 example:<br><font color=#99CCFF size=3>The testing of each functions proved that the system plays an important role in resources integration 
 and scheduling code resolution service rationally and effectively.</font><br>explain:<br><font color=#6699FF size=3> 通过对系统各功能点的测试，证明了系统对整合资源、合理有效地调度编码解析服务有重要作用。</font><br>
+<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=2)" width="80%" color=#987cb9 SIZE=10>
+
+
+
+### part 4
 ##### sub
 example:<br><font color=#99CCFF size=3>All Known Subinterfaces</font><br>explain:<br><font color=#6699FF size=3>所有已知的子接口 </font><br>
 
@@ -195,6 +209,11 @@ example:<br><font color=#99CCFF size=3>fetch me the bag from my drawer please</f
 ##### placeholder&drag&content
 example:<br><font color=#99CCFF size=3>drag the summary link web part onto the content placeholder</font><br>explain:<br><font color=#6699FF size=3> 将摘要链接web部件拖拽到内容占位符上</font><br>
 example2:<br><font color=#99CCFF size=3>create an instance of control you want to add to the placeholder control</font><br>explain:<br><font color=#6699FF size=3>创建一个你想要添加到占位符控件中的控件实例 </font><br>
+<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=2)" width="80%" color=#987cb9 SIZE=10>
+
+
+
+### part 5
 
 ##### patch
 example:<br><font color=#99CCFF size=3>Adobe released a patch for its own product last Wednesday, less than a week after being warned about it</font><br>explain:<br><font color=#6699FF size=3> Adobe在上周三发布了对其自身产品漏洞的补丁，距该公司接到谷歌警告还不到一周时间。
@@ -219,10 +238,14 @@ example:<br><font color=#99CCFF size=3>BindingException</font><br>explain:<br><f
 ##### mutex lock
 example:<br><font color=#99CCFF size=3>The mutex object must be declared; once declared, it must be initialized.</font><br>explain:<br><font color=#6699FF size=3> 互斥量对象必须先被声明；声明后还必须初始化。</font><br><font color=#6699FF size=3> mutex又称为互斥量</font>
 
-unstage
-changes not staged for commit
+##### query
+example:<br><font color=#99CCFF size=3>It provides the most functionally support of the SQL91: support multi-table query and index, transaction, view and trigger.</font><br>explain:<br><font color=#6699FF size=3> 它提供了对SQL92的大多数功能的支持：支持多表查询和索引、事务、视图、触发器</font><br>
+example:<br><font color=#99CCFF size=3>Using Aggregate Function to Realize Query of Tables in SQL</font><br>explain:<br><font color=#6699FF size=3> 巧用聚合函数在SQL中实现多表查询</font><br>
+##### changes not staged for commit
+<br>explain:<br><font color=#6699FF size=3>为了提交的改变的地方还没有被暂存 </font><br>
 
-linear address
+
+
 
 
 
