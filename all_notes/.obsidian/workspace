@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "OSandLinux/王道操作系统/第三章_进程互斥与锁.md",
+            "file": "OSandLinux/OS基础_小林coding/内存管理.md",
             "mode": "source",
             "backlinks": true,
             "source": false
@@ -62,7 +62,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 223
+    "width": 257
   },
   "right": {
     "id": "c49a711e9dedb52a",
@@ -78,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "OSandLinux/王道操作系统/第三章_进程互斥与锁.md",
+                "file": "OSandLinux/OS基础_小林coding/内存管理.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +95,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "OSandLinux/王道操作系统/第三章_进程互斥与锁.md",
+                "file": "OSandLinux/OS基础_小林coding/内存管理.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +118,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "OSandLinux/王道操作系统/第三章_进程互斥与锁.md"
+                "file": "OSandLinux/OS基础_小林coding/内存管理.md"
               }
             }
           }
@@ -131,15 +131,15 @@
   },
   "active": "9ecc4e4948763bf0",
   "lastOpenFiles": [
-    "OSandLinux/面试题.md",
-    "OSandLinux/王道操作系统/第三章_进程互斥与锁.md",
-    "OSandLinux/王道操作系统/第一章_操作系统概述.md",
     "OSandLinux/王道操作系统/第二章_进程与线程.md",
+    "OSandLinux/王道操作系统/第三章_进程互斥与同步.md",
+    "java/spring/spring操作篇.md",
+    "OSandLinux/面试题.md",
+    "OSandLinux/王道操作系统/第一章_操作系统概述.md",
     "elang/one more II.md",
     "principle_of_computer_organization/王道计组/第六章_总线和io.md",
     "git/Git.md",
     "OSandLinux/linux基础.png",
-    "OSandLinux/OS基础_小林coding/内存管理.md",
-    "OSandLinux/OS基础_小林coding/进程.md"
+    "OSandLinux/OS基础_小林coding/内存管理.md"
   ]
 }
