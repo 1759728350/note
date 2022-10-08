@@ -4,12 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "9ecc4e4948763bf0",
+        "id": "5ffee64662603155",
         "type": "leaf",
         "state": {
-          "type": "pdf",
+          "type": "markdown",
           "state": {
-            "file": "skills/math/对数的理解.pdf"
+            "file": "clang/regression/c语言考点.md",
+            "mode": "source",
+            "backlinks": true,
+            "source": false
           }
         }
       }
@@ -75,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "skills/math/对数的理解.pdf",
+                "file": "clang/regression/c语言考点.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -92,7 +95,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "skills/math/对数的理解.pdf",
+                "file": "clang/regression/c语言考点.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -115,7 +118,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "skills/math/对数的理解.pdf"
+                "file": "clang/regression/c语言考点.md"
               }
             }
           }
@@ -126,17 +129,17 @@
     "direction": "horizontal",
     "width": 257
   },
-  "active": "9ecc4e4948763bf0",
+  "active": "5ffee64662603155",
   "lastOpenFiles": [
+    "clang/double和float区别.md",
+    "clang/regression/c语言考点.md",
+    "clang/regression/C语言第三节课.md",
+    "clang/c程序的编译过程.md",
+    "clang/C语言-动态内存.md",
+    "skills/math/对数的理解.pdf",
     "skills/math/第一课_初等数学复习_函数运算.pdf",
     "OSandLinux/OS基础_小林coding/内存管理.md",
     "OSandLinux/王道操作系统/第五章_内存管理.md",
-    "OSandLinux/王道操作系统/第三章_进程互斥与同步.md",
-    "OSandLinux/王道操作系统/第七章_输入输出管理.md",
-    "OSandLinux/王道操作系统/第六章_文件管理.md",
-    "OSandLinux/王道操作系统/第二章_进程与线程.md",
-    "OSandLinux/王道操作系统/第四章_锁.md",
-    "OSandLinux/王道操作系统/第一章_操作系统概述.md",
-    "OSandLinux/expansion/并行、并发、同步、异步的区别.md"
+    "OSandLinux/王道操作系统/第三章_进程互斥与同步.md"
   ]
 }

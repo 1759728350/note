@@ -8,10 +8,48 @@ float小数点后六位精度
 double小数点后15位精度
 占4个字节
 
-十进制表示%d
-十进制小数%f
-八进制%o
-十六进制%x
+printf("占位控制格式",变量)
+
+十进制int表示%d
+十进制小数float%f
+无符号八进制int%o
+无符号十六进制int%x
+字符串string%s
+字符char%c
+十进制小数double%lf
+
+##### 分割符
+一次输入两个
+![](img/Pasted%20image%2020221008172927.png)
+就要用到分割符
+
+##### 隐式分割标记
+指空格，回车 Tab键。
+在控制格式中如果，两个格式说明符之间没有符号，则系统用默认的分割符
+比如a空格b
+注意:这种分割标记是在数值类型时才会有
+
+
+##### 求三个浮点数平均值
+```c
+void main(){
+	double a,b,c,d;
+	//输入时必须用双精度
+	scanf("%lf%lf&lf",&a,&b,&c);
+	//如果算整数,可以把3改成3.0,也可以用double转型
+	d = (a+b+c)/3;
+	//输出可以用f和lf
+	printf("%lf",d)
+}
+
+```
+##### double和float区别
+[区别](../double和float区别###double和float区别)
+
+<font color=#99CCFF style=" font-weight:bold;">scanf和printf</font>
+
+
+
 
 ![](img/Pasted%20image%2020220917194037.png)
 
@@ -23,3 +61,12 @@ double小数点后15位精度
 ![](img/Pasted%20image%2020220917195628.png)
 
 ![](img/Pasted%20image%2020220917195956.png)
+
+
+
+
+##### 输入
+printf()
+单个字符的输入输出
+getchar()
+putchar()
