@@ -48,6 +48,33 @@ void main(){
 
 <font color=#99CCFF style=" font-weight:bold;">scanf和printf</font>
 
+##### 运算符
+* 取余数
+取余必须是整数
+a%b=0    ==>  a是b的倍数 
+* 整数相除
+是整数
+* 库函数
+pow(a,b)求乘方
+sqrt(a)开平方
+abs(a)求绝对值
+fabs(a)求浮点数绝对值
+
+##### a++和++a
+a++先作为表达式结算然后再自身加一
+![](img/Pasted%20image%2020221008185749.png)
+
+对计算顺序的影响
+![](img/Pasted%20image%2020221008190143.png)
+
+
+
+
+
+
+
+
+
 
 
 

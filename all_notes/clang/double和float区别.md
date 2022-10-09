@@ -27,3 +27,7 @@ float用%f也会报错
 printf输出时
 比如输出double时用%lf和%f没啥区别
 但最好要用对应的输出
+
+##### 默认double
+一个小数默认是double
+要表示float需要在数后面加f
