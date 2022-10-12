@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "skills/math/jg_极限.md",
-            "mode": "source",
+            "file": "OSandLinux/jyy_nju_os/操作系统.md",
+            "mode": "preview",
             "backlinks": true,
             "source": false
           }
@@ -78,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "skills/math/jg_极限.md",
+                "file": "OSandLinux/jyy_nju_os/操作系统.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +95,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "skills/math/jg_极限.md",
+                "file": "OSandLinux/jyy_nju_os/操作系统.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +118,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "skills/math/jg_极限.md"
+                "file": "OSandLinux/jyy_nju_os/操作系统.md"
               }
             }
           }
@@ -131,8 +131,8 @@
   },
   "active": "9ecc4e4948763bf0",
   "lastOpenFiles": [
-    "skills/math/数学总结.md",
     "skills/math/jg_极限.md",
+    "skills/math/数学总结.md",
     "skills/math/第三课_重要极限.pdf",
     "第三课_重要极限.md",
     "skills/math/第二课_函数复习与极限.md",
