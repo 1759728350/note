@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "skills/math/第二课_函数复习与极限.md",
-            "mode": "preview",
+            "file": "skills/math/jg_极限.md",
+            "mode": "source",
             "backlinks": true,
             "source": false
           }
@@ -78,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "skills/math/第二课_函数复习与极限.md",
+                "file": "skills/math/jg_极限.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +95,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "skills/math/第二课_函数复习与极限.md",
+                "file": "skills/math/jg_极限.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +118,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "skills/math/第二课_函数复习与极限.md"
+                "file": "skills/math/jg_极限.md"
               }
             }
           }
@@ -131,15 +131,15 @@
   },
   "active": "9ecc4e4948763bf0",
   "lastOpenFiles": [
-    "OSandLinux/王道操作系统/第二章_进程与线程.md",
-    "python/note/自动化脚本.md",
+    "skills/math/数学总结.md",
+    "skills/math/jg_极限.md",
     "skills/math/第三课_重要极限.pdf",
+    "第三课_重要极限.md",
+    "skills/math/第二课_函数复习与极限.md",
     "skills/math/第一课_初等数学复习_函数运算.pdf",
     "skills/math/对数的理解.pdf",
-    "OSandLinux/OS基础_小林coding/进程.md",
-    "clang/c程序的编译过程.md",
-    "clang/regression/c语言考点.md",
-    "clang/regression/C语言第三节课.md",
-    "git/Git.md"
+    "OSandLinux/王道操作系统/第二章_进程与线程.md",
+    "python/note/自动化脚本.md",
+    "OSandLinux/OS基础_小林coding/进程.md"
   ]
 }
