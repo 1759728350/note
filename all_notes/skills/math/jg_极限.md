@@ -174,7 +174,7 @@ a(x)<=b(x)<=c(x)
 
 
 ### 函数连续
-就是在<font color=#66CC99 style=" font-weight:bold;">该点极限存在的基础上</font>,左右极限还得和该点函数值相同
+就是在<font color=#66CC99 style=" font-weight:bold;">该点左右极限存在的基础上</font>,左右极限还得和该点函数值相同
 当左右极限与该点<font color=#66CC99 style=" font-weight:bold;">函数值相同</font>
 就说明该函数<font color=#66CC99 style=" font-weight:bold;">在该点</font>连续
 
@@ -201,3 +201,59 @@ a(x)<=b(x)<=c(x)
 
 例二
 ![](img/Pasted%20image%2020221013115613.png)
+
+
+### 无穷小量
+无穷大量:极限时无穷大
+无穷小量:极限是0
+0是无穷小量
+
+一些概念上的题
+<font color=#F09B59 style=" font-weight:bold;">坑比较多</font>
+f(x)是无穷小量,但1/f(x)不是无穷大量,为什么呢?
+因为无穷大量的分母不为0
+<font color=#66CC99 style=" font-weight:bold;">0是无穷小量,但无穷小量不是0</font>,也不是任何具体的数
+<font color=#66CC99 style=" font-weight:bold;">无穷小量是一个趋势,不是一个数</font>
+1/无穷小量=无穷大量是说的是一个趋势,而不是说具体的数
+
+有限个无穷小之和还是无穷小
+
+例题
+找出无穷小量
+思路,算极限,谁的极限等于0
+![](img/Pasted%20image%2020221014152348.png)
+
+
+##### 无穷小量的阶数比较
+阶数越大,越靠近0
+比如x=0.1
+x^3=0.001   x^2=0.01
+
+当阶数相同,就是等价,比如说当趋近于0时sinx和x,tanx和x等价
+当阶数不同就要比较谁的阶数更高
+![](img/Pasted%20image%2020221014153839.png)
+
+
+例
+算等价
+何为等价?
+就是极限能化简到<font color=#66CC99 style=" font-weight:bold;">可以相互替代</font>的地步
+
+思路:把极限算通过等价替换来简化
+简化出来的式子不仅要同阶,前面的参数也要算出来
+![](img/Pasted%20image%2020221014155125.png)
+
+例
+阶数比较
+等价替换后算出阶数
+![](img/Pasted%20image%2020221014160455.png)
+
+<font color=#FF6666* style=" font-weight:bold;">易错点</font>
+阶数的运算
+不同的<font color=#66CC99 style=" font-weight:bold;">阶数运算抓小头</font>
+比如x^3+x^2其阶数就是2
+![](img/Pasted%20image%2020221014160651.png)
+
+在比如课本上的一道错题
+x^2-sinx是x的?
+我选了高阶,但实际上是同阶但不等价
