@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "OSandLinux/jyy_nju_os/操作系统.md",
-            "mode": "preview",
+            "file": "skills/math/jg_极限.md",
+            "mode": "source",
             "backlinks": true,
             "source": false
           }
@@ -78,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "OSandLinux/jyy_nju_os/操作系统.md",
+                "file": "skills/math/jg_极限.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +95,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "OSandLinux/jyy_nju_os/操作系统.md",
+                "file": "skills/math/jg_极限.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +118,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "OSandLinux/jyy_nju_os/操作系统.md"
+                "file": "skills/math/jg_极限.md"
               }
             }
           }
@@ -131,6 +131,7 @@
   },
   "active": "9ecc4e4948763bf0",
   "lastOpenFiles": [
+    "OSandLinux/jyy_nju_os/操作系统.md",
     "skills/math/jg_极限.md",
     "skills/math/数学总结.md",
     "skills/math/第三课_重要极限.pdf",
@@ -139,7 +140,6 @@
     "skills/math/第一课_初等数学复习_函数运算.pdf",
     "skills/math/对数的理解.pdf",
     "OSandLinux/王道操作系统/第二章_进程与线程.md",
-    "python/note/自动化脚本.md",
-    "OSandLinux/OS基础_小林coding/进程.md"
+    "python/note/自动化脚本.md"
   ]
 }
