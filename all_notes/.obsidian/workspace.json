@@ -1,0 +1,169 @@
+{
+  "main": {
+    "id": "89a65efdc9a39e5f",
+    "type": "split",
+    "children": [
+      {
+        "id": "d1f0658104057858",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c30ac3ee45311f88",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "skills/math/jg_第二章_导数.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "aab7c229be5acb6d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "skills/math/jg_第二章_导数.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d35a32116681ced5",
+    "type": "split",
+    "children": [
+      {
+        "id": "a2d9a9083abb3538",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8104255345443cf3",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "9f882188ee61cd5c",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": true,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "109effa4cb58257c",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "c49a711e9dedb52a",
+    "type": "split",
+    "children": [
+      {
+        "id": "5ed4d20cf6c8fee1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "df80704234b97d77",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "skills/math/jg_第二章_导数.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "20bb0d2cf38bb090",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "skills/math/jg_第二章_导数.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "41e0eb841e78aa77",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "652e51990a8a5aab",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "skills/math/jg_第二章_导数.md"
+              }
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 293.5
+  },
+  "ribbon": {
+    "mostRecentAction": ""
+  },
+  "active": "c30ac3ee45311f88",
+  "lastOpenFiles": [
+    "skills/math/数学总结.md",
+    "skills/math/第一课_初等数学复习_函数运算.pdf",
+    "skills/math/jg_第一章_极限.md",
+    "skills/math/jg_第二章_导数.md",
+    "OSandLinux/jyy_nju_os/操作系统.md",
+    "skills/math/第三课_重要极限.pdf",
+    "第三课_重要极限.md",
+    "skills/math/第二课_函数复习与极限.md",
+    "skills/math/对数的理解.pdf",
+    "OSandLinux/王道操作系统/第二章_进程与线程.md"
+  ]
+}
