@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "skills/math/jg_极限.md",
-            "mode": "source",
+            "file": "database/mybatis/使用mybatis遇到的问题.md",
+            "mode": "preview",
             "backlinks": true,
             "source": false
           }
@@ -78,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "skills/math/jg_极限.md",
+                "file": "database/mybatis/使用mybatis遇到的问题.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +95,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "skills/math/jg_极限.md",
+                "file": "database/mybatis/使用mybatis遇到的问题.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +118,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "skills/math/jg_极限.md"
+                "file": "database/mybatis/使用mybatis遇到的问题.md"
               }
             }
           }
@@ -131,15 +131,15 @@
   },
   "active": "9ecc4e4948763bf0",
   "lastOpenFiles": [
-    "OSandLinux/jyy_nju_os/操作系统.md",
-    "skills/math/jg_极限.md",
-    "skills/math/数学总结.md",
-    "skills/math/第三课_重要极限.pdf",
-    "第三课_重要极限.md",
-    "skills/math/第二课_函数复习与极限.md",
-    "skills/math/第一课_初等数学复习_函数运算.pdf",
-    "skills/math/对数的理解.pdf",
-    "OSandLinux/王道操作系统/第二章_进程与线程.md",
-    "python/note/自动化脚本.md"
+    "database/mybatis/mybatis使用要点.md",
+    "database/mybatis/mybatis注解.md",
+    "database/mybatis/使用mybatis遇到的问题.md",
+    "project_blog/框架总结.md",
+    "database/mybatis/mybatis-1-基本搭建/mybatis注解.md",
+    "database/mybatis/mybatis-1-基本搭建/img/Pasted image 20221019222432.png",
+    "database/mybatis/mybatis的parameterType传参.md",
+    "project_blog/springboot接收参数问题.md",
+    "project_blog/项目中的时间处理.md",
+    "OSandLinux/jyy_nju_os/操作系统.md"
   ]
 }
