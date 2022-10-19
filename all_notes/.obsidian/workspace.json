@@ -8,12 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "c30ac3ee45311f88",
+            "id": "b87d71eafddb3b93",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "skills/math/jg_第二章_导数.md",
+                "file": "skills/math/jg_第三章_积分.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -21,7 +21,7 @@
             }
           },
           {
-            "id": "aab7c229be5acb6d",
+            "id": "6c20f9abec69f13d",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -33,7 +33,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -153,17 +154,17 @@
   "ribbon": {
     "mostRecentAction": ""
   },
-  "active": "c30ac3ee45311f88",
+  "active": "6c20f9abec69f13d",
   "lastOpenFiles": [
+    "skills/math/jg_第一章_极限.md",
+    "skills/math/jg_第三章_积分.md",
+    "skills/math/jg_第二章_导数.md",
     "skills/math/数学总结.md",
     "skills/math/第一课_初等数学复习_函数运算.pdf",
-    "skills/math/jg_第一章_极限.md",
-    "skills/math/jg_第二章_导数.md",
     "OSandLinux/jyy_nju_os/操作系统.md",
     "skills/math/第三课_重要极限.pdf",
     "第三课_重要极限.md",
     "skills/math/第二课_函数复习与极限.md",
-    "skills/math/对数的理解.pdf",
-    "OSandLinux/王道操作系统/第二章_进程与线程.md"
+    "skills/math/对数的理解.pdf"
   ]
 }

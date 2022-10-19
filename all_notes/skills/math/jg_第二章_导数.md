@@ -76,12 +76,12 @@
 
 
 ### 导数公式
-logax = 1/xlna
-a^x = a^xlna
-
-
-
-
+logax导数 = $1 \over xlna$
+a^x导数 = $a^{x} lna$
+arctanx导数 = $1 \over 1+x^{2}$
+arcsinx导数 = $1 \over  \sqrt{1-x^{2}}$ 
+arccos导数 = -$1  \over    \sqrt {1-x^{2}}$
+tanx导数 = $sec^{2}x$
 ##### 幂指函数求导
 看到指数想到取对数化简
 ![](img/Pasted%20image%2020221016193531.png)
@@ -129,3 +129,15 @@ p,q两点的割线就是在q点的切线
 因此<font color=#66CC99 style=" font-weight:bold;">最大值不一定是极大值,极大值也不一定是最大值</font>
 * 最值:一个区间内最大,最小的数
 ![](img/Pasted%20image%2020221017013432.png)
+
+
+
+##### 凹凸性
+![](img/Pasted%20image%2020221019131616.png)
+
+##### 拐点是什么?
+![](img/Pasted%20image%2020221019131648.png)
+
+例题
+![](img/Pasted%20image%2020221019131748.png)
+![](img/Pasted%20image%2020221019131804.png)
