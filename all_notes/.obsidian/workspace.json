@@ -45,9 +45,30 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "673b44025cf01e4f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "java/java基础/static关键字.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "a6cb7af43e850b81",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {}
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -113,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "project_blog/未来总学习路线_2.0.md",
+                "file": "java/java基础/static关键字.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -130,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "project_blog/未来总学习路线_2.0.md",
+                "file": "java/java基础/static关键字.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -153,12 +174,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "project_blog/未来总学习路线_2.0.md"
+                "file": "java/java基础/static关键字.md"
               }
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -167,17 +188,17 @@
   "ribbon": {
     "mostRecentAction": ""
   },
-  "active": "9b04a3ee88fc8705",
+  "active": "673b44025cf01e4f",
   "lastOpenFiles": [
+    "java/设计模式/单例模式.md",
+    "java/java基础/static关键字.md",
+    "project_blog/未来总学习路线_2.0.md",
     "project_blog/未来总学习路线_1.0.md",
     "java/java面试内化.md",
     "java/java基础/java是什么类型的语言.md",
     "java/未命名.md",
     "java/java基础/java内存模型.md",
     "OSandLinux/王道操作系统/第四章_锁.md",
-    "OSandLinux/王道操作系统/第二章_进程与线程.md",
-    "project_blog/文件上传和下载.md",
-    "project_blog/面试技巧.md",
-    "project_blog/笔记技巧.md"
+    "OSandLinux/王道操作系统/第二章_进程与线程.md"
   ]
 }
