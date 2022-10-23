@@ -82,6 +82,7 @@ arctanx导数 = $1 \over 1+x^{2}$
 arcsinx导数 = $1 \over  \sqrt{1-x^{2}}$ 
 arccos导数 = -$1  \over    \sqrt {1-x^{2}}$
 tanx导数 = $sec^{2}x$
+arccotx导数= -$1 \over 1+x^{2}$
 ##### 幂指函数求导
 看到指数想到取对数化简
 ![](img/Pasted%20image%2020221016193531.png)

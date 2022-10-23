@@ -11,8 +11,26 @@
             "id": "c7ee2b25d4d93bf6",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "skills/math/jg_第三章_积分.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "6bedd0e86a11245b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "skills/math/jg_第二章_导数.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "skills/math/jg_第三章_积分.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +116,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "skills/math/jg_第三章_积分.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,11 +138,13 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "skills/math/jg_第三章_积分.md"
+              }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -133,15 +155,15 @@
   },
   "active": "c7ee2b25d4d93bf6",
   "lastOpenFiles": [
+    "skills/math/数学总结.md",
+    "skills/math/jg_第三章_积分.md",
+    "skills/math/jg_第二章_导数.md",
     "project_blog/secret.md",
     "project_blog/未来总学习路线_1.0.md",
     "project_blog/未来总学习路线_2.0.md",
     "java/java面试内化.md",
-    "skills/math/jg_第三章_积分.md",
     "java/java基础/static关键字.md",
     "java/java基础/final关键字.md",
-    "java/设计模式/单例模式.md",
-    "java/java基础/java是什么类型的语言.md",
-    "java/未命名.md"
+    "java/设计模式/单例模式.md"
   ]
 }
