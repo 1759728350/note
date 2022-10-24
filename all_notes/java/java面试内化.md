@@ -46,7 +46,7 @@ JDK（Java Development Kit）是整个 Java 的核心，是 java 开发工具包
 静态方法也属于类本身，但是此时没有类的实例，内存中没有非静态变量，所以无法调用。
 
 
-##### 1.4 重载和重写的区别（必会）
+##### 1.4重载和重写的区别（必会）
 重载： 发生在同一个类中，方法名必须相同，参数类型不同.个数不同.顺序不同,方法返回
 值和访问修饰符可以不同，发生在编译时。
 
@@ -55,7 +55,7 @@ JDK（Java Development Kit）是整个 Java 的核心，是 java 开发工具包
 如果父类方法访问修饰符为 <font color=#66CC99 style=" font-weight:bold;">private 则子类就不能重写该方法</font>。
 
 
-##### 1.4.2 final 在 java 中有什么作用？
+##### 1.4.2final 在 java 中有什么作用？
 
 -   final 修饰的类叫最终类，该类不能被<font color=#66CC99 style=" font-weight:bold;">继承</font>。
     
@@ -108,7 +108,7 @@ public boolean equals(Object anObject) {
 
 
 
-##### 1.5.2. 两个对象的 hashCode()相同，则 equals()也一定为 true，对吗？
+##### 1.5.2两个对象的 hashCode()相同，则 equals()也一定为 true，对吗？
 不对，两个对象的 hashCode()相同，equals()不一定 true。
 ```java
 String s1 = "通话";  
@@ -142,7 +142,7 @@ hashCode()存在的意义是什么？我们通过前面可以了解到hashCode()
 当我们用到hashCode()可以看到我们将name计算为3373707，age计算为98511，这样的话我们存值的时候就根据计算后的数值进行对应位置的存储，同样当我们get取值的时候再次将key计算为hashCode()值，因为同一个字符串hashCode()值相等，这个时候我们就可以<font color=#66CC99 style=" font-weight:bold;">直接根据hashCode()值将对应位置的数据取出，就不需要对key一个一个进行对比了，这样大大提高了效率</font>，这就是为什么有hashCode()存在的原因了。
 
 
-##### 1.6 String、StringBuffer、StringBuilder 三者之间的区别（必会）
+##### 1.6String、StringBuffer、StringBuilder 三者之间的区别（必会）
 
 String 字符串常量
 
@@ -168,9 +168,13 @@ StringBuilder 并没有对方法进行加同步锁，所以是非线程安全的
 
 （3）单线程操作字符串缓冲区下操作大量数据用 StringBuilder。
 
-##### 1.6.2 String str="i"与 String str=new String("i")一样吗？
+##### 1.6.2String str="i"与 String str=new String("i")一样吗？
 
-不一样，因为内存的分配方式不一样。String str="i"的方式，java 虚拟机会将其分配到<font color=#66CC99 style=" font-weight:bold;">常量池</font>中；而 String str=new String("i") 则会被分到<font color=#66CC99 style=" font-weight:bold;">堆内存</font>中。
+不一样，因为内存的分配方式不一样。String str="i"的方式，java 虚拟机会将其分配到<font color=#66CC99 style=" font-weight:bold;">常量池</font>中；
+而 String str=new String("i") 则会被分到<font color=#66CC99 style=" font-weight:bold;">堆内存</font>中。
+就是因为String不可变
+所以可以用常量池来存
+因为多个引用指向的String不可变,每个引用都修改不了String的值
 
 
 ##### 1.7 接口和抽象类的区别是什么？（必会）
@@ -186,7 +190,7 @@ main 方法：抽象类可以有 main 方法，并且我们能运行它；接口
 访问修饰符：<font color=#66CC99 style=" font-weight:bold;">接口中的方法默认使用 public 修饰</font>；抽象类中的方法可以是任意访
 问修饰符
 
-##### 1.7.2 普通类和抽象类有哪些区别?
+##### 1.7.2普通类和抽象类有哪些区别?
 
 -   普通类不能包含<font color=#66CC99 style=" font-weight:bold;">抽象方法</font>，抽象类可以包含抽象方法。
     
@@ -197,7 +201,7 @@ main 方法：抽象类可以有 main 方法，并且我们能运行它；接口
   
 不能，定义抽象类就是让其他类继承的，如果定义为 final 该类就不能被继承，这样彼此就会产生矛盾，所以 final 不能修饰抽象类
 
-##### 1.8 string 常用的方法有哪些？（了解）
+##### 1.8string常用的方法有哪些？（了解）
 
 indexOf()：返回指定字符的索引。
 
@@ -223,7 +227,7 @@ equals()：字符串比较。
 
 
 
-##### 1.12 Java 的异常（必会）
+##### 1.12Java 的异常（必会）
 ![](img/Pasted%20image%2020220803011040.png)
 
 Throwable 是所有 Java 程序中错误处理的父类，有两种子类：Error 和Exception。
@@ -266,7 +270,7 @@ SecurityException - 安全异常
 
 UnsupportedOperationException - 不支持的操作异常
 
-##### 1.12.2 java中的异常处理关键字是什么？
+##### 1.12.2java中的异常处理关键字是什么？
 throw：有时我们明确要创建异常对象然后抛出它来停止程序的正常处理。throw关键字用于向运行时抛出异常来处理它。
 
 throws：当我们在方法中抛出任何已检查的异常而不处理它时，我们需要在<font color=#66CC99 style=" font-weight:bold;">方法签名</font>中使用 throws关键字让调用者程序知道该方法可能抛出的异常。调用方法可以处理这些异常或使用throws关键字将其传播给它的调用方法。我们可以在throws子句中提供多个异常，也可以与main（）方法一起使用。
@@ -275,14 +279,14 @@ try-catch：我们在代码中使用try-catch块进行异常处理。try是块�
 
 finally： finally块是可选的，只能用于try-catch块。由于<font color=#66CC99 style=" font-weight:bold;">异常会暂停执行过程</font>，因此我们可能会打开一些不会关闭的资源，因此我们可以使用finally块。<font color=#66CC99 style=" font-weight:bold;">finally块总是被执行,以防程序异常停摆</font>，无论是否发生异常。
 
-##### 1.12.3 final, finally, finalize的区别？
+##### 1.12.3final, finally, finalize的区别？
 final用于声明属性，方法和类，分别表示属性不可交变，方法不可覆盖，类不可继承。    
 
 finally是异常处理语句结构的一部分，表示<font color=#66CC99 style=" font-weight:bold;">总是执行</font>。
 
 finalize是Object类的一个方法，在<font color=#66CC99 style=" font-weight:bold;">垃圾收集器执行的时候会调用被回收对象</font>的此方法，供垃圾收集时的其他资源回收，例如关闭文件等（在垃圾回收的时候会调用被回收对象的此方法）
 
-##### 1.12.4 try catch finally，try里有return，finally还执行么？
+##### 1.12.4try catch finally，try里有return，finally还执行么？
     执行，并且finally的执行早于try里面的return结论：
 
 1、不管有没有出现异常，finally块中代码都会执行；
@@ -293,7 +297,7 @@ finalize是Object类的一个方法，在<font color=#66CC99 style=" font-weight
 
 4、finally中最好不要包含return，否则程序会提前退出
 
-##### 1.12.5 什么情况finally不会执行
+##### 1.12.5什么情况finally不会执行
 一共有三种
 
     1、不进入try块
@@ -305,7 +309,7 @@ finalize是Object类的一个方法，在<font color=#66CC99 style=" font-weight
     3、线程中止
     java线程分为两类，守护线程和非守护线程。当所有的非守护线程中止时，不论存不存在守护线程，虚拟机都会kill掉守护线程从而中止程序。 虚拟机中，执行main方法的线程就是一个非守护线程，垃圾回收则是另一个守护线程，main执行完，程序就中止了，而不管垃圾回收线程是否中止。 所以，如果守护线程中存在finally代码块，那么当所有的非守护线程中止时，守护线程被kill掉，其finally代码块是不会执行的。
 
-##### 1.12.6 thorw与thorws区别
+##### 1.12.6thorw与thorws区别
 位置不同
 
     throws 用在函数上，后面跟的是异常类，可以跟多个；而 throw 用在函数内，后面跟的是异常对象。

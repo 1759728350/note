@@ -50,9 +50,37 @@ c是一种编译型语言
 
 
 ##### 静态链接与动态链接
+<font color=#F09B59 style=" font-weight:bold;">就是将.c文件编译,汇编生成的.o文件链接成不同的库,然后将库打包成可执行文件</font>
+
+
+<font color=#FFCCCC style=" font-weight:bold;">文件格式?</font>
 静态库文件和动态库文件。windows静态库文件就是.lib文件，动态库文件就是.dll文件。
 linux下,前者为.a 后者为.so
-太深了暂时不探讨
+
+<font color=#FFCCCC style=" font-weight:bold;">何为动态链接?
+</font>
+本身是加载库的过程
+就是链接其他依赖库的行为推迟到程序运行时,在可执行文件运行时才加载需要的库
+执行exe文件时,需要去找所依赖的动态链接库库的dll(windows系统)或是so(linux系统)
+然后将.c文件和所依赖的动态链接库dll文件转化为exe可执行文件
+因为<font color=#66CC99 style=" font-weight:bold;">其链接后的exe可执行文件是不完整的,在运行时需要去动态加载dll</font>
+因此我们在删除
+优点:节省存储空间
+
+<font color=#FFCCCC style=" font-weight:bold;">静态链接执行效率更快?</font>
+因为其将经过预处理,编译,汇编后的.o目标文件一次性链接完毕,打包成lib文件(linux下是.a文件)
+然后将静态链接库文件转为exe可执行文件
+在执行可执行exe文件时,就不需要去动态加载所依赖的库了
+所以我们明白了像向日葵这种只有一个exe文件的应用
+就是将所有依赖的静态链接库打包成了一个exe可执行文件
+<font color=#66CC99 style=" font-weight:bold;">优点:执行效率更高</font>
+
+<font color=#FFCCCC style=" font-weight:bold;">如何制作一个动态链接库和静态链接库?</font>
+下面两个实验非常详细
+[实验1](https://blog.csdn.net/zhengnianli/article/details/104321056?ops_request_misc=&request_id=&biz_id=102&utm_term=C%E8%AF%AD%E8%A8%80%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-2-104321056.142^v59^new_blog_pos_by_title,201^v3^control_1&spm=1018.2226.3001.4187
+)
+[实验2](https://blog.csdn.net/assiduous_me/article/details/113731968?ops_request_misc=&request_id=&biz_id=102&utm_term=C%E8%AF%AD%E8%A8%80%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-5-113731968.142^v59^new_blog_pos_by_title,201^v3^control_1&spm=1018.2226.3001.4187)
+
 
 
 

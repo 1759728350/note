@@ -1,5 +1,5 @@
 
-##### 1.9 什么是单例模式？有几种？（必会）
+##### 1.9什么是单例模式?有几种?必会
 
 单例模式：某个类的实例在多线程环境下只会被创建一次出来。
 
@@ -30,7 +30,7 @@ synchroized(Singleton.class){
 ![](img/Pasted%20image%2020220802234113.png)
 
 
-##### 1.10 反射（了解）
+##### 1.10反射（了解）
 
 在 Java 中的反射机制是指在运行状态中，对于任意一个类都能够知道这个类所有的
 属性和方法；并且对于任意一个对象，都能够调用它的任意一个方法；这种动态获
@@ -87,7 +87,7 @@ Lambda 允许<font color=#66CC99 style=" font-weight:bold;">把函数作为一�
 字节流直接对于二进制数据进行io操作,不经过缓冲区,而字符流需要经过缓冲区,所以字符流对于内存中需要频繁处理的数据/字符串具有更强的读写能力减少资源浪费(缓冲区满了再发送),也因此字节流不用缓冲区适合大型文件的io操作
 
 
-##### 1.13.2 BIO、NIO、AIO 有什么区别？（高薪常问）
+##### 1.13.2BIO、NIO、AIO 有什么区别？（高薪常问）
 
 <font color=#99CCFF style=" font-weight:bold;">不会</font>
 
@@ -95,7 +95,7 @@ Lambda 允许<font color=#66CC99 style=" font-weight:bold;">把函数作为一�
 [io面试](https://blog.csdn.net/weixin_44196561/article/details/120261292?ops_request_misc=&request_id=&biz_id=102&utm_term=java%20io%E9%9D%A2%E8%AF%95%E9%A2%98&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-0-120261292.nonecase&spm=1018.2226.3001.4187)
 
 
-##### 1.14 ThreadLocal 的原理（高薪常问）
+##### 1.14ThreadLocal 的原理（高薪常问）
 
 <font color=#99CCFF style=" font-weight:bold;">不会</font>
 ThreadLocal：为共享变量在每个线程中创建一个副本，每个线程都可以访问自己

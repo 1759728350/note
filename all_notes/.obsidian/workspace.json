@@ -8,12 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "c7ee2b25d4d93bf6",
+            "id": "bed2c01a96f15841",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/java面试内化.md",
+                "file": "java/juc/juc.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -21,25 +21,12 @@
             }
           },
           {
-            "id": "2982e91c338d9525",
+            "id": "16d71722a26bb597",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "skills/math/jg_第三章_积分.md",
-                "mode": "preview",
-                "backlinks": true,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "bed2c01a96f15841",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "java/jvm面试题.md",
+                "file": "java/jvm/jvm面试内化.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -52,7 +39,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "skills/math/jg_第二章_导数.md",
+                "file": "clang/c程序的编译过程.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -60,7 +47,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -126,7 +113,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/jvm面试题.md",
+                "file": "java/jvm/jvm面试内化.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -143,7 +130,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/jvm面试题.md",
+                "file": "java/jvm/jvm面试内化.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -166,7 +153,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/jvm面试题.md"
+                "file": "java/jvm/jvm面试内化.md"
               }
             }
           }
@@ -180,17 +167,17 @@
   "ribbon": {
     "mostRecentAction": ""
   },
-  "active": "bed2c01a96f15841",
+  "active": "16d71722a26bb597",
   "lastOpenFiles": [
-    "skills/math/jg_第三章_积分.md",
+    "java/Java面试宝典9.0.pdf",
     "java/java面试内化_02.md",
     "java/java面试内化.md",
-    "java/Java面试宝典9.0.pdf",
-    "java/java基础/java是什么类型的语言.md",
-    "clang/c程序的编译过程.md",
-    "skills/math/数学总结.md",
+    "java/jvm/jvm面试内化.md",
+    "java/juc/面试题.md",
+    "java/juc/juc.md",
+    "java/jvm面试内化.md",
     "skills/math/jg_第二章_导数.md",
-    "project_blog/secret.md",
-    "project_blog/未来总学习路线_1.0.md"
+    "clang/c程序的编译过程.md",
+    "skills/math/jg_第一章_极限.md"
   ]
 }
