@@ -144,26 +144,24 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
     "width": 293.5
   },
-  "ribbon": {
-    "mostRecentAction": ""
-  },
   "active": "6bedd0e86a11245b",
   "lastOpenFiles": [
+    "elang/one more II.md",
+    "elang/one more.md",
+    "elang/express_yourself.md",
+    "java/java面试内化.md",
+    "java/java面试内化_02.md",
+    "java/jvm/jvm面试内化.md",
     "clang/c程序的编译过程.md",
     "project_blog/guide/未来总学习路线_2.0.md",
     "clang/c语言-动态内存.md",
-    "java/juc/juc.md",
-    "database/mybatis/面试题.md",
-    "java/jvm/jvm面试内化.md",
-    "java/Java面试宝典9.0.pdf",
-    "java/java面试内化_02.md",
-    "java/java面试内化.md",
-    "java/juc/面试题.md"
+    "java/juc/juc.md"
   ]
 }
