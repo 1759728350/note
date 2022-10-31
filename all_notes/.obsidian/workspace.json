@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/jvm/JVM上篇：内存与垃圾回收篇/07-方法区.md",
+                "file": "java/juc/juc.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/jvm/JVM上篇：内存与垃圾回收篇/07-方法区.md",
+                "file": "java/juc/juc.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/jvm/JVM上篇：内存与垃圾回收篇/07-方法区.md",
+                "file": "java/juc/juc.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/jvm/JVM上篇：内存与垃圾回收篇/07-方法区.md"
+                "file": "java/juc/juc.md"
               }
             }
           }
@@ -139,10 +139,10 @@
   },
   "active": "6bedd0e86a11245b",
   "lastOpenFiles": [
+    "java/jvm/JVM上篇：内存与垃圾回收篇/07-方法区.md",
     "java/jvm/JVM中篇：字节码与类的加载篇/01-class文件结构/README.md",
     "OSandLinux/asm/学习笔记/汇编语言学习笔记.md",
     "java/jvm/JVM上篇：内存与垃圾回收篇/02-类加载子系统.md",
-    "java/jvm/JVM上篇：内存与垃圾回收篇/07-方法区.md",
     "java/jvm/JVM上篇：内存与垃圾回收篇/01-JVM与Java体系结构.md",
     "java/jvm/JVM上篇：内存与垃圾回收篇/07-方法区/07-方法区.md",
     "java/jvm/JVM上篇：内存与垃圾回收篇/06-堆/06-堆.md",
