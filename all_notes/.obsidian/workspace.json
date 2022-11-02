@@ -8,13 +8,52 @@
         "type": "tabs",
         "children": [
           {
-            "id": "6bedd0e86a11245b",
+            "id": "f8b4dc76237c9d44",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/juc/juc.md",
+                "file": "java/jvm/JVM上篇：内存与垃圾回收篇/09-执行引擎.md",
+                "mode": "preview",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "2666839116c1a90f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "OSandLinux/王道操作系统/第五章_内存管理.md",
                 "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "e46ce42edc8a1438",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "OSandLinux/OS基础_小林coding/内存管理.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "a82bcaeb3dc99f15",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "java/jvm/JVM上篇：内存与垃圾回收篇/08-对象实例化及直接内存.md",
+                "mode": "preview",
                 "backlinks": true,
                 "source": false
               }
@@ -86,7 +125,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/juc/juc.md",
+                "file": "java/jvm/JVM上篇：内存与垃圾回收篇/09-执行引擎.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +142,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/juc/juc.md",
+                "file": "java/jvm/JVM上篇：内存与垃圾回收篇/09-执行引擎.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +165,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/juc/juc.md"
+                "file": "java/jvm/JVM上篇：内存与垃圾回收篇/09-执行引擎.md"
               }
             }
           }
@@ -137,17 +176,17 @@
     "direction": "horizontal",
     "width": 293.5
   },
-  "active": "6bedd0e86a11245b",
+  "active": "f8b4dc76237c9d44",
   "lastOpenFiles": [
-    "java/jvm/JVM上篇：内存与垃圾回收篇/07-方法区.md",
-    "java/jvm/JVM中篇：字节码与类的加载篇/01-class文件结构/README.md",
-    "OSandLinux/asm/学习笔记/汇编语言学习笔记.md",
-    "java/jvm/JVM上篇：内存与垃圾回收篇/02-类加载子系统.md",
-    "java/jvm/JVM上篇：内存与垃圾回收篇/01-JVM与Java体系结构.md",
-    "java/jvm/JVM上篇：内存与垃圾回收篇/07-方法区/07-方法区.md",
-    "java/jvm/JVM上篇：内存与垃圾回收篇/06-堆/06-堆.md",
-    "java/jvm/JVM上篇：内存与垃圾回收篇/05-本地方法接口和本地方法栈/05-本地方法接口和本地方法栈.md",
-    "java/jvm/JVM上篇：内存与垃圾回收篇/04-虚拟机栈/04-虚拟机栈.md",
-    "java/jvm/JVM上篇：内存与垃圾回收篇/03-运行时数据区及程序计数器/03-运行时数据区及程序计数器.md"
+    "java/jvm/JVM上篇：内存与垃圾回收篇/04-虚拟机栈.md",
+    "java/jvm/jvm面试内化.md",
+    "OSandLinux/王道操作系统/第五章_内存管理.md",
+    "java/jvm/JVM上篇：内存与垃圾回收篇/08-对象实例化及直接内存.md",
+    "OSandLinux/OS基础_小林coding/内存管理.md",
+    "OSandLinux/王道操作系统/第二章_进程与线程.md",
+    "java/jvm/JVM上篇：内存与垃圾回收篇/08-对象实例化及直接内存/README.md",
+    "OSandLinux/王道操作系统/第三章_进程互斥与同步.md",
+    "java/juc/juc.md",
+    "java/jvm/JVM上篇：内存与垃圾回收篇/07-方法区.md"
   ]
 }
