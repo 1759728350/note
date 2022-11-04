@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/jvm/JVM上篇：内存与垃圾回收篇/09-执行引擎.md",
+                "file": "java/jvm/JVM上篇：内存与垃圾回收篇/11-垃圾回收概述及算法.md",
                 "mode": "preview",
                 "backlinks": true,
                 "source": false
@@ -109,7 +109,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 545.5
+    "width": 312.5
   },
   "right": {
     "id": "c49a711e9dedb52a",
@@ -125,7 +125,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/jvm/JVM上篇：内存与垃圾回收篇/09-执行引擎.md",
+                "file": "java/jvm/JVM上篇：内存与垃圾回收篇/11-垃圾回收概述及算法.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -142,7 +142,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/jvm/JVM上篇：内存与垃圾回收篇/09-执行引擎.md",
+                "file": "java/jvm/JVM上篇：内存与垃圾回收篇/11-垃圾回收概述及算法.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -165,7 +165,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/jvm/JVM上篇：内存与垃圾回收篇/09-执行引擎.md"
+                "file": "java/jvm/JVM上篇：内存与垃圾回收篇/11-垃圾回收概述及算法.md"
               }
             }
           }
@@ -178,15 +178,15 @@
   },
   "active": "f8b4dc76237c9d44",
   "lastOpenFiles": [
-    "java/jvm/JVM上篇：内存与垃圾回收篇/04-虚拟机栈.md",
-    "java/jvm/jvm面试内化.md",
+    "java/jvm/JVM上篇：内存与垃圾回收篇/09-执行引擎.md",
+    "project_blog/guide/面试技巧.md",
+    "project_blog/guide/未来总学习路线_2.0.md",
+    "project_blog/guide/笔记技巧.md",
+    "project_blog/guide/未来总学习路线_1.0.md",
     "OSandLinux/王道操作系统/第五章_内存管理.md",
     "java/jvm/JVM上篇：内存与垃圾回收篇/08-对象实例化及直接内存.md",
     "OSandLinux/OS基础_小林coding/内存管理.md",
-    "OSandLinux/王道操作系统/第二章_进程与线程.md",
-    "java/jvm/JVM上篇：内存与垃圾回收篇/08-对象实例化及直接内存/README.md",
-    "OSandLinux/王道操作系统/第三章_进程互斥与同步.md",
-    "java/juc/juc.md",
-    "java/jvm/JVM上篇：内存与垃圾回收篇/07-方法区.md"
+    "java/jvm/JVM上篇：内存与垃圾回收篇/04-虚拟机栈.md",
+    "java/jvm/jvm面试内化.md"
   ]
 }
