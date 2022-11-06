@@ -8,51 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "f8b4dc76237c9d44",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "java/jvm/JVM上篇：内存与垃圾回收篇/11-垃圾回收概述及算法.md",
-                "mode": "preview",
-                "backlinks": true,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "2666839116c1a90f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "OSandLinux/王道操作系统/第五章_内存管理.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "e46ce42edc8a1438",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "OSandLinux/OS基础_小林coding/内存管理.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
-            }
-          },
-          {
             "id": "a82bcaeb3dc99f15",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/jvm/JVM上篇：内存与垃圾回收篇/08-对象实例化及直接内存.md",
+                "file": "algorithm_dataStructure/0704.二分查找.md",
                 "mode": "preview",
                 "backlinks": true,
                 "source": false
@@ -125,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/jvm/JVM上篇：内存与垃圾回收篇/11-垃圾回收概述及算法.md",
+                "file": "algorithm_dataStructure/0704.二分查找.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -142,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/jvm/JVM上篇：内存与垃圾回收篇/11-垃圾回收概述及算法.md",
+                "file": "algorithm_dataStructure/0704.二分查找.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -165,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/jvm/JVM上篇：内存与垃圾回收篇/11-垃圾回收概述及算法.md"
+                "file": "algorithm_dataStructure/0704.二分查找.md"
               }
             }
           }
@@ -176,17 +137,17 @@
     "direction": "horizontal",
     "width": 293.5
   },
-  "active": "f8b4dc76237c9d44",
+  "active": "a82bcaeb3dc99f15",
   "lastOpenFiles": [
-    "java/jvm/JVM上篇：内存与垃圾回收篇/09-执行引擎.md",
-    "project_blog/guide/面试技巧.md",
-    "project_blog/guide/未来总学习路线_2.0.md",
-    "project_blog/guide/笔记技巧.md",
-    "project_blog/guide/未来总学习路线_1.0.md",
-    "OSandLinux/王道操作系统/第五章_内存管理.md",
+    "project_blog/线程安全及不可变性.md",
+    "java/jvm/JVM上篇：内存与垃圾回收篇/12-垃圾回收相关概念/README.md",
+    "java/java基础/static关键字.md",
+    "java/jvm/JVM上篇：内存与垃圾回收篇/02-类加载子系统.md",
     "java/jvm/JVM上篇：内存与垃圾回收篇/08-对象实例化及直接内存.md",
+    "leetcode-master-master/problems/0704.二分查找.md",
+    "leetcode-master-master/problems/数组总结篇.md",
+    "leetcode-master-master/problems/数组理论基础.md",
     "OSandLinux/OS基础_小林coding/内存管理.md",
-    "java/jvm/JVM上篇：内存与垃圾回收篇/04-虚拟机栈.md",
-    "java/jvm/jvm面试内化.md"
+    "OSandLinux/王道操作系统/第五章_内存管理.md"
   ]
 }
