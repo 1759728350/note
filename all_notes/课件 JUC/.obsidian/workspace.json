@@ -1,54 +1,62 @@
 {
   "main": {
-    "id": "89a65efdc9a39e5f",
+    "id": "cbcde917c89d9afd",
     "type": "split",
     "children": [
       {
-        "id": "56df8206fcab1ec7",
+        "id": "5209666fe8890174",
         "type": "tabs",
         "children": [
           {
-            "id": "470bc5e6ea814d22",
+            "id": "91b10c154534c2cd",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "课件 JUC/JUC.md",
-                "mode": "preview",
-                "backlinks": true,
+                "file": "JUC.md",
+                "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "112708ffbbef6c21",
+            "id": "fb4b48797c163bbf",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "assets/1562757277239.png"
+              }
+            }
+          },
+          {
+            "id": "15123b240d25fbbd",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/设计模式/代理模式.md",
+                "file": "未命名.md",
                 "mode": "source",
-                "backlinks": true,
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "d35a32116681ced5",
+    "id": "15cce7b38953bbc0",
     "type": "split",
     "children": [
       {
-        "id": "a2d9a9083abb3538",
+        "id": "d04bb980984d735c",
         "type": "tabs",
         "children": [
           {
-            "id": "8104255345443cf3",
+            "id": "b9d716d12033ff33",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -58,7 +66,7 @@
             }
           },
           {
-            "id": "9f882188ee61cd5c",
+            "id": "f20fe340a90407d3",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -66,14 +74,14 @@
                 "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
-                "collapseAll": true,
-                "extraContext": true,
+                "collapseAll": false,
+                "extraContext": false,
                 "sortOrder": "alphabetical"
               }
             }
           },
           {
-            "id": "109effa4cb58257c",
+            "id": "d20452c7683ac481",
             "type": "leaf",
             "state": {
               "type": "starred",
@@ -84,23 +92,23 @@
       }
     ],
     "direction": "horizontal",
-    "width": 312.5
+    "width": 300
   },
   "right": {
-    "id": "c49a711e9dedb52a",
+    "id": "d68ee0b514903f72",
     "type": "split",
     "children": [
       {
-        "id": "5ed4d20cf6c8fee1",
+        "id": "3fa05a817db4df76",
         "type": "tabs",
         "children": [
           {
-            "id": "df80704234b97d77",
+            "id": "648f592118d3b1d6",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/设计模式/代理模式.md",
+                "file": "未命名.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -112,19 +120,19 @@
             }
           },
           {
-            "id": "20bb0d2cf38bb090",
+            "id": "ce68dc543a793631",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/设计模式/代理模式.md",
+                "file": "未命名.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "41e0eb841e78aa77",
+            "id": "43f54945d76f1c92",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -135,33 +143,26 @@
             }
           },
           {
-            "id": "652e51990a8a5aab",
+            "id": "bff69084b286ae7e",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/设计模式/代理模式.md"
+                "file": "未命名.md"
               }
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 293.5
+    "width": 300,
+    "collapsed": true
   },
-  "active": "112708ffbbef6c21",
+  "active": "15123b240d25fbbd",
   "lastOpenFiles": [
-    "课件 JUC/JUC.md",
-    "java/设计模式/代理模式.md",
-    "java/设计模式/单例模式.md",
-    "skills/math/jg_第二章_导数.md",
-    "skills/math/第三课_重要极限.pdf",
-    "skills/math/第二课_函数复习与极限.md",
-    "java/java基础/io流.md",
-    "java/java基础/file类.md",
-    "java/java基础/BigDecimal.md",
-    "课件 JUC/assets/1597722989205.png"
+    "assets/1562757277239.png",
+    "未命名.md",
+    "JUC.md"
   ]
 }
