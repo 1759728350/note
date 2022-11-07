@@ -4,16 +4,29 @@
     "type": "split",
     "children": [
       {
-        "id": "56df8206fcab1ec7",
+        "id": "4973e4b1c4232f3d",
         "type": "tabs",
         "children": [
           {
-            "id": "470bc5e6ea814d22",
+            "id": "ff659c9cbe78b3ad",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "课件 JUC/JUC.md",
+                "file": "java/juc/多线程基础.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "6ceab08a7fb385bb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "OSandLinux/王道操作系统/第三章_进程互斥与同步.md",
                 "mode": "preview",
                 "backlinks": true,
                 "source": false
@@ -21,20 +34,19 @@
             }
           },
           {
-            "id": "112708ffbbef6c21",
+            "id": "02df43f4226a97e8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/设计模式/代理模式.md",
+                "file": "java/jvm/JVM上篇：内存与垃圾回收篇/06-堆.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -100,7 +112,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/设计模式/代理模式.md",
+                "file": "java/juc/多线程基础.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -117,7 +129,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/设计模式/代理模式.md",
+                "file": "java/juc/多线程基础.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -140,7 +152,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/设计模式/代理模式.md"
+                "file": "java/juc/多线程基础.md"
               }
             }
           }
@@ -151,17 +163,17 @@
     "direction": "horizontal",
     "width": 293.5
   },
-  "active": "112708ffbbef6c21",
+  "active": "ff659c9cbe78b3ad",
   "lastOpenFiles": [
+    "OSandLinux/王道操作系统/第三章_进程互斥与同步.md",
+    "java/jvm/JVM上篇：内存与垃圾回收篇/06-堆.md",
+    "java/jvm/JVM上篇：内存与垃圾回收篇/07-方法区.md",
+    "java/juc/多线程基础.md",
+    "多线程基础.md",
     "课件 JUC/JUC.md",
+    "尚硅谷-JavaSE课堂笔记 (1).md",
+    "尚硅谷-JavaSE课堂笔记 (1) - 副本.md",
     "java/设计模式/代理模式.md",
-    "java/设计模式/单例模式.md",
-    "skills/math/jg_第二章_导数.md",
-    "skills/math/第三课_重要极限.pdf",
-    "skills/math/第二课_函数复习与极限.md",
-    "java/java基础/io流.md",
-    "java/java基础/file类.md",
-    "java/java基础/BigDecimal.md",
-    "课件 JUC/assets/1597722989205.png"
+    "java/设计模式/单例模式.md"
   ]
 }
