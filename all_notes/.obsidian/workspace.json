@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/juc/多线程基础.md",
-                "mode": "source",
+                "file": "algorithm_dataStructure/0035.搜索插入位置.md",
+                "mode": "preview",
                 "backlinks": true,
                 "source": false
               }
@@ -112,7 +112,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/juc/多线程基础.md",
+                "file": "algorithm_dataStructure/0035.搜索插入位置.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,7 +129,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/juc/多线程基础.md",
+                "file": "algorithm_dataStructure/0035.搜索插入位置.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -152,7 +152,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/juc/多线程基础.md"
+                "file": "algorithm_dataStructure/0035.搜索插入位置.md"
               }
             }
           }
@@ -165,15 +165,15 @@
   },
   "active": "ff659c9cbe78b3ad",
   "lastOpenFiles": [
+    "algorithm_dataStructure/0704.二分查找.md",
+    "algorithm_dataStructure/时间复杂度怎么算.md",
+    "java/juc/多线程基础.md",
     "OSandLinux/王道操作系统/第三章_进程互斥与同步.md",
     "java/jvm/JVM上篇：内存与垃圾回收篇/06-堆.md",
     "java/jvm/JVM上篇：内存与垃圾回收篇/07-方法区.md",
-    "java/juc/多线程基础.md",
     "多线程基础.md",
     "课件 JUC/JUC.md",
     "尚硅谷-JavaSE课堂笔记 (1).md",
-    "尚硅谷-JavaSE课堂笔记 (1) - 副本.md",
-    "java/设计模式/代理模式.md",
-    "java/设计模式/单例模式.md"
+    "尚硅谷-JavaSE课堂笔记 (1) - 副本.md"
   ]
 }
