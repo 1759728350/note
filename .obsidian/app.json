@@ -2,5 +2,6 @@
   "attachmentFolderPath": "./img",
   "newLinkFormat": "relative",
   "useMarkdownLinks": true,
-  "newFileLocation": "current"
+  "newFileLocation": "current",
+  "showInlineTitle": false
 }

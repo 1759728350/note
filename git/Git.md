@@ -1,10 +1,3 @@
-学习 git 之前，我们需要先明白一个概念
-
-**版本控制！**
-
-  
-
-版本控制
 
 版本控制git
 -------
@@ -30,30 +23,8 @@
 
 没有进行版本控制或者版本控制本身缺乏正确的流程管理，在软件开发过程中将会引入很多问题，如软件代码的一致性、软件内容的冗余、软件过程的事物性、软件开发过程中的并发性、软件源代码的安全性，以及软件的整合等问题。
 
-
-
-##### 常见的版本控制工具
-
-主流的版本控制器有如下这些：
-
-*   **Git**
-    
-*   **SVN**（Subversion）
-    
-*   **CVS**（Concurrent Versions System）
-    
-*   **VSS**（Micorosoft Visual SourceSafe）
-    
-*   **TFS**（Team Foundation Server）
-    
-*   Visual Studio Online
-    
-
-现在影响力最大且使用最广泛的是 Git 与 SVN
-
-
 ##### 版本控制分类
-
+常见的git svn
 **1、本地版本控制**
 
 记录文件每次的更新，可以对每个版本做一个快照，或是记录补丁文件，适合个人用，如 RCS。
@@ -180,8 +151,6 @@ git config --global user.email  #邮箱
 
 ##### 设置用户名与邮箱（用户标识，必要）
 
-
-
 当你安装 Git 后首先要做的事情是设置你的用户名称和 e-mail 地址。这是非常重要的，因为每次 Git 提交都会使用该信息。它被永远的嵌入到了你的提交中：
 
 ```shell
@@ -189,40 +158,12 @@ $ git config --global user.name "username"
 $ git config --global user.email "email@example.com"
 ```
 
-
-
 只需要做一次这个设置，如果你传递了 --global 选项，因为 Git 将总是会使用该信息来处理你在系统中所做的一切操作。如果你希望在一个特定的项目中使用不同的名称或 e-mail 地址，你可以在该项目中运行该命令而不要 --global 选项。总之 --global 为全局配置，不加为某个项目的特定配置。
-
-
-
-
-
-### gitee/hub配置git
-
-这个其实可以作为大家未来找工作的一个重要信息！
-
-设置本机绑定 SSH 公钥，实现免密码登录！（免密码登录，这一步挺重要的，码云是远程仓库，我们是平时工作在本地仓库！)
-
-```shell
-# 进入 C:\Users\Administrator\.ssh 目录
-# 生成公钥
-ssh-keygen
-```
-
-3将公钥信息 public key 添加到码云账户中即可！
-
-使用码云创建一个自己的仓库！
-
-许可证：开源是否可以随意转载，开源但是不能商业使用，不能转载，...  限制！
-
-克隆到本地！
-
-IDEA 中集成 Git
 
 ### 配置ssh公钥
 
 ```shell
-ssh-keygen -t rsa -C "注册邮箱"=
+ssh-keygen -t rsa -C "注册邮箱"
 ```
 
 然后用户主目录/.ssh/下有两个文件，id_rsa是私钥，id_rsa.pub是公钥
@@ -234,7 +175,6 @@ ssh-keygen -t rsa -C "注册邮箱"=
 ![image-20220216230258527](Git.assets/image-20220216230258527.png)
 
 ![image-20220216230239984](Git.assets/image-20220216230239984.png)
-
 
 
 测试是否连接成功
@@ -298,88 +238,8 @@ The file will have its original line endings in your working directory
 当文件被更改后查看状态![image-20220217022814855](Git.assets/image-20220217022814855.png)
 
 commit -a直接将修改后的文件提交到主分支中,一步到位
-
-```shell
-$ git status
-On branch master
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
-        modified:   a.txt
-
-no changes added to commit (use "git add" and/or "git commit -a")
-
-
-dougax@lyh MINGW64 /d/github/test (master)
-$ git commit -a
-warning: LF will be replaced by CRLF in a.txt.
-The file will have its original line endings in your working directory
-[master 724adb9] second,,,,,,,,,,,second
- 1 file changed, 6 insertions(+), 1 deletion(-)
-
-```
-
 -m直接写提交信息,不用再进入到vim中再写了
-
-```shell
-dougax@lyh MINGW64 /d/github/test (master)
-$ vim a.txt
-
-dougax@lyh MINGW64 /d/github/test (master)
-$ git add a.txt
-warning: LF will be replaced by CRLF in a.txt.
-The file will have its original line endings in your working directory
-
-dougax@lyh MINGW64 /d/github/test (master)
-$ git commit -m "the third try" a.txt
-warning: LF will be replaced by CRLF in a.txt.
-The file will have its original line endings in your working directory
-[master b7779e5] the third try
- 1 file changed, 5 insertions(+), 1 deletion(-)
-
-```
-
-
-
-
-
-
-
-工作流程
-----
-
-初始化本地
-创建远程仓库
-本地建立密钥并放到远程仓库
-remote建立连接创建仓库别名
-clone版本库
-开发
-add .  commit   push
-push失败,pull merge
-push
-
-
-
-git 的工作流程一般是这样的：
-
-１、在工作目录中添加、修改文件；
-
-２、将需要进行版本管理的文件放入暂存区域；
-
-３、将暂存区域的文件提交到 git 仓库。
-
-因此，git 管理的文件有三种状态：已修改（modified）, 已暂存（staged）, 已提交 (committed)
-
-<img src="https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7Ksu8UlITwMlbX3kMGtZ9p09iaOhl0dACfLrMwNbDzucGQ30s3HnsiaczfcR6dC9OehicuwibKuHjRlzg/640?wx_fmt=png" style="zoom:50%;" />
-
-Git 多人项目合作开发
-
-
-
-
-
-本地仓库搭建
-------
+### 本地仓库搭建
 
 git init
 
@@ -424,15 +284,13 @@ ls-ah查看隐藏文件, 查看被设置为仓库的目录所生成的 .git 隐�
 
 
 创建本地仓库的方法有两种：一种是创建全新的仓库，另一种是克隆远程仓库。
-
 1、创建全新的仓库，需要用 GIT 管理的项目的根目录执行：
-
-
-
 2、执行后可以看到，仅仅在项目目录多出了一个. git 目录，关于版本等的所有信息都在这个目录里面。
 
-克隆远程仓库
-------
+
+
+## 克隆远程仓库
+
 
 ```bash
 git remote add url   #先remote连接
@@ -447,19 +305,81 @@ git remote add url   #先remote连接
 $ git clone -o 远程主机别名 [url]  # https://github.com/lTbgykio/Books-Free-Books.git
 ```
 
-
-
 上面远程主机别名起叫elecbook
 然后remote 查看远程主机名
 
 ![image-20220218120806925](Git.assets/image-20220218120806925.png)
 
 
+### clone和pull的区别
+区别:clone不需要你有这个远程仓库的权限
+而pull你需要有权限,比如ssh
+
+git clone
+是在本地没有版本库的时候，从远程服务器克<font color=#FFCCCC style=" font-weight:bold;">隆整个版本库,还有所有分支</font>到本地，是一个本地从无到有的过程。
+
+git pull
+在本地有版本库的情况下，从远程库获取最新commit 数据（如果有的话），<font color=#FFCCCC style=" font-weight:bold;">并merge</font>（合并）到本地。
+
+git pull = git fetch + git merge
+
+##### 使用场景
+
+通常情况下，远程操作的第一步，是使用git clone从远程主机克隆一个版本库到本地。
+
+本地修改代码后，每次从本地仓库push到远程仓库之前都要先进行git pull操作，**保证push到远程仓库时没有版本冲突**。也就是说,在这个仓库只有我一个人在提交时,没有第二个人commit,即使不pull也是可以随意push的,因为版本并没有冲突
+
+### 关联远程库pull操作
+
+> remote add url 关联另一个远程仓库别名
+> git remote 查看所有关联的远程仓库名
+
+```bash
+#通过复制github上自己的ssh来关联自己的远程代码仓库
+dougax@lyh MINGW64 /d/github/test/jiayou2021 (main)
+$ git remote add origin_1 git@github.com:1759728350/jiayou2021.git
+#给该远程仓库起的别名为origin_1
+```
 
 
 
-文件的四种状态
--------
+`git pull`命令作用：从另一个存储库或**本地分支关联的远端分支**获取最新代码，并与本地代码资源整合。
+`git pull`命令执行过程：取回远程主机某个分支的更新，再与本地的指定分支合并（可能存在需手动解决的冲突）。
+
+```shell
+$ git pull <远程主机名> <远程分支名>:<本地分支名>
+```
+
+
+
+```bash
+#查看你远程添加了几个仓库
+dougax@lyh MINGW64 /d/github/test/jiayou2021 (main)
+$ git remote -v
+origin  git@github.com:1759728350/jiayou2021.git (fetch)
+origin  git@github.com:1759728350/jiayou2021.git (push)
+origin_1        git@github.com:1759728350/jiayou2021.git (fetch)
+origin_1        git@github.com:1759728350/jiayou2021.git (push)
+
+dougax@lyh MINGW64 /d/github/test/jiayou2021 (main)
+$ git pull origin_1 main
+
+
+dougax@lyh MINGW64 /d/github/test/jiayou2021 (main)
+$ ll
+total 2
+-rw-r--r-- 1 dougax 197121 47 Feb 18 10:49 README.md
+-rw-r--r-- 1 dougax 197121 19 Feb 18 10:50 first.txt
+
+dougax@lyh MINGW64 /d/github/test/jiayou2021 (main)
+$ git branch -v
+* main f5d334f [ahead 1] push test
+
+dougax@lyh MINGW64 /d/github/test/jiayou2021 (main)
+$ git push origin_1 main
+```
+## 文件的四种状态
+
 
 ```shell
 #查看指定文件状态
@@ -485,14 +405,8 @@ git status
 
 
 
+## GIT 分支
 
-
-  
-
-
-
-GIT 分支命令
----------
 
 ```shell
 # 列出所有本地分支
@@ -570,67 +484,49 @@ IDEA 中操作
 
 master 主分支应该非常稳定，用来发布新版本，一般情况下不允许在上面工作，工作一般情况下在新建的 dev 分支上工作，工作完后，比如上要发布，或者说 dev 分支代码稳定后可以合并到主分支 master 上来。
 
+### 分支切换和合并
+分支xj2
+![](img/Pasted%20image%2020221201174832.png)
+
+切换到master分支
+![](img/Pasted%20image%2020221201174921.png)
+可以看到切换分支后工作区的文件就换变
+每次分支上改动，不要忘add和commit
+
+git merge 分支
+在当前分支下合并其他分支
+
+自动合并失败时
+![](img/Pasted%20image%2020221201181628.png)
+这个时候就要手动打开上面提示的m.java去修改
+然后add commit
+
+这时候是在当前分支去看哪一块需要保留,不是切换到被合并子分支去改
+
+## 工作流程
+初始化本地
+创建远程仓库
+本地建立密钥并放到远程仓库
+remote建立连接创建仓库别名
+clone版本库
+开发
+add .  commit   push
+push失败,pull merge
+push
 
 
-## 分支合并
 
-<font color=#FFCCCC style=" font-weight:bold;">没学会</font>
+git 的工作流程一般是这样的：
 
-```shell
-dougax@lyh MINGW64 /d/github/test (fix_shit)
-$ vim a.txt
+１、在工作目录中添加、修改文件；
 
-dougax@lyh MINGW64 /d/github/test (fix_shit)
-$ git add a.txt
+２、将需要进行版本管理的文件放入暂存区域；
 
-dougax@lyh MINGW64 /d/github/test (fix_shit)
-$ git commit -m "edit by fix_shit 222 " a.txt
+３、将暂存区域的文件提交到 git 仓库。
 
-dougax@lyh MINGW64 /d/github/test (fix_shit)
-$ git checkout master
-Switched to branch 'master'
+因此，git 管理的文件有三种状态：已修改（modified）, 已暂存（staged）, 已提交 (committed)
 
-dougax@lyh MINGW64 /d/github/test (master)
-$ vim a.txt
-
-dougax@lyh MINGW64 /d/github/test (master)
-$ git add a.txt
-
-dougax@lyh MINGW64 /d/github/test (master)
-$ git commit -m "edit by master 111 " a.txt
-[master 7a16ec4] edit by master 111
-
-#切换到fix_shit分支将master分支合并到fix上
-dougax@lyh MINGW64 /d/github/test (master)
-$ git checkout fix_shit
-Switched to branch 'fix_shit'
-
-dougax@lyh MINGW64 /d/github/test (fix_shit)
-$ git merge master
-Auto-merging a.txt
-CONFLICT (content): Merge conflict in a.txt
-Automatic merge failed; fix conflicts and then commit the result.
-
-dougax@lyh MINGW64 /d/github/test (fix_shit|MERGING)
-$ vim a.txt
-
-dougax@lyh MINGW64 /d/github/test (fix_shit|MERGING)
-$ git add a.txt
-
-dougax@lyh MINGW64 /d/github/test (fix_shit|MERGING)
-$ git commit -m "resolve conflect" a.txt
-fatal: cannot do a partial commit during a merge.
-
-dougax@lyh MINGW64 /d/github/test (fix_shit|MERGING)
-$ git commit -m "resolve conflect"
-[fix_shit 013663b] resolve conflect
-
-dougax@lyh MINGW64 /d/github/test (fix_shit)
-
-```
-
-解决冲突后,此时仍然有两个分支,master那个分支保留,fix_shit由于合并了master,所以文件里就会有修改建议
-
+<img src="https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7Ksu8UlITwMlbX3kMGtZ9p09iaOhl0dACfLrMwNbDzucGQ30s3HnsiaczfcR6dC9OehicuwibKuHjRlzg/640?wx_fmt=png" style="zoom:50%;" />
 
 
 ## 暂存区,工作区和远程仓库
@@ -688,55 +584,7 @@ git rm --cached \<file> 只表示将暂存区的file文件删除。
 
 
 
-## 关联远程库pull操作
 
-> remote add url 关联另一个远程仓库别名
-> git remote 查看所有关联的远程仓库名
-
-```bash
-#通过复制github上自己的ssh来关联自己的远程代码仓库
-dougax@lyh MINGW64 /d/github/test/jiayou2021 (main)
-$ git remote add origin_1 git@github.com:1759728350/jiayou2021.git
-#给该远程仓库起的别名为origin_1
-```
-
-
-
-`git pull`命令作用：从另一个存储库或**本地分支关联的远端分支**获取最新代码，并与本地代码资源整合。
-`git pull`命令执行过程：取回远程主机某个分支的更新，再与本地的指定分支合并（可能存在需手动解决的冲突）。
-
-```shell
-$ git pull <远程主机名> <远程分支名>:<本地分支名>
-```
-
-
-
-```bash
-#查看你远程添加了几个仓库
-dougax@lyh MINGW64 /d/github/test/jiayou2021 (main)
-$ git remote -v
-origin  git@github.com:1759728350/jiayou2021.git (fetch)
-origin  git@github.com:1759728350/jiayou2021.git (push)
-origin_1        git@github.com:1759728350/jiayou2021.git (fetch)
-origin_1        git@github.com:1759728350/jiayou2021.git (push)
-
-dougax@lyh MINGW64 /d/github/test/jiayou2021 (main)
-$ git pull origin_1 main
-
-
-dougax@lyh MINGW64 /d/github/test/jiayou2021 (main)
-$ ll
-total 2
--rw-r--r-- 1 dougax 197121 47 Feb 18 10:49 README.md
--rw-r--r-- 1 dougax 197121 19 Feb 18 10:50 first.txt
-
-dougax@lyh MINGW64 /d/github/test/jiayou2021 (main)
-$ git branch -v
-* main f5d334f [ahead 1] push test
-
-dougax@lyh MINGW64 /d/github/test/jiayou2021 (main)
-$ git push origin_1 main
-```
 
 ## 两仓库分支合并
 
@@ -919,7 +767,7 @@ $ git push [remote] [branch]
 ```
 
 
-## 强制拉取远程仓库并覆盖本地仓库代码
+ ## 强制拉取远程仓库并覆盖本地仓库代码
 
 ```shell
 git fetch --all 
@@ -929,21 +777,7 @@ git pull #可省略
 ```
 
 
-## clone和pull的区别
 
-git clone
-是在本地没有版本库的时候，从远程服务器克<font color=#FFCCCC style=" font-weight:bold;">隆整个版本库,还有所有分支</font>到本地，是一个本地从无到有的过程。
-
-git pull
-在本地有版本库的情况下，从远程库获取最新commit 数据（如果有的话），<font color=#FFCCCC style=" font-weight:bold;">并merge</font>（合并）到本地。
-
-git pull = git fetch + git merge
-
-##### 使用场景
-
-通常情况下，远程操作的第一步，是使用git clone从远程主机克隆一个版本库到本地。
-
-本地修改代码后，每次从本地仓库push到远程仓库之前都要先进行git pull操作，**保证push到远程仓库时没有版本冲突**。也就是说,在这个仓库只有我一个人在提交时,没有第二个人commit,即使不pull也是可以随意push的,因为版本并没有冲突
 
 ## 报错解决
 
@@ -1116,3 +950,6 @@ add . 将所有文件到加入了,有的文件你还没修改后就不要急着�
 ## git 查看暂存区的使用场景挖坑
 ## git diff 命令
 ## 查看及删除git远程库不需要的文件
+
+思考
+![](img/Pasted%20image%2020221201185509.png)
