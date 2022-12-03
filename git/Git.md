@@ -387,9 +387,6 @@ git status [filename]
 
 #查看所有文件状态
 git status
-
-# git add .                  添加所有文件到暂存区
-# git commit -m "消息内容"    提交暂存区中的内容到本地仓库 -m 提交信息
 ```
 
 版本控制就是对文件的版本控制，要对文件进行修改、提交等操作，首先要知道文件当前在什么状态，不然可能会提交了现在还不想提交的文件，或者要提交的文件没提交上。
@@ -406,8 +403,6 @@ git status
 
 
 ## GIT 分支
-
-
 ```shell
 # 列出所有本地分支
 git branch
@@ -935,21 +930,70 @@ _文件从没有被add过_
 ![[Pasted image 20220816203646.png]]
 
 
-
-## add.不能乱用
+## 暂存区
+##### add.不能乱用
 add是将文件加入到缓存区且让git能追踪到
 add . 将所有文件到加入了,有的文件你还没修改后就不要急着推上去
 
-## 查看某个文件的提交历史
-
+## 版本库
+##### 查看某个文件的提交历史
  ```shell
  git log ${FileName}
-
 ```
 
-## git 查看暂存区的使用场景挖坑
-## git diff 命令
-## 查看及删除git远程库不需要的文件
+## 版本穿梭/切换分支
+可以切换不同的分支,也可以穿梭到某个commit
+```shell
+git log  -n //查看n条commit,获取commitId
+//commit穿梭
+git checkout commitid
 
+切回去
+git checkout master
+```
+
+切换分支
+git checkout 分支
+
+注意:git checkout 文件名
+不能乱用,会丢弃掉文件,难以恢复
+## 版本回退
+```shell
+git reset 
+//回退三个区,工作区文件目录也变
+//难以回退回去,尽量别用
+git reset --hard commitId
+
+//不加mixed默认是这个
+//回退暂存区add信息 和 版本库提交的信息
+git reset --mixed commitId
+//回退版本库提交信息
+git reset --soft commitId
+
+上面这些都会删日志
+```
+
+
+##### git revert
+git revert commitId
+再次创建一个新版本commit号,
+这个commit会和你之前跳转的commit比较合并
+你要修改完了
+就可以add + commit
+然后就是个新的commit了
+你要跳转回去
+你直接git checkout commitId
+所以这个回退是建立一个新版本且不删除之前回退版本的回退
+不会删除日志更安全
+更安全
+
+你要删除这个新的revert产生的commit且便会没revert的版本
+你就直接git reset --hard commitId就行了
+日志也会一并删除
+
+## 挖坑
+git 查看暂存区的使用场景挖坑
+git diff 命令
+查看及删除git远程库不需要的文件
 思考
 ![](img/Pasted%20image%2020221201185509.png)
