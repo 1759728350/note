@@ -287,8 +287,42 @@ ls-ah查看隐藏文件, 查看被设置为仓库的目录所生成的 .git 隐�
 1、创建全新的仓库，需要用 GIT 管理的项目的根目录执行：
 2、执行后可以看到，仅仅在项目目录多出了一个. git 目录，关于版本等的所有信息都在这个目录里面。
 
+### 为啥每次提交都需要输密码?
+因为你git remote add 的是https的协议url
+只要改成ssh的url就不需要验证了
+![](img/Pasted%20image%2020221126190211.png)
+```shell
+//先删除之前关联的远程仓库名,以防之后再add时name重复
+git remote rm regression 
+//重新关联
+git remote add regression git@github.com:1759728350/breathe.git
+//之后正常提交就行了
+```
 
+### 忽略文件
 
+```
+#为注释
+*.txt        #忽略所有 .txt结尾的文件,这样的话上传就不会被选中！
+!lib.txt     #但lib.txt除外
+/temp        #仅忽略项目根目录下的TODO文件,不包括其它目录temp
+build/       #忽略build/目录下的所有文件
+doc/*.txt    #会忽略 doc/notes.txt 但不包括 doc/server/arch.txt
+```
+
+有些时候我们不想把某些文件纳入版本控制中，比如数据库文件，临时文件，设计文件等
+
+在主目录下建立 ".gitignore" 文件，此文件有如下规则：
+
+1.  忽略文件中的空行或以井号（#）开始的行将会被忽略。
+
+2.  可以使用 Linux 通配符。例如：星号（*）代表任意多个字符，问号（？）代表一个字符，方括号（[abc]）代表可选字符范围，大括号（{string1,string2,...}）代表可选的字符串等。
+
+3.  如果名称的最前面有一个感叹号（!），表示例外规则，将不被忽略。
+
+4.  如果名称的最前面是一个路径分隔符（/），表示要忽略的文件在此目录下，而子目录中的文件不忽略。
+
+5.  如果名称的最后面是一个路径分隔符（/），表示要忽略的是此目录下该名称的子目录，而非文件（默认文件或目录都忽略）。使用码云
 ## 克隆远程仓库
 
 
@@ -555,9 +589,6 @@ Git 本地有三个工作区域：工作目录（Working Directory）、暂存�
 *   Stash：隐藏，是一个工作状态保存栈，用于保存 / 恢复 WorkSpace 中的临时状态。
 
 
-
-
-
 工作目录（WorkSpace) 一般就是你希望 Git 帮助你管理的文件夹，可以是你项目的目录，也可以是一个空目录，建议不要有中文。
 
 日常使用只要记住下图 6 个命令：
@@ -579,104 +610,6 @@ git rm --cached \<file> 只表示将暂存区的file文件删除。
 
 
 
-
-
-## 两仓库分支合并
-
-<font color=#FFCCCC style=" font-weight:bold;">没学会</font>
-
-```bash
-dougax@lyh MINGW64 /d/github/auto
-$ git clone https://github.com/chen-kai-1/meituan-shenquan.git
-Cloning into 'meituan-shenquan'...
-
-#这个目录下还不是仓库,所以要进入下一目录
-dougax@lyh MINGW64 /d/github/auto
-$ git branch
-fatal: not a git repository (or any of the parent directories): .git
-
-dougax@lyh MINGW64 /d/github/auto
-$ ll
-total 0
-drwxr-xr-x 1 dougax 197121 0 Feb 18 13:06 meituan-shenquan/
-
-dougax@lyh MINGW64 /d/github/auto
-$ cd meituan-shenquan/
-#可以看出当前是仓库目录
-dougax@lyh MINGW64 /d/github/auto/meituan-shenquan (master)
-$ ll
-total 124
--rw-r--r-- 1 dougax 197121  1083 Feb 18 13:06 LICENSE
--rwxr-xr-x 1 dougax 197121 43942 Feb 18 13:06 mt-action-scripts.py*
--rwxr-xr-x 1 dougax 197121 55031 Feb 18 13:06 mt-terminal-scripts.py*
--rw-r--r-- 1 dougax 197121 18132 Feb 18 13:06 readme.md
-#查看分支
-dougax@lyh MINGW64 /d/github/auto/meituan-shenquan (master)
-$ git branch
-* master
-#添加自己的远程仓库  并起别名为my
-dougax@lyh MINGW64 /d/github/auto/meituan-shenquan (master)
-$ git remote add my git@github.com:1759728350/jiayou2021.git
-#查看有哪些远程仓库   看自己的远程仓库是否已经添加
-dougax@lyh MINGW64 /d/github/auto/meituan-shenquan (master)
-$ git remote
-my
-origin
-
-#抓取远程仓库的分支,注意这里只能用fetch,不能用pull
-dougax@lyh MINGW64 /d/github/auto/meituan-shenquan (master)
-$ git fetch my
- * [new branch]      main       -> my/main
-#创建切换并创建mix分支,关联my/main分支
-dougax@lyh MINGW64 /d/github/auto/meituan-shenquan (master)
-$ git checkout -b mix my/main
-Switched to a new branch 'mix'
-Branch 'mix' set up to track remote branch 'main' from 'my'.
-#查看mix分支是否已成功创建
-dougax@lyh MINGW64 /d/github/auto/meituan-shenquan (mix)
-$ git branch
-  master
-* mix
-#将两分支合并,合并到mix分支中,此处失败
-dougax@lyh MINGW64 /d/github/auto/meituan-shenquan (mix)
-$ git merge master
-fatal: refusing to merge unrelated histories
-#上网查到原因是两个分支是两个不同的版本，具有不同的提交历史
-#需要加--allow-unrelated-histories 强行合并
-dougax@lyh MINGW64 /d/github/auto/meituan-shenquan (mix)
-$ git merge master --allow-unrelated-histories
-Merge made by the 'ort' strategy.
- .github/.DS_Store            |  Bin 0 -> 6148 bytes
- .github/workflows/aciton.yml |   43 ++
- LICENSE                      |   21 +
- mt-action-scripts.py         |  882 +++++++++++++++++++++++++++++++++
- mt-terminal-scripts.py       | 1122 ++++++++++++++++++++++++++++++++++++++++++
- readme.md                    |  182 +++++++
- 6 files changed, 2250 insertions(+)
- create mode 100644 .github/.DS_Store
- create mode 100644 .github/workflows/aciton.yml
- create mode 100644 LICENSE
- create mode 100644 mt-action-scripts.py
- create mode 100644 mt-terminal-scripts.py
- create mode 100644 readme.md
-#查看文件是否合并进去
-dougax@lyh MINGW64 /d/github/auto/meituan-shenquan (mix)
-$ ll
-total 125
--rw-r--r-- 1 dougax 197121  1083 Feb 18 13:17 LICENSE
--rw-r--r-- 1 dougax 197121    20 Feb 18 13:13 first.txt
--rwxr-xr-x 1 dougax 197121 43942 Feb 18 13:17 mt-action-scripts.py*
--rwxr-xr-x 1 dougax 197121 55031 Feb 18 13:17 mt-terminal-scripts.py*
--rw-r--r-- 1 dougax 197121 18132 Feb 18 13:17 readme.md
-
-#将当前分支提交到远程主机仓库my(这是本机起的别名)的main分支上
-dougax@lyh MINGW64 /d/github/auto/meituan-shenquan (mix)
-$ git push my mix:main
-#git push <远程主机名> <本地分支名> :<远程分支名>
-```
-
-![image-20220218134302336](Git.assets/image-20220218134302336.png)
-
 ## push操作
 
 作用:git push命令用于将本地分支的更新推送到远程主机对应分支
@@ -687,30 +620,16 @@ git push的一般形式为 git push <远程主机名> <本地分支名> :<远程
 
 
 
-#### git push origin master
+##### git push origin master
 
 如果远程分支被省略，如上则表示将本地分支推送到与之存在追踪关系的远程分支**（通常两者同名）**，如果该远程分支不存在，则会被新建
-
-
-
 ```shell
-dougax@lyh MINGW64 /d/github/test/jiayou2021 (main)
 $ vim first.txt
 
-dougax@lyh MINGW64 /d/github/test/jiayou2021 (main)
 $ git add first.txt
-warning: LF will be replaced by CRLF in first.txt.
-The file will have its original line endings in your working directory
 
-dougax@lyh MINGW64 /d/github/test/jiayou2021 (main)
 $ git commit -m "push test" first.txt
-warning: LF will be replaced by CRLF in first.txt.
-The file will have its original line endings in your working directory
-[main f5d334f] push test
- 1 file changed, 1 insertion(+)
- create mode 100644 first.txt
 
-dougax@lyh MINGW64 /d/github/test/jiayou2021 (main)
 $ git status
 On branch main
 Your branch is ahead of 'origin/main' by 1 commit.
@@ -724,7 +643,41 @@ origin  git@github.com:1759728350/jiayou2021.git (fetch)
 origin  git@github.com:1759728350/jiayou2021.git (push)
 ```
 
+##### git 为什么要先commit，然后pull，最后再push？
 
+<font color=#66CC99 style=" font-weight:bold;">一般工作先pull初始化一下本地仓库,每次提交在push之前pull一下检查冲突多一个合并过程
+否则你啥都不知道的情况下就把人家代码给覆盖掉了</font>
+
+
+情况是这样的，现在远程有一个仓库，分支就一个，是master。然后我本地的仓库是从远程的master上clone下来的。大家都是clone下来，再在自己本地改好，再commit然后pull然后push，大家都是这么做的。那么现在问题来了：
+
+1，那我本地这个也算是个分支？还是就是一个本地仓库？
+
+答：本地和远程的关系相当于两个分支,你感觉一样是因为你git pull 的时候已经自动给绑定好对应关系了, set-upstream..balbala
+
+2，如果我在远程新建了个分支，然后我pull了下来，那我本地到底有分支这个说法吗？我本地的分支是不是就是那个远程新建的分支？
+
+答：你远程新建了一个分支拉到本地的道理是一样的,属于复制了一份,但是本地分支和远程分支已经是两个东西了
+
+3，本地仓库和本地分支有什么区别？
+
+答：本地分支属于本地仓库里,是包含关系,一个仓库里可以有很多分支
+
+4，commit是提交到本地仓库，然后push，这个push是把所有代码推到远程仓库，还是只是把commit的地方推到远程仓库？
+
+答：肯定不会全量推送到远程的,是通过对比 commit 的记录,如果本地高于远程就直接把多出来的commit 给怼上去,如果本地分支的最新版本和远程的 commit 有冲突，就需要解决冲突。
+
+5，那为什么要先commit，然后pull，然后再push，我pull了，岂不是把自己改的代码都给覆盖掉了嘛，因为远程没有我改的代码，我pull，岂不是覆盖了我本地的改动好的地方了？那我还怎么push？
+
+答：这个先 commit 再 pull 最后再push 的情况就是为了应对多人合并开发的情况,
+
+      1.commit 是为了告诉 git 我这次提交改了哪些东西,不然你只是改了但是 git 不知道你改了,也就无从判断比较;
+
+     2.pull是为了本地 commit 和远程commit 的对比记录,git 是按照文件的行数操作进行对比的,如果同时操作了某文件的同一行那么就会产生冲突,git 也会把这个冲突给标记出来,这个时候就需要先把和你冲突的那个人拉过来问问保留谁的代码,然后在 git add && git commit && git pull 这三连,再次 pull 一次是为了防止再你们协商的时候另一个人给又提交了一版东西,如果真发生了那流程重复一遍,通常没有冲突的时候（也就是没有修改同一行）就直接给你合并了,不会把你的代码给覆盖掉
+
+      3.出现代码覆盖或者丢失的情况:比如A B两人的代码pull 时候的版本都是1,A在本地提交了2,3并且推送到远程了,B 进行修改的时候没有commit 操作,他先自己写了东西,然后 git pull 这个时候 B 本地版本已经到3了,B 在本地版本3的时候改了 A 写过的代码,再进行了git commit && git push 那么在远程版本中就是4,而且 A 的代码被覆盖了,所以说所有人都要先 commit 再 pull,不然真的会覆盖代码的。
+
+修改：看了评论发现上段语句有些不严谨。强调如下：上面B修改的时候不是同一块代码，才可以成功更新（pull）下来到本地仓库，但是此时IDEA里面看不到最新内容，然后不知情的改了A写过的代码，再commit和push，可以成功覆盖git上面的A的修改。        此段主要强调的是：为了避免    不知情的修改了别人代码   还不报错的成功push上去，所以需要先commit再pull，目的就是为了能在IDEA上看的见A修改的代码
 
 ## 删除文件操作
 
@@ -761,119 +714,56 @@ $ git commit -m "delete remote integration-engine-stream.iml"
 $ git push [remote] [branch]
 ```
 
-
- ## 强制拉取远程仓库并覆盖本地仓库代码
+## pull拉取
+#### 拉取失败解决
+##### 强制拉取远程仓库并覆盖本地仓库代码
 
 ```shell
 git fetch --all 
 git reset --hard master 
 git pull #可省略
-
 ```
 
-
-
-
-## 报错解决
-
-![image-20220218172506512](Git.assets/image-20220218172506512.png)
-
+##### 拉取并合并
+自己已经写了一部分,但合并时,在你写的这个工程中有别人改了并提交
+你可以将自己写的那部分暂存
+然后pull再合并
 ```shell
-$ git push note master
-To github.com:1759728350/note.git
- ! [rejected]        master -> master (non-fast-forward)
-error: failed to push some refs to 'github.com:1759728350/note.git'
-hint: Updates were rejected because the tip of your current branch is behind
-hint: its remote counterpart. Integrate the remote changes (e.g.
-hint: 'git pull ...') before pushing again.
-hint: See the 'Note about fast-forwards' in 'git push --help' for details.
-
-dougax@lyh MINGW64 /d/elecbook (master)
-$ git pull --rebase note master
-From github.com:1759728350/note
-
- * branch            master     -> FETCH_HEAD
-   Successfully rebased and updated refs/heads/master.
+git stash       //将未提交的内容暂存到栈中
+git pull        //拉取
+git stash pop   //从暂存区取出储藏 （更新后的代码和自己写的代码合并，可能存在冲突，需要手动解决冲突）
+//然后再提交
 ```
 
-
-
-## 忽略文件
-
-```
-#为注释
-*.txt        #忽略所有 .txt结尾的文件,这样的话上传就不会被选中！
-!lib.txt     #但lib.txt除外
-/temp        #仅忽略项目根目录下的TODO文件,不包括其它目录temp
-build/       #忽略build/目录下的所有文件
-doc/*.txt    #会忽略 doc/notes.txt 但不包括 doc/server/arch.txt
-```
-
-有些时候我们不想把某些文件纳入版本控制中，比如数据库文件，临时文件，设计文件等
-
-在主目录下建立 ".gitignore" 文件，此文件有如下规则：
-
-1.  忽略文件中的空行或以井号（#）开始的行将会被忽略。
-
-2.  可以使用 Linux 通配符。例如：星号（*）代表任意多个字符，问号（？）代表一个字符，方括号（[abc]）代表可选字符范围，大括号（{string1,string2,...}）代表可选的字符串等。
-
-3.  如果名称的最前面有一个感叹号（!），表示例外规则，将不被忽略。
-
-4.  如果名称的最前面是一个路径分隔符（/），表示要忽略的文件在此目录下，而子目录中的文件不忽略。
-
-5.  如果名称的最后面是一个路径分隔符（/），表示要忽略的是此目录下该名称的子目录，而非文件（默认文件或目录都忽略）。使用码云
-
-
-## 为啥每次提交都需要输密码?
-因为你git remote add 的是https的协议url
-只要改成ssh的url就不需要验证了
-![](img/Pasted%20image%2020221126190211.png)
+##### 提交然后pull直接覆盖解决冲突
+本地工作区修改了内容然后pull了报错
 ```shell
-//先删除之前关联的远程仓库名,以防之后再add时name重复
-git remote rm regression 
-//重新关联
-git remote add regression git@github.com:1759728350/breathe.git
-//之后正常提交就行了
+git add -u //全写为git add --update，仅将被修改的文件提交到暂存区
+git commit -m "" 
+git pull
 ```
 
-## git 为什么要先commit，然后pull，最后再push？
-
-<font color=#66CC99 style=" font-weight:bold;">一般工作先pull初始化一下本地仓库,每次提交在push之前pull一下检查冲突多一个合并过程
-否则你啥都不知道的情况下就把人家代码给覆盖掉了</font>
 
 
-情况是这样的，现在远程有一个仓库，分支就一个，是master。然后我本地的仓库是从远程的master上clone下来的。大家都是clone下来，再在自己本地改好，再commit然后pull然后push，大家都是这么做的。那么现在问题来了：
-
-1，那我本地这个也算是个分支？还是就是一个本地仓库？
-
-答：本地和远程的关系相当于两个分支,你感觉一样是因为你git pull 的时候已经自动给绑定好对应关系了, set-upstream..balbala
-
-2，如果我在远程新建了个分支，然后我pull了下来，那我本地到底有分支这个说法吗？我本地的分支是不是就是那个远程新建的分支？
-
-答：你远程新建了一个分支拉到本地的道理是一样的,属于复制了一份,但是本地分支和远程分支已经是两个东西了
-
-3，本地仓库和本地分支有什么区别？
-
-答：本地分支属于本地仓库里,是包含关系,一个仓库里可以有很多分支
-
-4，commit是提交到本地仓库，然后push，这个push是把所有代码推到远程仓库，还是只是把commit的地方推到远程仓库？
-
-答：肯定不会全量推送到远程的,是通过对比 commit 的记录,如果本地高于远程就直接把多出来的commit 给怼上去,如果本地分支的最新版本和远程的 commit 有冲突，就需要解决冲突。
-
-5，那为什么要先commit，然后pull，然后再push，我pull了，岂不是把自己改的代码都给覆盖掉了嘛，因为远程没有我改的代码，我pull，岂不是覆盖了我本地的改动好的地方了？那我还怎么push？
-
-答：这个先 commit 再 pull 最后再push 的情况就是为了应对多人合并开发的情况,
-
-      1.commit 是为了告诉 git 我这次提交改了哪些东西,不然你只是改了但是 git 不知道你改了,也就无从判断比较;
-
-     2.pull是为了本地 commit 和远程commit 的对比记录,git 是按照文件的行数操作进行对比的,如果同时操作了某文件的同一行那么就会产生冲突,git 也会把这个冲突给标记出来,这个时候就需要先把和你冲突的那个人拉过来问问保留谁的代码,然后在 git add && git commit && git pull 这三连,再次 pull 一次是为了防止再你们协商的时候另一个人给又提交了一版东西,如果真发生了那流程重复一遍,通常没有冲突的时候（也就是没有修改同一行）就直接给你合并了,不会把你的代码给覆盖掉
-
-      3.出现代码覆盖或者丢失的情况:比如A B两人的代码pull 时候的版本都是1,A在本地提交了2,3并且推送到远程了,B 进行修改的时候没有commit 操作,他先自己写了东西,然后 git pull 这个时候 B 本地版本已经到3了,B 在本地版本3的时候改了 A 写过的代码,再进行了git commit && git push 那么在远程版本中就是4,而且 A 的代码被覆盖了,所以说所有人都要先 commit 再 pull,不然真的会覆盖代码的。
-
-修改：看了评论发现上段语句有些不严谨。强调如下：上面B修改的时候不是同一块代码，才可以成功更新（pull）下来到本地仓库，但是此时IDEA里面看不到最新内容，然后不知情的改了A写过的代码，再commit和push，可以成功覆盖git上面的A的修改。        此段主要强调的是：为了避免    不知情的修改了别人代码   还不报错的成功push上去，所以需要先commit再pull，目的就是为了能在IDEA上看的见A修改的代码
 
 
-## git add的存在意义
+
+## 参考
+[学习笔记](https://gitee.com/hongjilin/hongs-study-notes/tree/master/%E7%BC%96%E7%A8%8B_%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#1git-stash)
+[车子的git十篇命令解析](https://blog.csdn.net/longintchar/category_7883282.html)
+
+
+
+
+
+
+
+## 暂存区
+##### add.不能乱用
+add是将文件加入到缓存区且让git能追踪到
+add . 将所有文件到加入了,有的文件你还没修改后就不要急着推上去
+
+##### git add的存在意义
 不知道大家在学习Git的过程中，有没有想过一个问题，就是为什么要有git add 命令．
 
 当一个文件被我们add过后，每次commit前还是需要git add，为什么不像svn那样只用add一次，以后在也不用add命令了．而且我们add文件后，再去修改文件，然后执行commit命令，最后的修改并不会被commit到仓库，这也增加了提交错误的风险．
@@ -930,11 +820,6 @@ _文件从没有被add过_
 ![[Pasted image 20220816203646.png]]
 
 
-## 暂存区
-##### add.不能乱用
-add是将文件加入到缓存区且让git能追踪到
-add . 将所有文件到加入了,有的文件你还没修改后就不要急着推上去
-
 ## 版本库
 ##### 查看某个文件的提交历史
  ```shell
@@ -990,6 +875,7 @@ git revert commitId
 你要删除这个新的revert产生的commit且便会没revert的版本
 你就直接git reset --hard commitId就行了
 日志也会一并删除
+
 
 ## 挖坑
 git 查看暂存区的使用场景挖坑
