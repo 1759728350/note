@@ -1,96 +1,4 @@
 
-版本控制git
--------
-
-版本控制（Revision control）是一种在开发的过程中用于管理我们对文件、目录或工程等内容的修改历史，方便查看更改历史记录，备份以便恢复以前的版本的软件工程技术。
-
-*   实现跨区域多人协同开发
-    
-*   追踪和记载一个或者多个文件的历史记录
-    
-*   组织和保护你的源代码和文档
-    
-*   统计工作量
-    
-*   并行开发、提高开发效率
-    
-*   跟踪记录整个软件的开发过程
-    
-*   减轻开发人员的负担，节省时间，同时降低人为错误
-    
-
-简单说就是用于管理多人协同开发项目的技术。
-
-没有进行版本控制或者版本控制本身缺乏正确的流程管理，在软件开发过程中将会引入很多问题，如软件代码的一致性、软件内容的冗余、软件过程的事物性、软件开发过程中的并发性、软件源代码的安全性，以及软件的整合等问题。
-
-##### 版本控制分类
-常见的git svn
-**1、本地版本控制**
-
-记录文件每次的更新，可以对每个版本做一个快照，或是记录补丁文件，适合个人用，如 RCS。
-
-![](https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7Ksu8UlITwMlbX3kMGtZ9p0Dg3fHrbPqbNEOMO9GTjFhVaukMZWx54icS7eS2x8A7BEu0VB9ibwEhzQ/640?wx_fmt=png)
-
-**2、集中版本控制  SVN**
-
-所有的版本数据都保存在服务器上，协同开发者从服务器上同步更新或上传自己的修改
-
-![](https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7Ksu8UlITwMlbX3kMGtZ9p00V4uLaibxtZI9RLpq7tkSdlWiaF92AVeZ0ib9DicqBkS2poo5u8sEU2mCQ/640?wx_fmt=png)
-
-所有的版本数据都存在服务器上，用户的本地只有自己以前所同步的版本，如果不连网的话，用户就看不到历史版本，也无法切换版本验证问题，或在不同分支工作。而且，所有数据都保存在单一的服务器上，有很大的风险这个服务器会损坏，这样就会丢失所有的数据，当然可以定期备份。代表产品：SVN、CVS、VSS
-
-**3、分布式版本控制 Git**
-
-每个人都拥有全部的代码！安全隐患！
-
-所有版本信息仓库全部同步到本地的每个用户，这样就可以在本地查看所有版本历史，可以离线在本地提交，只需在连网时 push 到相应的服务器或其他用户那里。由于每个用户那里保存的都是所有的版本数据，只要有一个用户的设备没有问题就可以恢复所有的数据，但这增加了本地存储空间的占用。
-
-不会因为服务器损坏或者网络问题，造成不能工作的情况！
-
-![](https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7Ksu8UlITwMlbX3kMGtZ9p0ev8Q7qXjsTfeSwFexdA4tGjFAiaVEKQzAHdGcINXILKflI2cfk9BiawQ/640?wx_fmt=png)
-
-
-
-##### Git 与 SVN 的主要区别
-
-SVN 是集中式版本控制系统，版本库是集中放在中央服务器的，而工作的时候，用的都是自己的电脑，所以首先要从中央服务器得到最新的版本，然后工作，完成工作后，需要把自己做完的活推送到中央服务器。集中式版本控制系统是必须联网才能工作，对网络带宽要求较高。
-
-
-
-Git 是分布式版本控制系统，没有中央服务器，每个人的电脑就是一个完整的版本库，工作的时候不需要联网了，因为版本都在自己电脑上。协同的方法是这样的：比如说自己在电脑上改了文件 A，其他人也在电脑上改了文件 A，这时，你们两之间只需把各自的修改推送给对方，就可以互相看到对方的修改了。Git 可以直接看到更新了哪些代码和文件！
-
-**Git 是目前世界上最先进的分布式版本控制系统。**
-
-  
-
-聊聊 Git 的历史
-
-同生活中的许多伟大事物一样，Git 诞生于一个极富纷争大举创新的年代。
-
-Linux 内核开源项目有着为数众广的参与者。绝大多数的 Linux 内核维护工作都花在了提交补丁和保存归档的繁琐事务上 (1991－2002 年间)。到 2002 年，整个项目组开始启用一个专有的分布式版本控制系统 BitKeeper 来管理和维护代码。
-
-Linux 社区中存在很多的大佬！破解研究 BitKeeper ！
-
-到了 2005 年，开发 BitKeeper 的商业公司同 Linux 内核开源社区的合作关系结束，他们收回了 Linux 内核社区免费使用 BitKeeper 的权力。这就迫使 Linux 开源社区 (特别是 Linux 的缔造者 Linus Torvalds) 基于使用 BitKeeper 时的经验教训，开发出自己的版本系统。（2 周左右！） 也就是后来的 Git！
-
-**Git 是目前世界上最先进的分布式版本控制系统。**
-
-Git 是免费、开源的，最初 Git 是为辅助 Linux 内核开发的，来替代 BitKeeper！
-
-
-
-Linux 和 Git 之父李纳斯 · 托沃兹（Linus Benedic Torvalds）1969、芬兰
-
-  
-
-Git 环境配置
-
-
-环境搭建
-
-
-
-
 打开 [git 官网] https://git-scm.com/，下载 git 对应操作系统的版本。
 
 所有东西下载慢的话就可以去找镜像！
@@ -98,17 +6,9 @@ Git 环境配置
 官网下载太慢，我们可以使用淘宝镜像下载：http://npm.taobao.org/mirrors/git-for-windows/
 
 
-
-
-
-
-
-
-Git 配置
-------
+## Git 配置
 
 安装成功后在开始菜单中会有 Git 项，菜单下有 3 个程序：任意文件夹下右键也可以看到对应的程序！
-
 
 
 **Git Bash：**Unix 与 Linux 风格的命令行，使用最多，推荐最多
@@ -125,10 +25,6 @@ git config --system --list
 git config --global  --list
 ```
 
-右键点击git bush here
-
-
-
 
 
 所有的配置文件，其实都保存在本地！
@@ -143,7 +39,6 @@ git config --global  --list
 git config --global user.name  #查看名称
 git config --global user.email  #邮箱
 #这个用户名和密码仅仅只是区分 不同合作开发者的  和github以及gitee没关系
-
 ```
 
 
@@ -192,53 +87,8 @@ ssh -T git@github.com
 
 这里可以直接编辑配置文件，通过命令设置后会响应到这里。
 
-### 提交本地仓库
-
-```shell
-dougax@lyh MINGW64 /d/github/test (master)
-$ vim a.txt
-
-dougax@lyh MINGW64 /d/github/test (master)
-
-#先将文件放入到暂存区
-$ git add a.txt
-warning: LF will be replaced by CRLF in a.txt.
-The file will have its original line endings in your working directory
-
-dougax@lyh MINGW64 /d/github/test (master)
-#如果感觉刚才那个文件还需要改,可以先从暂存区退回来
-
-#git rm --cached a.txt
 
 
-#查看状态
-$ git status
-On branch master
-
-No commits yet
-
-Changes to be committed:
-  (use "git rm --cached <file>..." to unstage)
-        new file:   a.txt
-
-
-dougax@lyh MINGW64 /d/github/test (master)
-
-#再将暂存区中的文件提交到仓库
-$ git commit a.txt
-warning: LF will be replaced by CRLF in a.txt.
-The file will have its original line endings in your working directory
-#下面是这次提交新生成的版本号,右边是提交信息
-[master (root-commit) 0786e5a] this is the first file i have commited
- 1 file changed, 1 insertion(+)
- create mode 100644 a.txt
-#然后输入提交信息,相当于注释
-```
-
-当文件被更改后查看状态![image-20220217022814855](Git.assets/image-20220217022814855.png)
-
-commit -a直接将修改后的文件提交到主分支中,一步到位
--m直接写提交信息,不用再进入到vim中再写了
 ### 本地仓库搭建
 
 git init
@@ -249,9 +99,6 @@ git init
 #在要建立本地仓库的文件夹下右键  git bash here
 
 # 在当前目录新建一个Git代码库
-
-$ git init
-
 dougax@lyh MINGW64 /d/github/test
 $ git init
 Initialized empty Git repository in D:/github/test/.git/
@@ -387,7 +234,7 @@ $ git pull <远程主机名> <远程分支名>:<本地分支名>
 
 
 ```bash
-#查看你远程添加了几个仓库
+#查看你远程添加了几个仓库的关联
 dougax@lyh MINGW64 /d/github/test/jiayou2021 (main)
 $ git remote -v
 origin  git@github.com:1759728350/jiayou2021.git (fetch)
@@ -395,17 +242,13 @@ origin  git@github.com:1759728350/jiayou2021.git (push)
 origin_1        git@github.com:1759728350/jiayou2021.git (fetch)
 origin_1        git@github.com:1759728350/jiayou2021.git (push)
 
-dougax@lyh MINGW64 /d/github/test/jiayou2021 (main)
 $ git pull origin_1 main
 
-
-dougax@lyh MINGW64 /d/github/test/jiayou2021 (main)
 $ ll
 total 2
 -rw-r--r-- 1 dougax 197121 47 Feb 18 10:49 README.md
 -rw-r--r-- 1 dougax 197121 19 Feb 18 10:50 first.txt
 
-dougax@lyh MINGW64 /d/github/test/jiayou2021 (main)
 $ git branch -v
 * main f5d334f [ahead 1] push test
 
@@ -434,6 +277,53 @@ git status
 *   Staged: 暂存状态. 执行 git commit 则将修改同步到库中, 这时库中的文件和本地文件又变为一致, 文件为 Unmodify 状态. 执行 git reset HEAD filename 取消暂存, 文件状态为 Modified
     
 
+
+## 暂存区,工作区和远程仓库
+
+Git 本地有三个工作区域：工作目录（Working Directory）、暂存区 (Stage/Index)、资源库(Repository 或 Git Directory)。如果在加上远程的 git 仓库(Remote Directory) 就可以分为四个工作区域。文件在这四个区域之间的转换关系如下：
+
+
+*   Workspace：工作区，就是你平时存放项目代码的地方
+
+*   Index / Stage：暂存区，用于临时存放你的改动，事实上它只是一个文件，保存即将提交到文件列表信息
+
+*   Repository：仓库区（或本地仓库），就是安全存放数据的位置，这里面有你提交到所有版本的数据。其中 HEAD 指向最新放入仓库的版本
+
+*   Remote：远程仓库，托管代码的服务器，可以简单的认为是你项目组中的一台电脑用于远程数据交换
+
+本地的三个区域确切的说应该是 git 仓库中 HEAD 指向的版本：
+
+
+
+*   Directory：使用 Git 管理的一个目录，也就是一个仓库，包含我们的工作空间和 Git 的管理空间。
+
+*   WorkSpace：需要通过 Git 进行版本控制的目录和文件，这些目录和文件组成了工作空间。
+
+*   .git：存放 Git 管理信息的目录，初始化仓库的时候自动创建。
+
+*   Index/Stage：暂存区，或者叫待提交更新区，在提交进入 repo 之前，我们可以把所有的更新放在暂存区。
+
+*   Local Repo：本地仓库，一个存放在本地的版本库；HEAD 会只是当前的开发分支（branch）。
+
+*   Stash：隐藏，是一个工作状态保存栈，用于保存 / 恢复 WorkSpace 中的临时状态。
+
+
+工作目录（WorkSpace) 一般就是你希望 Git 帮助你管理的文件夹，可以是你项目的目录，也可以是一个空目录，建议不要有中文。
+
+日常使用只要记住下图 6 个命令：
+
+![img](Git.assets/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzM1NDE1Mg==,size_16,color_FFFFFF,t_70.png)
+
+通过ll来查看哪些文件已经存入到暂存区(index/stage)中
+![image-20220221001105070](Git.assets/image-20220221001105070.png)
+
+上面蓝色的是已经add到暂存区中的文件
+![image-20220221001230534](Git.assets/image-20220221001230534.png)
+
+git checkout -- \<file> 表示将文件从暂存区的file版本替换到工作区的file版本，如果暂存区没有，就从版本库中的file版本替换工作区的file版本；
+当执行 “git checkout .” 或者 “git checkout – ” 命令时，会用暂存区全部或指定的文件替换工作区的文件。这个操作很危险，会清除工作区中未添加到暂存区的改动。
+
+git rm --cached \<file> 只表示将暂存区的file文件删除。
 
 
 ## GIT 分支
@@ -558,57 +448,6 @@ git 的工作流程一般是这样的：
 <img src="https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7Ksu8UlITwMlbX3kMGtZ9p09iaOhl0dACfLrMwNbDzucGQ30s3HnsiaczfcR6dC9OehicuwibKuHjRlzg/640?wx_fmt=png" style="zoom:50%;" />
 
 
-## 暂存区,工作区和远程仓库
-
-Git 本地有三个工作区域：工作目录（Working Directory）、暂存区 (Stage/Index)、资源库(Repository 或 Git Directory)。如果在加上远程的 git 仓库(Remote Directory) 就可以分为四个工作区域。文件在这四个区域之间的转换关系如下：
-
-
-
-*   Workspace：工作区，就是你平时存放项目代码的地方
-
-*   Index / Stage：暂存区，用于临时存放你的改动，事实上它只是一个文件，保存即将提交到文件列表信息
-
-*   Repository：仓库区（或本地仓库），就是安全存放数据的位置，这里面有你提交到所有版本的数据。其中 HEAD 指向最新放入仓库的版本
-
-*   Remote：远程仓库，托管代码的服务器，可以简单的认为是你项目组中的一台电脑用于远程数据交换
-
-本地的三个区域确切的说应该是 git 仓库中 HEAD 指向的版本：
-
-
-
-*   Directory：使用 Git 管理的一个目录，也就是一个仓库，包含我们的工作空间和 Git 的管理空间。
-
-*   WorkSpace：需要通过 Git 进行版本控制的目录和文件，这些目录和文件组成了工作空间。
-
-*   .git：存放 Git 管理信息的目录，初始化仓库的时候自动创建。
-
-*   Index/Stage：暂存区，或者叫待提交更新区，在提交进入 repo 之前，我们可以把所有的更新放在暂存区。
-
-*   Local Repo：本地仓库，一个存放在本地的版本库；HEAD 会只是当前的开发分支（branch）。
-
-*   Stash：隐藏，是一个工作状态保存栈，用于保存 / 恢复 WorkSpace 中的临时状态。
-
-
-工作目录（WorkSpace) 一般就是你希望 Git 帮助你管理的文件夹，可以是你项目的目录，也可以是一个空目录，建议不要有中文。
-
-日常使用只要记住下图 6 个命令：
-
-![img](Git.assets/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzM1NDE1Mg==,size_16,color_FFFFFF,t_70.png)
-
-
-
-通过ll来查看哪些文件已经存入到暂存区(index/stage)中
-![image-20220221001105070](Git.assets/image-20220221001105070.png)
-
-上面蓝色的是已经add到暂存区中的文件
-![image-20220221001230534](Git.assets/image-20220221001230534.png)
-
-git checkout -- \<file> 表示将文件从暂存区的file版本替换到工作区的file版本，如果暂存区没有，就从版本库中的file版本替换工作区的file版本；
-当执行 “git checkout .” 或者 “git checkout – ” 命令时，会用暂存区全部或指定的文件替换工作区的文件。这个操作很危险，会清除工作区中未添加到暂存区的改动。
-
-git rm --cached \<file> 只表示将暂存区的file文件删除。
-
-
 
 ## push操作
 
@@ -679,40 +518,6 @@ origin  git@github.com:1759728350/jiayou2021.git (push)
 
 修改：看了评论发现上段语句有些不严谨。强调如下：上面B修改的时候不是同一块代码，才可以成功更新（pull）下来到本地仓库，但是此时IDEA里面看不到最新内容，然后不知情的改了A写过的代码，再commit和push，可以成功覆盖git上面的A的修改。        此段主要强调的是：为了避免    不知情的修改了别人代码   还不报错的成功push上去，所以需要先commit再pull，目的就是为了能在IDEA上看的见A修改的代码
 
-## 删除文件操作
-
-git删除已经push的远程文件或文件夹
-
-在使用git提交项目时，有时候会误提交一下文件，比如：.iml，.project，*.settings，.idea/*等文件，有时候这些不需要提交的文件可以加入到.gitignore，在提交的时候可以忽略这些文件，但是有时候我们忘记，就会出现误提交一些文件，这时就需要我们删除误提交的文件，<font color=#99CCFF style=" font-weight:bold;">下面是使用git命令来删除已经push的误提交的文件</font>：
-
-注意：<font color=#FFCCCC style=" font-weight:bold;">该方法适用于我们需要删除暂存区或分支上的文件, 但本地又需要使用, 只是不希望这个文件被版本控制</font>
-
-1.**预览暂存区我们需要删除的文件或文件夹**（此步骤可以预览我们要删除的文件或文件夹是否是我们要删除的，有没有或多或少删除）
-比如：我们就拿删除 integration-engine-stream.iml 作为例子
-
-```shell
-git rm -r -n --cached 文件/文件夹
-$ git add .    #虽然有些IDE在代码更新后会自动add，但是还是最好手动add一下，以防万一
-$ git rm -r -n --cached integration-engine-stream.iml
-rm 'data-integration-engine-stream/integration-engine-stream.iml'
-```
-
-使用 -n 参数，执行命令时，是不会删除任何文件，而是展示此命令要删除的文件列表预览。由此我们看到只有要删除的文件 integration-engine-stream.iml
-
-**git rm -r --cached file/dir**参数为递归删除，递归删除暂存区中的文件夹/文件
-
-2.确认无误后删除暂存区文件或文件夹，只需去掉 -n 参数
-3.将本次暂存区的更改提交
-
-```shell
-$ git commit -m "delete remote integration-engine-stream.iml"
-```
-
-4.push
-
-```shell
-$ git push [remote] [branch]
-```
 
 ## pull拉取
 #### 拉取失败解决
@@ -744,24 +549,46 @@ git pull
 ```
 
 
-
-
-
-
 ## 参考
 [学习笔记](https://gitee.com/hongjilin/hongs-study-notes/tree/master/%E7%BC%96%E7%A8%8B_%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#1git-stash)
 [车子的git十篇命令解析](https://blog.csdn.net/longintchar/category_7883282.html)
-
-
-
-
-
 
 
 ## 暂存区
 ##### add.不能乱用
 add是将文件加入到缓存区且让git能追踪到
 add . 将所有文件到加入了,有的文件你还没修改后就不要急着推上去
+
+##### 删除暂存区文件
+git rm --cached \<file> 只表示将暂存区的file文件删除。
+
+##### 删除已经push的文件
+git删除已经push的远程文件或文件夹
+这个操作相当于再提交一个版本覆盖之前的提交
+我们不需要add(本地还要用这个文件) 只需要把暂存区中的对应文件删掉再提交和push
+就可以删除远程仓库的对应文件,本质是覆盖
+
+
+注意：该方法适用于我们需要删除暂存区或分支上的文件, <font color=#FFCCCC style=" font-weight:bold;">但本地又需要使用</font>, 只是不希望这个文件被版本控制
+
+1.**预览暂存区我们需要删除的文件或文件夹**（此步骤可以预览我们要删除的文件或文件夹是否是我们要删除的，有没有或多或少删除）
+
+```shell
+git rm -r -n --cached 文件/文件夹
+$ git add .    #虽然有些IDE在代码更新后会自动add，但是还是最好手动add一下，以防万一
+$ git rm -r -n --cached integration-engine-stream.iml
+rm 'data-integration-engine-stream/integration-engine-stream.iml'
+```
+
+使用 -n 参数，执行命令时，是不会删除任何文件，而是展示此命令要删除的文件列表预览。由此我们看到只有要删除的文件 integration-engine-stream.iml
+
+**git rm -r --cached file/dir**参数为递归删除，递归删除暂存区中的文件夹/文件
+
+2.确认无误后删除暂存区文件或文件夹，只需去掉 -n 参数
+3.将本次暂存区的更改提交,commit和push,
+<font color=#99CCFF style=" font-weight:bold;">千万别add,不然就白rm了</font>
+
+
 
 ##### git add的存在意义
 不知道大家在学习Git的过程中，有没有想过一个问题，就是为什么要有git add 命令．
@@ -826,6 +653,10 @@ _文件从没有被add过_
  git log ${FileName}
 ```
 
+##### 提交命令
+commit -a直接将修改后的文件提交到主分支中,一步到位
+-m直接写提交信息,不用再进入到vim中再写了
+
 ## 版本穿梭/切换分支
 可以切换不同的分支,也可以穿梭到某个commit
 ```shell
@@ -878,8 +709,10 @@ git revert commitId
 
 
 ## 挖坑
+当需要用到这些命令时再去学吧
 git 查看暂存区的使用场景挖坑
 git diff 命令
+git rebace
 查看及删除git远程库不需要的文件
 思考
 ![](img/Pasted%20image%2020221201185509.png)
