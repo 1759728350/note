@@ -36,8 +36,7 @@ print(r'hello\nworld')        #r使得后面所有的转义字符全部失效变
 ### 变量
 
 ##### 变量即对象
-
-<img  src="python基础语法.assets/image-20211128192648716.png" align="left">
+![](python基础语法.assets/image-20211128192648716.png)
 
 ```python
 name = 'asd'
@@ -84,8 +83,7 @@ a is not
 ##### 变量类型
 
 浮点类
-
-<img  src="python基础语法.assets/image-20211127211314742.png" align="left">
+![](python基础语法.assets/image-20211127211314742.png)
 
 ```python
 print(1.1+2.2)                #3.3000000000000003
@@ -256,8 +254,8 @@ print('和为', sum)
 ##### 列表在内存中的结构     
 
 其指向一个id名为728的数组,这个数组每个值为元素id
+![](python基础语法.assets/image-20211128193527091.png)
 
-<img src="python基础语法.assets/image-20211128193527091.png" alt="image-20211128193527091" style="zoom:80%;" align="left" />
 
 ##### 列表初始化
 
@@ -378,7 +376,7 @@ elsejjj 2003864970480
 
 元祖的创建方式
 
-<img src="python基础语法.assets/image-20211129203133907.png" align="left">
+![](python基础语法.assets/image-20211129203133907.png)
 
 元祖不可变,但其内部元素列表时可变序列,所以可以改变
 
@@ -398,7 +396,7 @@ in /not in可以判断是否在其中
 
 ##### 元素的增删改
 
-<img src="python基础语法.assets/image-20211129210958756.png" align="left">
+![](python基础语法.assets/image-20211129210958756.png)
 
 ##### 字典视图
 
@@ -519,13 +517,13 @@ main能起到隔离作用减少代码片段对于方法的影响
 
 验证安装成功
 
-<img src="python基础语法.assets/image-20211201213510562.png" align="left">
+![](python基础语法.assets/image-20211201213510562.png)
 
 
 
 ### 定时执行函数
 
-<img src="python基础语法.assets/image-20211201212006788.png" align="left">
+![](python基础语法.assets/image-20211201212006788.png)
 
 ### python解释器位置
 
