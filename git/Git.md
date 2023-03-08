@@ -49,8 +49,8 @@ git config --global user.email  #邮箱
 当你安装 Git 后首先要做的事情是设置你的用户名称和 e-mail 地址。这是非常重要的，因为每次 Git 提交都会使用该信息。它被永远的嵌入到了你的提交中：
 
 ```shell
-$ git config --global user.name "username"
-$ git config --global user.email "email@example.com"
+$ git config --global user.name "hedley"
+$ git config --global user.email "1759728350@qq.com"
 ```
 
 只需要做一次这个设置，如果你传递了 --global 选项，因为 Git 将总是会使用该信息来处理你在系统中所做的一切操作。如果你希望在一个特定的项目中使用不同的名称或 e-mail 地址，你可以在该项目中运行该命令而不要 --global 选项。总之 --global 为全局配置，不加为某个项目的特定配置。
@@ -58,7 +58,7 @@ $ git config --global user.email "email@example.com"
 ### 配置ssh公钥
 
 ```shell
-ssh-keygen -t rsa -C "注册邮箱"
+ssh-keygen -t rsa -C "1759728350@qq.com"
 ```
 
 然后用户主目录/.ssh/下有两个文件，id_rsa是私钥，id_rsa.pub是公钥
