@@ -170,6 +170,10 @@ doc/*.txt    #会忽略 doc/notes.txt 但不包括 doc/server/arch.txt
 4.  如果名称的最前面是一个路径分隔符（/），表示要忽略的文件在此目录下，而子目录中的文件不忽略。
 
 5.  如果名称的最后面是一个路径分隔符（/），表示要忽略的是此目录下该名称的子目录，而非文件（默认文件或目录都忽略）。使用码云
+
+##### 环境变量配置
+![](img/Pasted%20image%2020230308132008.png)
+![](img/Pasted%20image%2020230308132019.png)
 ## 克隆远程仓库
 
 
@@ -520,7 +524,7 @@ origin  git@github.com:1759728350/jiayou2021.git (push)
 
 
 ## pull拉取
-#### 拉取失败解决
+#### 拉取失败解决_强制覆盖
 ##### 强制拉取远程仓库并覆盖本地仓库代码
 
 ```shell
@@ -547,11 +551,21 @@ git add -u //全写为git add --update，仅将被修改的文件提交到暂存
 git commit -m "" 
 git pull
 ```
+#### 拉取防止覆盖本地_stash暂存
+git pull之前先暂存防止之前写的本地内容被覆盖
+```bash
+git stash
+git pull
+git stash pop
+//然后add commit
+```
 
 
 ## 参考
 [学习笔记](https://gitee.com/hongjilin/hongs-study-notes/tree/master/%E7%BC%96%E7%A8%8B_%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#1git-stash)
 [车子的git十篇命令解析](https://blog.csdn.net/longintchar/category_7883282.html)
+
+
 
 
 ## 暂存区
