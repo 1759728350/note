@@ -1006,6 +1006,8 @@ git remote rm regression
 git remote add regression git@github.com:1759728350/breathe.git
 //之后正常提交就行了
 ```
+把https切换成git的url就行了
+git@github.com:1759728350/breathe.git
 
 ## git 为什么要先commit，然后pull，最后再push？
 
