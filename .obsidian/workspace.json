@@ -8,14 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "f6e5b31dff623d1f",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {}
-            }
-          },
-          {
             "id": "de7596bfed532db0",
             "type": "leaf",
             "state": {
@@ -156,8 +148,11 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "f6e5b31dff623d1f",
+  "active": "de7596bfed532db0",
   "lastOpenFiles": [
+    "net/计算机网络-数据包网络运输.md",
+    "net/计算机网络-数据包网络运输.assets/1010726-20191204184739482-738579611.png",
+    "net/SSH.md",
     "server.txt",
     "新建 文本文档.txt",
     "git/Git.md",
