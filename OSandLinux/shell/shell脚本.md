@@ -2,109 +2,210 @@
 
 该语言凭借系统自身解析编译，不需要下载编译器
 
-管道|
+```shell
+#!/bin/bash              ##这是一个shell脚本   
+```
 
-who|wc   统计使用人数
+### 两种执行脚本方式
 
-/>覆盖 
-
-输入重定向<      <<
-
-
-
-> #/bin/bash                         
+```shell
+source 或者 . ##在当前shell进程下执行
+. first.sh                 //必须加点杠才能执行sh命令
 
 
+bash 脚本    ##在新开的子bash中执行脚本
+bash first.sh          //第二种方式，根据脚本定义的解析器来执行命令   无视权限
 
-这是一个shell脚本
-
-### 编译方式      #!/bin/bash                 
-
-#a:lyh
-
-who>test                        //相对于当前文件下的test
-wc test
-
-
-
-### 两种执行方式
-
-#### ./first.sh                 //执行sh命令
-
-#### bash first.sh          //第二种方式，根据脚本定义的解析器来执行命令   无视权限
-
-无权限仍可以执行     ，可以得出用户在可读当前脚本时即使无执行权限仍可借由解析器间接执行
+##无权限仍可以执行     ，可以得出用户在可读当前脚本时即使无执行权限仍可借由解析器间接执行
 
 -rw-r--r--. 1 root root 37 11月 18 11:08 first.sh
 -rw-r--r--. 1 root root 88 11月 18 11:17 test
 [root@liyonghai shell]# bash first.sh 
  2 10 88 test
+```
+
+##### 子shell不会覆盖变量
+
+bash执行脚本创建子shell执行脚本,所以不会更改当前的环境变量
+
+而直接点执行会成功修改, 因为子shell只会在自己的作用域中修改变量
+
+```shell
+vim b.sh
+#!/bin/bash
+$name="hedley"
+
+. b.sh  ##当前shell下执行该脚本
+
+vim a.sh
+#!/bin/bash
+$name="son"
+
+bash a.sh  ##开一个子shell执行
+echo $name   ##hedley,说明没有发生覆盖更改
+```
 
 
 
 ### 变量
 
+##### 变量种类
+
+本地变量  只能用在bash的当前进程中,会被销毁
+
+环境变量   称为全局变量,所有的bash中都可以用,已经被持久化的变量,不会被销毁
+
+局部变量   shell脚本中定义的变量
+
 ##### 系统变量
 
 $HOME  $PATH   获取值加$
 
-##### 普通变量
+##### 用户自定义变量
 
-A=100                          等号前后不要加空格
-
+```shell
+A=100                          ##等号前后不要加空格,shell脚本中不能乱加空格
 echo "A=$A"
+
+##当我们想在复制诸如lyh 123则会报错
+
+a="100 sjdksa"
+##想要值中有空格就加双引号
+```
+
+##### 变量与字符串拼接
+
+```shell
+#!/bin/bash
+name="${1}sadasdasd"
+echo $name
+
+##所以字符串拼接时就用花括号包变量,然后用双引号包整个字符串
+```
 
 ##### 静态变量不能unset
 
+```shell
 readonly a=1000
-
 echo "a=$a"
-
 unset a                       //报错
+```
 
 
 
+##### 变量拼接字符串
 
+```shell
+name="Alice"
+greeting="Hello, ${name}!"
+```
 
-##### vim在普通模式下    dd删除一整行
+##### 单引号和飘号双引号
 
-##### yy复制当前行     p粘贴
-
-
-
+```shell
 #!/bin/bash
 #a:lyh
 
 name=lyh
-echo $name              //输出为lyh
-echo "$name"         //输出为lyh
-echo '$name'           //输出为$name
+echo ${name}              //输出为lyh
+echo "${name}"            //输出为lyh
+echo '${name}'           //输出为$name
 
-结论：双引号和无符号被当做正常输出
+##单引号不解析语法,飘号表示当做命令输出
+```
 
-单引号表示字符串
+飘号让变量可以接收命令的输出
 
-飘号表示当做命令输出
+```shell
+dir=`ls`
+echo $dir
+bin boot data dev etc home lib lib64 lost+found media mnt opt proc root run sbin shellscript.sh 
+```
 
-注意：弱类型一律视为字符
+双引号做参数替换防止意外
+
+```shell
+是否要加双引号取决于这个串会不会做替换
+tip="a=$0"
+echo "$tip"
+##如果一个字符串包含空格或特殊字符（如$、*、|等）
+##shell脚本本身对于命令替换和赋值单纯就是简单的字符串拼接替换,所以不加双引号容易出现意外情况
+
+```
 
 
 
-#!/bin/bash
-echo "pleeeeee"             
-read year                    //输入
-echo $year              //输出变量
-         
+##### read读取输入值
 
-##### 设置环境变量
+```shell
+read -t 10 -p "输入个值" S        #-p输入友好提示
+echo "$S"						 #-t 10 表示10秒内输入,10秒接收不到直接执行程序
+```
 
+### 常用环境变量
+
+##### 特殊状态变量
+
+```shell
+echo $?  ##输出上一命令是否执行成功  1-255执行失败  0表示执行成功
+##脚本中常用来判断上一步骤是否执行成功
+
+```
+
+##### 个人环境变量配置文件
+
+```shell
+~/.bash_profile    ~/.bashrc  ##这些文件上配置用户特有的环境变量,当用户远程登录时会执行赋值
+##所以修改后要exit退出重新登录才会生效
+```
+
+系统环境配置文件
+
+```shell
+/etc/profile   /etc/bashrc
+```
+
+##### 查询和设置环境变量
+
+查询环境变量
+
+set查看所有变量
+
+```shell
+name=hedley        ##定义一个临时变量
+set | grep ^name    ##set包括所有变量,可以查到临时变量,持久化的环境变量
+##输出name=hedley
+```
+
+env查看环境变量
+
+```shell
+env | grep PATH
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin
+
+export | grep PATH   ##效果一样
+```
+
+
+
+```shell
 在/etc/profile下 export TOMCAT_HOME=/opt/tomcat
 
 source /etc/profile   刷新数据重新配置
 
 然后输出echo $TOMCAT_HOME
+```
 
-##### 位置参数
+### 脚本执行
+
+##### 脚本入参
+
+```shell
+$0 表示命令本身
+$1-9 表示入参  9以后需要加花括号${10}
+$# 获取参数总个数
+$* $@都是获取所有参数$@接收的是一个数组
+```
 
 ```shell
 #!bin/bash
@@ -121,21 +222,43 @@ $@是1 2
 $#参数个数2
 ```
 
-##### 预定义变量
+##### 运算符号
+
+![image-20231017082944322](D:\elecbook\OSandLinux\shell\${imgs}\image-20231017082944322.png)
 
 ```shell
-#!bin/bash
-echo "当前运行进程id为$$"
-/share/myshell.sh &             随便后台启动一个程序
-echo "最近一个后台方式运行的进程id为$!"
-echo "当前运行进程结果为$?,为0则执行成功"
+#!/bin/bash
+
+read -p "n1:" n1
+read -p "n2:" n2
+sum="$(($n1+$n2))"  ##sum之前不能加空格
+echo "n1+n2=$sum"
+
+ . sum.sh
+n1:1
+n2:2
+n1+n2=3
+
+--例2  读取命令行第一第二个参数
+#!/bin/bash
+
+echo "$(($1+$2))"
+[root@VM-4-10-centos testdir]# . sumab.sh 1 2
+3
+
 ```
 
-##### read读取输入值
-
 ```shell
-read -t 10 -p "输入个值" S        #-p输入友好提示
-echo "$S"						 #-t 10 表示10秒内输入,10秒接收不到直接执行程序
+##赋值运算
+##写法一内部赋值
+echo $((i=i+1))
+##外部赋值
+i=$(i+1)
+echo $i
+##逻辑运算
+echo $((8>7))  ##输出为1     false为0
+
+((8>7&&5==5))   ##输出为1
 ```
 
 
@@ -233,16 +356,6 @@ done
 ##### 取值运算符
 
 ![image-20211130152514303](shell脚本.assets/image-20211130152514303.png)
-
-推荐第二种
-
-
-
-
-
-<img src="shell脚本.assets/image-20211130145733109.png" alt="image-20211130145733109" style="zoom:80%;" />
-
-<img src="shell脚本.assets/image-20211130145822350.png" alt="image-20211130145822350" style="zoom:80%;" />
 
 ![image-20211130145652449](shell脚本.assets/image-20211130145652449.png)
 
@@ -369,15 +482,13 @@ dirname /home/aaa/test.txt
 
 #### 函数
 
-
-
 输入两个数相加
 
 ```shell
-[root@lyh share]# bash -x funtest.sh 
-+ read -p 请输入第一个加数 n1
+bash -x funtest.sh 
+read -p 请输入第一个加数 n1
 请输入第一个加数4
-+ read -p 请输入第二个加数 n2
+read -p 请输入第二个加数 n2
 请输入第二个加数5
 + getSum 4 5
 + SUM=9
@@ -385,16 +496,15 @@ dirname /home/aaa/test.txt
 9
 
 #!/bin/bash
-
-function getSum(){
-
-        SUM=$[$n1+$n2]
-        echo "$SUM"
-
-}
-
 read -p "请输入第一个加数" n1
 read -p "请输入第二个加数" n2
+function getSum(){
+        SUM=$[$n1+$n2]
+        echo "$SUM"
+        exit 1       ##给函数一个退出码
+}
+
+
 
 getSum $n1 $n2
 ```
@@ -447,6 +557,200 @@ diyih3
 [root@liyonghai shell]# bash hh.sh 455
 diyih3
 ```
+
+### 三剑客
+
+#### 正则表达式
+
+##### 行首定位符
+
+```shell
+^ ##行首定位符
+
+##把以sum开头的文件找出来
+ls | grep ^sum    
+输出:
+sumab.sh
+sum.sh
+
+##把文件内容中的以ec开头的行输出出来
+cat forelem.sh | grep ^ec
+输出:
+echo $0_$1_$2
+echo $*
+echo $@ 
+```
+
+##### 行尾定位符
+
+```shell
+$ ##行尾定位符
+
+##把文件内容中以句号结尾的内容输出出来
+cat end.txt | grep 群星。$
+输出:
+当因为错过太阳而哭泣时,你也会错过群星。
+
+##把以txt结尾的文件都输出出来
+ls | grep txt$
+输出:
+a.txt
+blank.txt
+```
+
+##### 通配符. 匹配任意单个字符
+
+```shell
+grep a.c a.txt
+输出
+abc
+adc
+```
+
+##### 匹配0-n个符合数量控制
+
+```shell
+*
+cat a.txt | grep abc*    ## 在这里*让c能出现0-任意多次   在这里*不是占位符,而是×[0,n]
+输出
+ab   ##注意:ab也会被匹配,因为前导字母c的出现次数是0到任意多
+abc
+
+##区分*在正则中和在普通环境中的占位符的区别
+*在一般情况下是占位符,表示0到任意多个字符
+但在正则中则是对前导字符进行数量匹配
+```
+
+扩展
+
+> 点和星可以组合起来 以点为前导,星为数量  -->就能表示任意多个字符
+
+```shell
+ ls | grep ".*"  
+a.txt
+b.txt
+c.txt
+```
+
+##### 单字符条件匹配
+
+> 比如你不确定是hedley还是hadley,你就可以将那个不确定的位置用单字符条件匹配
+>
+> 匹配[ ]中包含的任一字符
+
+```shell
+[root@VM-4-10-centos testdir]# cat aaa.txt 
+love
+Love
+iove
+|ove
+1ove
+ove
+
+[root@VM-4-10-centos testdir]# grep  "[Ll]ove" aaa.txt 
+love      ##在方括号中输入那个你想匹配的字符
+Love
+```
+
+扩展
+
+> ^在[ ]中表示取反,匹配不在条件内的字符
+
+```shell
+grep "[^Ll]ove" aaa.txt
+iove
+|ove
+1ove
+```
+
+> [ - ]单字符用杠匹配连续条件内的范围   比如[0-9]   [a-z]  
+
+```shell
+[root@VM-4-10-centos testdir]# grep "[a-k]ove" aaa.txt 
+iove
+```
+
+##### 脱意符
+
+> 由于上面的那些 匹配符 比较特殊,所以为了让那些匹配符失效就有了脱意符 \
+
+```shell
+grep "l\.ve" b.txt
+l.ve
+
+grep "l.ve" b.txt
+love
+l.ve
+```
+
+##### 字符出现多次匹配
+
+```shell
+x{n} ##x出现n次
+x{n,m}  ##x出现n到m次
+x{n,}  ##x初心n到无数次匹配
+
+因为花括号在shell中有特殊含义,所以要加转义符
+x\{n\}
+x\{n,m\}
+x\{n,\}
+
+
+[root@VM-4-10-centos testdir]# grep "a\{3,4\}" bbb.txt 
+aaaa.txt
+aaaaaa.txt
+```
+
+##### 词首词尾定位符
+
+```shell
+\<     ##每一行有一个单词符合就行,不是每一行第一个单词符合条件     
+grep "\<love" 1.txt
+love is sosadas 
+aaa love is sadsa
+dog love cat
+```
+
+##### 其他
+
+括号匹配没学会
+
+| \d   | 匹配一个数字字符                   |
+| ---- | ---------------------------------- |
+| \D   | 匹配一个非数字字符。等价于[^0-9]。 |
+| \s   | 空白符                             |
+| \S   | 非空白符                           |
+
+#### 扩展正则
+
+##### 匹配1-n个符合数量控制
+
+```shell
+[root@VM-4-10-centos testdir]# egrep "a+.txt" bbb.txt 
+aaaa.txt
+oaa.txt
+aaaaaa.txt
+```
+
+##### 匹配0-1个符合数量控制
+
+```shell
+[root@VM-4-10-centos testdir]# egrep "lo?ve" aaa.txt 
+love
+lve
+```
+
+##### 多字符串的或匹配
+
+>(aa|bb)
+
+```shell
+egrep "love(able|tion)" a.txt
+loveable
+lovetion
+```
+
+
 
 
 
