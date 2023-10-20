@@ -562,7 +562,7 @@ diyih3
 
 #### 正则表达式
 
-##### 行首定位符
+##### ^行首定位符
 
 ```shell
 ^ ##行首定位符
@@ -581,7 +581,7 @@ echo $*
 echo $@ 
 ```
 
-##### 行尾定位符
+##### $行尾定位符
 
 ```shell
 $ ##行尾定位符
@@ -598,7 +598,7 @@ a.txt
 blank.txt
 ```
 
-##### 通配符. 匹配任意单个字符
+##### .通配符匹配任意单个字符
 
 ```shell
 grep a.c a.txt
@@ -607,7 +607,7 @@ abc
 adc
 ```
 
-##### 匹配0-n个符合数量控制
+##### *匹配0-n个符合数量控制
 
 ```shell
 *
@@ -632,7 +632,7 @@ b.txt
 c.txt
 ```
 
-##### 单字符条件匹配
+##### []字符条件匹配
 
 > 比如你不确定是hedley还是hadley,你就可以将那个不确定的位置用单字符条件匹配
 >
@@ -670,7 +670,7 @@ iove
 iove
 ```
 
-##### 脱意符
+##### \脱意符
 
 > 由于上面的那些 匹配符 比较特殊,所以为了让那些匹配符失效就有了脱意符 \
 
@@ -683,7 +683,7 @@ love
 l.ve
 ```
 
-##### 字符出现多次匹配
+##### {}字符出现次数区间匹配
 
 ```shell
 x{n} ##x出现n次
@@ -701,10 +701,14 @@ aaaa.txt
 aaaaaa.txt
 ```
 
-##### 词首词尾定位符
+##### <>词首词尾定位符
 
 ```shell
-\<     ##每一行有一个单词符合就行,不是每一行第一个单词符合条件     
+\<     ##词首定位符   每一行有一个单词符合就行,不是每一行第一个单词符合条件   
+\>  ##词尾定位符
+
+##这两个符号需要转义
+
 grep "\<love" 1.txt
 love is sosadas 
 aaa love is sadsa
@@ -723,7 +727,7 @@ dog love cat
 
 #### 扩展正则
 
-##### 匹配1-n个符合数量控制
+##### +匹配1-n个符合数量控制
 
 ```shell
 [root@VM-4-10-centos testdir]# egrep "a+.txt" bbb.txt 
@@ -732,7 +736,7 @@ oaa.txt
 aaaaaa.txt
 ```
 
-##### 匹配0-1个符合数量控制
+##### ?匹配0-1个符合数量控制
 
 ```shell
 [root@VM-4-10-centos testdir]# egrep "lo?ve" aaa.txt 
@@ -740,7 +744,7 @@ love
 lve
 ```
 
-##### 多字符串的或匹配
+##### ()多字符串的或匹配
 
 >(aa|bb)
 
@@ -750,7 +754,107 @@ loveable
 lovetion
 ```
 
+#### 练习
 
+```shell
+/.*/   匹配任意数量任意字符
+/^$/   匹配空行
+/^[A-Z]..$/  匹配大写字母开头后面任意两个字符
+/^[A-Z][a-z]*3[0-5]/  匹配以大写字母开头然后0到任意多个小写字母,然后以3为十位数,任意数字为个位数
+/[a-z]*\./      任意多个字母后面跟.
+/^[A-Za-z]*[^,][A-Za-z]*$/以大小写字母开头和结尾,中间不包括逗号
+/\<java\>/ 查找含有一个词,这个词是java的行,注意是词,不是只包含就显示了,比如javable不会匹配的
+/\<j.[*]ble\>/
+/5{2}3{2,3}\./  5出现两次,3出现2到3次后面跟个点
+/^[ \t]*$/  匹配开头任意多个空格或者制表符,结尾也是,所以匹配的是连续的空格或制表符串
+
+vim模式下编辑
+## 1-$ 表示从当前文件的第一行到最后一行  s表示替换
+##/前表达式/后表达式/
+##前表达式的括号对应后表达式的\1,同理如果两个括号,第二个括号对应后表达式的\2
+括号前需要加\  因为和某些规则冲突了
+
+:1,$ s/\([oO]ccur\)ence/\1rence/     ##将occurence换成occurrence
+:1,$ s/\(one\) and \(two\)/\2 and \1/   ##将one和two换位置
+
+```
+
+#### grep
+
+```shell
+grep
+egrep  ##支持扩展正则
+fgrep  ##不需要考虑符号转义
+```
+
+> grep -v 取反
+
+```shell
+$ ls | grep .png
+Pasted image 20231005221011.png
+Pasted image 20231006002349.png
+Pasted image 20231006004643.png
+Pasted image 20231006214403.png
+
+HUAWEI@DESKTOP-K5DG4PL MINGW64 /d/net (master)
+$ ls | grep .png | grep -v 11
+Pasted image 20231006002349.png
+Pasted image 20231006004643.png
+Pasted image 20231006214403.png
+```
+
+>对文件夹进行grep递归查找内容
+
+```shell
+$ grep -R linux linux-rche/
+
+linux-rche/servera第一天.md:##### 调试selinux
+linux-rche/servera第一天.md:什么是selinux?
+linux-rche/servera第一天.md:linux的安全模块,对于端口,文件定义哪些进程可以执行操作,哪些端口,文件可以被访问
+linux-rche/命令.md:# linux文件管理
+linux-rche/命令.md:# linux基本命令
+linux-rche/命令.md:linux中的所有命令相当于可执行文件,你可以这样理解:在linux中软件,二进制可执行文件,一行命令
+linux-rche/命令.md:# linux磁盘管理
+linux-rche/命令.md:各种linux内核,linux启动boot引导程序,用户个人文件都是需要挂载到linux的目录上的
+
+```
+
+````shell
+当然可以！Shell脚本是一种用来编写命令行任务的脚本语言，非常适合处理文件和系统操作。您可以使用Shell脚本来自动化各种重复性的任务，包括文件操作、进程管理、定时任务等。
+
+在Shell脚本中，反斜杠 `\` 通常用于转义字符。它可以将特殊字符转换为普通字符，例如将换行符转义为`\n`，将制表符转义为`\t`等。此外，还可以使用反斜杠将长命令行拆分为多行，方便阅读和维护。
+
+以下是一个简单的示例，展示了如何使用Shell脚本自动执行一系列Git操作：
+
+```shell
+#!/bin/bash
+
+# 设置仓库路径和消息
+repository_path="/path/to/repository"
+commit_message="Daily commit"
+
+# 切换到仓库目录
+cd $repository_path
+
+# 添加所有修改的文件
+git add .
+
+# 提交更改
+git commit -m "$commit_message"
+
+# 推送到远程仓库
+git push origin master
+
+# 输出完成消息
+echo "Daily commit completed."
+```
+
+以上脚本会进入到指定的仓库路径，自动添加所有修改的文件，并将更改提交到本地仓库和远程仓库。
+
+您可以根据需要修改脚本中的仓库路径和提交消息。另外，如果您希望定期执行该脚本，可以将其添加到定时任务中（例如使用`crontab`命令）。
+
+希望这个例子能够帮助您开始编写自己的Shell脚本！如有任何问题，请随时提问。
+````
 
 
 
