@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "java/Servlet/session.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               }
             }
@@ -23,26 +23,24 @@
             "id": "29f649b1b4cf8417",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "OSandLinux/shell/shell脚本.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "graph",
+              "state": {}
             }
           },
           {
             "id": "279f4100f33a483f",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.4.16"
+                "file": "python/note/python基础语法.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -116,7 +114,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "OSandLinux/shell/shell脚本.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +130,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "OSandLinux/shell/shell脚本.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -155,9 +151,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "OSandLinux/shell/shell脚本.md"
-              }
+              "state": {}
             }
           },
           {
@@ -187,12 +181,14 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "279f4100f33a483f",
+  "active": "29f649b1b4cf8417",
   "lastOpenFiles": [
-    "java/Servlet/cookie.md",
-    "java/Servlet/session.md",
-    "java/Servlet/Servlet.md",
     "OSandLinux/shell/shell脚本.md",
+    "java/Servlet/session.md",
+    "python/note/python基础语法.md",
+    "python/note/自动化脚本.md",
+    "java/Servlet/cookie.md",
+    "java/Servlet/Servlet.md",
     "git/Git.md",
     "net/计算机网络-数据包网络运输.md",
     "net/计算机网络-数据包网络运输.assets/1010726-20191204184739482-738579611.png",
